@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+ <head>
+ <meta charset="utf-8">
+ <title>学習報告一覧</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="learningReportEdit.css">
+ </head>
+ <body>
+	<div class="contents">
+	<div class="header">
+	  <h1>学習報告編集</h1>
+    </div>
+	<div class="form">
+	  <form th:action="@{/Toppage}" th:object="${LearningReport}" method="POST">
+        <span>日付</span>
+		<input type="date" th:field="*{date}" th:value="*{date}" required pattern="\d{4}-\d{2}-\d{2}"><br>
+		<span>開始時刻</span>
+		<input type="time" th:field="*{opentime}" th:value="*{opentime}"><br>
+		<span>終了時刻</span>
+		<input type="time" th:field="*{closetime}" th:value="*{closetime}"><br>
+        <span>学習内容</span>
+		<div class="manu">
+		   <div>
+		       <select name="language">
+		          <option>言語</option>
+		          <option th:each="course : ${course}"th:value="${course.courseId}"th:text="*{language}"></option>
+		       </select>
+	       </div>
+	        <div>
+		        <select name="chapters">
+		    	 <option>チャプター</option>
+			     <option th:each="chapter : ${chapters}"th:value="${chapters.chapterId}"th:text="*{chapters.chapter}"></option>
+		        </select>
+	        </div>
+		    <div>
+		        <select name="text">
+			       <option>テキスト</option>
+			       <option th:each="text: ${text}"th:value="${text.textId}"th:text="*{text.textName}"></option>
+		        </select>
+         	</div>
+		</div>
+		<input type="submit" value="更新">
+        <input type="submit" value="戻る" formaction="/learningReportList">
+	  </form>
+    </div>
+  </div>
 </body>
 </html>
