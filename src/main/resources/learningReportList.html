@@ -1,10 +1,52 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+ <head>
+ <meta charset="utf-8">
+ <title>学習報告一覧</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="learningReportList.css">
+ </head>
 <body>
-
+  <div class="contents">
+      <h1>学習報告一覧</h1>
+    <div class="warapper">
+    <table>
+      <thead>
+        <tr class="item-name">
+          <th>No.</th>
+          <th>日付</th>
+          <th>開始時間</th>
+          <th>終了時間</th>
+          <th>総時間</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody  class="record">
+        <tr th:each="report : ${learninglist}" th:object="${LearningReport}" class="record">
+          <div class="table-contents">
+          <td th:text="*{id}"></td>
+          <td th:text="${#dates.format(Date, 'yyyy/MM/dd')}"></td>
+          <td th:text="${#dates.format(opentime, 'HH:mm')}"></td>
+          <td th:text="${#dates.format(closetime, 'HH:mm')}"></td>
+          <td th:text="${#dates.format(totaltime, 'HH:mm')}"></td>
+          </div>
+          <td>
+            <form th:action="@{/learningReportEdit}" method="post">
+                <input type="submit" class="btn btn-outline-light" name="edit" value="編集">
+                <input type="hidden" name="id" th:value="${LearningReport.id}">
+            </form>
+        </td>
+        <td>
+            <form th:action="@{/learningReportEdit}" method="post">
+                <input type="submit" class="btn-outline-light" name="delete" value="削除">
+                <input type="hidden" name="id" th:value="${LearningReport.id}">
+            </form>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 </body>
 </html>

@@ -1,1 +1,57 @@
-@charset "UTF-8";
+body {
+    background-image:url(./images/haikei.png);
+    height: 100%;
+    position: fixed;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    }
+    .contents{
+        height: auto;
+        width: 80%;
+        padding:　25px 10px;
+        position: fixed;
+        top: 100px;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: #000;
+        text-align: center;
+    }
+    table{
+        width: 100%;
+        padding:　25px 10px;
+        position: relative;
+        top: 100px;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: rgb(65, 65, 65);
+        text-align: center;
+    }
+    th{
+        padding: 10px;
+        border-bottom:3px solid #990b14;
+        color: white;
+    }
+    .record tbody{
+        background-color: rgb(167, 167, 167);
+    }
+    .record td{
+        border-bottom: 1px solid #990b14;
+        background-color: rgb(99, 99, 99);
+    }
+    input[type = "submit"]{
+        background-color: #000;
+        width: 100%;
+        height: 100%;
+        color: rgb(255, 255, 255);
+        padding: auto;
+        border: auto;
+    }
+    form input[type = "submit"]:hover {
+        background-color: #990b14;
+        width: 100%;
+        height: 100%;
+        padding: auto;
+        border:2px solid #990b14;
+        }  
