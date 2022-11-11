@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+body {
+background-image:url(./images/haikei.png);
+height: 100vh;
+position: fixed;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+background-color: rgb(45,45,45);
+}
+
+form {
+    width: 400px;
+    padding:　25px 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #000;
+    text-align: center;
+  }
+
+  form h1{
+    color: white;
+    font-weight: 500;
+  }
+
+  form input[type = "name"],form input[type = "id"] ,form input[type = "password"],form input[type = "mail"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    border: 2px solid #990b14;
+    padding: 15px 10px;
+    width: 200px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    text-align: center;
+  }
+
+  form input[type = "name"]:focus,form input[type = "id"]:focus ,form input[type = "password"]:focus,form input[type = "mail"]:focus{
+    width: 280px;
+    background-color: #f0f8ff;
+  }
+
+form input[type = "password"]:focus,form input[type = "mail"]:focus{
+  width: 280px;
+  background-color: #f0f8ff;
+}
+  form input[type = "change"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 10px auto;
+    padding: 10px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    transition: 0.25s;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  form input[type = "change"]:hover {
+    background-color: #990b14
+  }
+
+  form input[type = "back"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 10px auto;
+    padding: 10px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    transition: 0.25s;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  form input[type = "back"]:hover {
+    background-color: #990b14
+  }
+
+</div>
