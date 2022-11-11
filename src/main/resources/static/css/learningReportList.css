@@ -1,30 +1,28 @@
 body {
     background-image:url(./images/haikei.png);
-    height: 100%;
-    position: fixed;
+    height:auto;
+    position:relative;
+    color: white;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    color: white;
     }
     .contents{
-        height: auto;
+        height: 100%;
         width: 80%;
-        padding:　25px 10px;
-        position: fixed;
-        top: 100px;
-        left: 50%;
-        transform: translate(-50%,-50%);
+        padding: 10px 0;
+        position: relative;
+        top: 5%;
         background-color: #000;
         text-align: center;
+        margin: 0 auto;
     }
     table{
+        height: 100%;
         width: 100%;
-        padding:　25px 10px;
-        position: relative;
+
+        position: absolute;
         top: 100px;
-        left: 50%;
-        transform: translate(-50%,-50%);
         background-color: rgb(65, 65, 65);
         text-align: center;
     }
