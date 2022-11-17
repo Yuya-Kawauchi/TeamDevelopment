@@ -33,13 +33,13 @@
           </div>
           <td>
             <form th:action="@{/learningReportEdit}" method="post">
-                <button>編集</button>
+                <button name="edit">編集</button>
                 <input type="hidden" name="id" th:value="${LearningReport.id}">
             </form>
         </td>
         <td>
             <form th:action="@{/learningReportEdit}" method="post">
-              <button>削除</button>
+              <button  name="delete">削除</button>
                 <input type="hidden" name="id" th:value="${LearningReport.id}">
             </form>
         </td>
