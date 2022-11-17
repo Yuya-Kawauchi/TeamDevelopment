@@ -134,7 +134,7 @@ caption{
 form {
     width: 50%;
     margin:auto;
-    padding:　25px 10px;
+    padding: 25px 10px;
     position: fixed;
     top:0;
     bottom: 0;
@@ -152,7 +152,7 @@ form {
   
     table{
         width: 75%;
-        padding:　25px 10px;
+        padding: 25px 10px;
         position: relative;
         top: 250px;
         left: 50%;
@@ -185,6 +185,7 @@ form {
 .Pagination {
   display: flex;
   text-align:center;
+  padding: 0px;
   margin: 150px;
   margin-left: auto;
     margin-right: auto;
@@ -193,6 +194,7 @@ form {
   border: solid 2px #990b14;
   border-radius: 9999px;
   overflow: hidden;
+  list-style: none;
 }
 .Pagination > * + * {
   border-left: solid 2px #111;
@@ -202,7 +204,7 @@ form {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 45px;
+  width: 41px;
   height: 45px;
   font-size: 14px;
   color: #111;
@@ -228,5 +230,3 @@ form {
         padding: auto;
         border:2px solid #990b14;
         }
-
-</div>
