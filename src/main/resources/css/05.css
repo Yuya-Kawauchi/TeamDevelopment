@@ -26,7 +26,7 @@ form {
     font-weight: 500;
   }
 
-  form input[type = "date"],form input[type = "time"] {
+  form input[type = "date"] {
     border: 0;
     background: none;
     display: block;
@@ -39,6 +39,23 @@ form {
     transition: 0.25s;
     text-align: center;
     border-radius: 24px;
+    color:#fff;
+  }
+
+  form input[type = "time"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    border: 2px solid #990b14;
+    padding: 15px 10px;
+    width: 200px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+    text-align: center;
+    border-radius: 24px;
+    color:#fff;
   }
 
 
@@ -47,7 +64,7 @@ form {
     background-color: #f0f8ff;
   }
 
- 
+
  button{
   border: 0;
   background: none;
