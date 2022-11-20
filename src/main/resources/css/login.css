@@ -41,7 +41,7 @@ form {
     background-color: #990b14;
   }
 
-#submit{
+button{
     border: 0;
     background: none;
     display: block;
@@ -52,22 +52,6 @@ form {
     outline: none;
     color: white;
     border-radius: 25px;
-    transition: 0.25s;
-    text-align: center;
-    cursor: pointer;
-  }
-
-
-
- #newaccount{
-    border: 0;
-    background: none;
-    display: block;
-    margin: 10px auto;
-    padding: 10px 10px;
-    width: 200px;
-    outline: none;
-    color: white;
     transition: 0.25s;
     text-align: center;
     cursor: pointer;
