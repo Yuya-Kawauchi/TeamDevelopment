@@ -41,15 +41,6 @@ form {
     color:#fff;
   }
 
-  form input[type = "name"]:focus,form input[type = "id"]:focus ,form input[type = "password"]:focus,form input[type = "mail"]:focus{
-    width: 280px;
-    background-color: #f0f8ff;
-  }
-
-form input[type = "password"]:focus,form input[type = "mail"]:focus{
-  width: 280px;
-  background-color: #f0f8ff;
-}
 
 button{
     border: 0;
