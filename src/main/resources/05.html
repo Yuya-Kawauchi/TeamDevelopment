@@ -12,30 +12,23 @@
 <div class="login_form_top"><h1>新規学習報告</h1></div>
   <form class="login-container">
   <form th:action="@{/schedule/confirm}" th:object="${scheduleSessionForm}"method="post">
-    <span style="border-bottom: solid 1px rgb(95, 95, 95);">日付</span><input type="date" placeholder="日付">
-    <input type="text" name="date" th:field="*{scheduleForm.date}">
-    <span style="border-bottom: solid 1px rgb(95, 95, 95);">開始時刻</span><input type="time" placeholder="開始時刻">
-    <input type="text" name="startTime" th:field="*{scheduleForm.startTime}">
-    <span style="border-bottom: solid 1px rgb(95, 95, 95);">終了時刻</span><input type="time"  placeholder="終了時刻">
-    <input type="text" name="endTime" th:field="*{scheduleForm.endTime}">
+    <span style="border-bottom: solid 1px rgb(95, 95, 95);"input type="date" placeholder="日付"name="date" th:field="*{scheduleForm.date}">日付</span>
+    <span style="border-bottom: solid 1px rgb(95, 95, 95);">開始時刻</span><input type="time" placeholder="開始時刻"name="startTime" th:field="*{scheduleForm.startTime}">
+    <span style="border-bottom: solid 1px rgb(95, 95, 95);">終了時刻</span><input type="time"  placeholder="終了時刻"name="endTime" th:field="*{scheduleForm.endTime}">
     <span style="border-bottom: solid 1px  rgb(95, 95, 95);">学習内容</span>
-
-    
-    <div class="cp_ipselect cp_sl03">
-    
-       <select name="language">
-       <option>RTC-32</option>
-       </select>
-       <select name="chapters">
-       <option>RTC-32</option>
-       </select>
-       <select name="text">
-       <option>RTC-32</option>
-       </select>
-       </div>
-       
-        <button id="register"> 登録</button>
-        <button id="back"> 戻る</button>
+<div class="cp_ipselect cp_sl03">
+     <select name="language">
+      <option>RTC-32</option>
+      </select>
+      <select name="chapters">
+      <option>RTC-32</option>
+      </select>
+      <select name="text">
+      <option>RTC-32</option>
+      </select>
+      </div>
+      <button id="register"> 登録</button>
+      <button id="back"> 戻る</button>
 </form>
 </div>
 </body>
