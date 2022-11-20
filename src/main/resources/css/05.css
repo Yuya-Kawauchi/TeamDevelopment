@@ -41,51 +41,27 @@ form {
     border-radius: 24px;
   }
 
-form input[type = "content"]{
 
-  text-align: center;
-}
-
-  form input[type = "date"]:focus,form input[type = "time"]:focus ,form input[type = "time"]:focus,form input[type = "content"]:focus{
+  form input[type = "date"]:focus,form input[type = "time"]:focus ,form input[type = "time"]:focus{
     width: 280px;
     background-color: #f0f8ff;
   }
 
-  form input[type = "register"]{
-    border: 0;
-    background: none;
-    display: block;
-    margin: 15px auto;
-    padding: 15px 10px;
-    width: 200px;
-    outline: none;
-    color: white;
-    transition: 0.25s;
-    text-align: center;
-    cursor: pointer;
+ 
+ button{
+  border: 0;
+  background: none;
+  display: block;
+  margin: 15px auto;
+  padding: 15px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  transition: 0.25s;
+  text-align: center;
+  cursor: pointer;
   }
 
-  form input[type = "register"]:hover {
-    background-color: #990b14
-  }
-
-  form input[type = "back"]{
-    border: 0;
-    background: none;
-    display: block;
-    margin: 10px auto;
-    padding: 10px 10px;
-    width: 200px;
-    outline: none;
-    color: white;
-    transition: 0.25s;
-    text-align: center;
-    cursor: pointer;
-  }
-
-  form input[type = "back"]:hover {
-    background-color: #990b14
-  }
 
 .cp_ipselect.cp_sl03::before {
 	border-left: 6px solid transparent;
