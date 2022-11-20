@@ -13,14 +13,10 @@
         <h1>ユーザー編集</h1>
       </div>
   <form class="login-container">
-    <input type="name" placeholder="名前">
-     <input type="text" name="name" th:field="*{scheduleForm.name}">
-    <input type="id" placeholder="ID">
-    <input type="text" name="id" th:field="*{scheduleForm.id}">
-    <input type="password"  placeholder="Password">
-    <input type="text" name="password" th:field="*{scheduleForm.passeord}">
-    <input type="mail"  placeholder="Email">
-    <input type="text" name="email" th:field="*{scheduleForm.email}">
+    <input type="name" placeholder="名前"name="name" th:field="*{scheduleForm.name}">
+    <input type="id" placeholder="ID"name="id" th:field="*{scheduleForm.id}">
+    <input type="password"  placeholder="Password"name="password" th:field="*{scheduleForm.passeord}">
+    <input type="mail"  placeholder="Email"name="email" th:field="*{scheduleForm.email}">
     <button id="change"> 更新</button>
     <button id="back">戻る</button>
   </form>
