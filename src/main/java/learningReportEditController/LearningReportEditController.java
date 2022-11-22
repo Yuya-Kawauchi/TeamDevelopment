@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import entity.LearningReport;
-import learningEditService.LearningEditService;
+import learningReportEditService.LearningEditService;
 
 @Controller
 public class LearningReportEditController {
 
 	@Autowired
-	private LearningEditService learningEditService;
+	private LearningReportEditService learningReportEditService;
 	
 	  @GetMapping("/learningReportEdit")
 	  public String  showLearningEdit(Model model ,LearningReport learningReport) {
-	    List<LearningReport> learningreport = learningEditService.selectById(id);
+	    List<LearningReport> learningreport = learningReportEditService.selectById(id);
 	    model.addAttribute(learningReport);
 	    return "learningReportEdit";
 	  }
@@ -32,14 +32,14 @@ public class LearningReportEditController {
 			
 			if (result.hasErrors()) {
 				
-				return "learningReportEdit";
+				return "redirect:/learningReportEdit";
 			}
-			learningEditService.update(learningReport);
+			learningReportEditService.update(learningReport);
 			return "redirect:/Toppage";
 	  }
 			
 			
-	  @PostMapping(path = "/learningReportEdit", params = "back")
+	  @PostMapping(path = "/learningReportList", params = "back")
 	  public String back() {
 		  return "redirect:/learningReportList";
 	  }
