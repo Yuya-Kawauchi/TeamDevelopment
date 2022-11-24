@@ -12,10 +12,7 @@ import learningListRepository.LearningListRepository;
 public class LearningListService {
 	 @Autowired
 	  private LearningListRepository learningListRepository;
-	  /**
-	   * ユーザー情報 全検索
-	   * @return 検索結果
-	   */
+
 	  public List<LearningReport> findAll() {
 	    return LearningListRepository.findAll();
 	  }
