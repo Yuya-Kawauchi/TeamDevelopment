@@ -3,21 +3,22 @@
  */
 package com.example.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-/**
- * @author haruc
- *
- */
+import com.example.demo.service.UserEditService;
 
 @Controller
 public class UserEditContoller {
 
+    @Autowired
+    UserEditService usereditservice;
+
     @GetMapping("/useredit")
-    public String getUserEdit(Model model) {
+    public String getHome(Model model) {
 
         //コンテンツ部分にユーザー詳細を表示するための文字列を登録
         model.addAttribute("contents", "login/home :: home_contents");
@@ -26,19 +27,27 @@ public class UserEditContoller {
 
     @GetMapping("/userList")
     public String getUserList(Model model) {
-        model.addAttribute("name");
-        model.addAttribute("id");
-        model.addAttribute("password");
-        return "/04";
+
+        //コンテンツ部分にユーザー一覧を表示するための文字列を登録
+        model.addAttribute("contents", "login/userList :: userList_contents");
+        //ユーザー一覧の生成
+        List<User> userList = userService.selectMany();
+        //Modelにユーザーリストを登録
+        model.addAttribute("userList", userList);
+        //データ件数を取得
+        int count = userService.count();
+        model.addAttribute("userListCount", count);
+        return "login/homeLayout";
     }
 
-    @PostMapping("/04")
+    @PostMapping("/logout")
     public String postLogout() {
-        return "redirect:/04";
+        //ログイン画面にリダイレクト
+        return "redirect:/login";
     }
 
-    @GetMapping("/04")
+    @GetMapping("/userList/csv")
     public String getUserListCsv(Model model) {
-        return getUserEdit(model);
+        return getUserList(model);
     }
 }
