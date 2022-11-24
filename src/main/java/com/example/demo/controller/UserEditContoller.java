@@ -7,8 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 
+import com.example.demo.entity.UserEditEntity;
+import com.example.demo.entity.UserEditForm;
 import com.example.demo.service.UserEditService;
 
 @Controller
@@ -18,36 +21,33 @@ public class UserEditContoller {
     UserEditService usereditservice;
 
     @GetMapping("/useredit")
-    public String getHome(Model model) {
-
-        //コンテンツ部分にユーザー詳細を表示するための文字列を登録
-        model.addAttribute("contents", "login/home :: home_contents");
-        return "login/homeLayout";
+    public String getHome() {
+    //トップページにいくよ
+        return "/topPage";
     }
 
     @GetMapping("/userList")
-    public String getUserList(Model model) {
-
-        //コンテンツ部分にユーザー一覧を表示するための文字列を登録
-        model.addAttribute("contents", "login/userList :: userList_contents");
+    public String getUseEdit(@ModelAttribute UserEditForm form,@PathVariable Integer id
+, Model model) {
         //ユーザー一覧の生成
-        List<User> userList = userService.selectMany();
-        //Modelにユーザーリストを登録
-        model.addAttribute("userList", userList);
-        //データ件数を取得
-        int count = userService.count();
-        model.addAttribute("userListCount", count);
-        return "login/homeLayout";
-    }
-
-    @PostMapping("/logout")
-    public String postLogout() {
-        //ログイン画面にリダイレクト
-        return "redirect:/login";
-    }
-
-    @GetMapping("/userList/csv")
-    public String getUserListCsv(Model model) {
-        return getUserList(model);
-    }
+    	UserEditEntity user = usereditservice.findById(id);
+    	UserEditForm usereditform = new UserEditForm();
+    	usereditform.setName(user.getName());
+    	usereditform.setId(user.getId());
+    	usereditform.setPassword(user.getPassword());
+    	usereditform.setEmailaddress(user.getEmailaddress());
+        model.addAttribute("userUpdateRequest", usereditform);
+        return "user/edit";
+      }
 }
+//        model.addAttribute("usereditForm",form);
+//    	  //ユーザー一覧画面にリダイレクト
+//        List<User> userList = usereditservice.selectMany();
+//        //Modelにユーザーリストを登録
+//        model.addAttribute("userList", userList);
+//        //データ件数を取得
+//        int count = usereditservice.count();
+//        model.addAttribute("userListCount", count);
+//        return "/UserEdit";
+//    }
+//}
