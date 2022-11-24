@@ -11,7 +11,7 @@ import learningListRepository.LearningListRepository;
 @Service
 public class LearningListService {
 	 @Autowired
-	  private LearningListRepository LearningListRepository;
+	  private LearningListRepository learningListRepository;
 	  /**
 	   * ユーザー情報 全検索
 	   * @return 検索結果
@@ -20,8 +20,9 @@ public class LearningListService {
 	    return LearningListRepository.findAll();
 	  }
 	  
-	  public int delete(){
-		  
+	  public void delete(Integer id){
+		 LearningReport learningReport = findById(id);
+		 learningListRepository.delete(learningReport);
 	  }
 	  
 }
