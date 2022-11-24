@@ -24,10 +24,8 @@ public class learningReportEditService {
 
 	public void update(LearningReport learningReport) {
 		
-		// データベースに登録する値を保持するインスタンスの作成
 		LearningEditForm form = new LearningEditForm();
 		
-		// 画面から受け取った値を設定する
 		form.setId(learningReport.getId());
 		form.setUserId(learningReport.getUserId());
 		form.setDate(learningReport.getDate());
@@ -36,7 +34,6 @@ public class learningReportEditService {
 		form.setCourseId(learningReport.getCourseId());
 		form.setremark(learningReport.getremark());
 		
-		// データベースを更新する
 		learningReportEditRepository.save(form);
 	}
 }
