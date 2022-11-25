@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.demo.entity.UserEditEntity;
 import com.example.demo.entity.UserEditForm;
@@ -26,16 +24,15 @@ public class UserEditContoller {
         return "/topPage";
     }
 
-    @GetMapping("/userList")
-    public String getUseEdit(@ModelAttribute UserEditForm form,@PathVariable Integer id
-, Model model) {
+    @GetMapping("/userlist")
+    public String getUseEdit(UserEditForm form, Model model) {
         //ユーザー一覧の生成
-    	UserEditEntity user = usereditservice.findById(id);
+    	UserEditEntity user = usereditservice.findById(form.getUser_id());
     	UserEditForm usereditform = new UserEditForm();
+    	usereditform.setUser_id(user.getUser_id());
     	usereditform.setName(user.getName());
-    	usereditform.setId(user.getId());
     	usereditform.setPassword(user.getPassword());
-    	usereditform.setEmailaddress(user.getEmailaddress());
+    	usereditform.setMail_address(user.getMail_address());
         model.addAttribute("userUpdateRequest", usereditform);
         return "user/edit";
       }

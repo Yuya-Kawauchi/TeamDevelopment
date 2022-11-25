@@ -1,30 +1,28 @@
 package com.example.demo.entity;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 import lombok.Data;
+
 @Entity
 @Data
-@Table
-(name = "user")
+@Table(name = "user")
 public class UserEditEntity {
 	
 	  /**
 	   * ID
 	   */
 	  @Id
-	  @Column(name = "id")
-	  @GeneratedValue(strategy = GenerationType.IDENTITY)
-	  private Integer id;
+	  @Column(name = "user_id")
+	  private Integer user_id;
 	  /**
 	   * 名前
 	   */
 	  @Column(name = "name")
+	  @Size(max = 100, message = "名前は100桁以内で入力してください")
 	  private String name;
 	  /**
 	   * パスワード
@@ -34,7 +32,7 @@ public class UserEditEntity {
 	  /**
 	   * メールアドレス
 	   */
-	  @Column(name = "emailaddress")
-	  private String emailaddress;
+	  @Column(name = "mail_address")
+	  private String mail_address;
 	 
 	}
