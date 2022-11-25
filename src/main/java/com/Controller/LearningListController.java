@@ -28,13 +28,13 @@ public class LearningListController {
 	  }
 	  
 	  @PostMapping(path = "edit", params = "edit")
-	  public String postLearningList(@RequestParam Integer id, @ModelAttribute LearningReport learningReport) {
-		  LearningEditForm learningEditForm = learningListService.selectById(id);
+	  public String postLearningList(@RequestParam Integer rema, @ModelAttribute LearningReport learningReport) {
+		  LearningEditForm learningEditForm = learningListService.selectById(rema);
 		  return "learningReportEdit";
 	  }
 	  @PostMapping(path = "learningReportList", params = "delete")
-	  public String deleteLearningReport(@RequestParam Integer id) {
-		  learningListService.delete(id);
+	  public String deleteLearningReport(@RequestParam Integer rema) {
+		  learningListService.delete(rema);
 		  return "redirect:/learningReportList";
 	  }
 	  

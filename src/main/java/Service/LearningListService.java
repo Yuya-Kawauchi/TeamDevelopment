@@ -17,12 +17,12 @@ public class LearningListService {
 	    return learningListRepository.findAll();
 	  }
 	  
-	  public List<LearningReport> selectById(interger id) {
-		 return learningListRepository.findById(id);
+	  public List<LearningReport> selectById(interger rema) {
+		 return learningListRepository.findById(rema);
 	  }
 	  
-	  public void delete(Integer id){
-		 LearningReport learningReport = findById(id);
+	  public void delete(Integer rema){
+		 LearningReport learningReport = learningListRepository.findById(rema);
 		 learningListRepository.delete(learningReport);
 	  }
 	  
