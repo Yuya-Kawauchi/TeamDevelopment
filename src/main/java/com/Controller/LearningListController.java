@@ -1,4 +1,4 @@
-package learningListController;
+package Controller;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import Service.LearningListService;
 import entity.LearningEditForm;
 import entity.LearningReport;
-import learningListService.LearningListService;
 
 
 @Controller

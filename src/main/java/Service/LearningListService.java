@@ -1,12 +1,12 @@
-package learningListService;
+package Service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import Repository.LearningListRepository;
 import entity.LearningReport;
-import learningListRepository.LearningListRepository;
 
 @Service
 public class LearningListService {
@@ -14,7 +14,11 @@ public class LearningListService {
 	  private LearningListRepository learningListRepository;
 
 	  public List<LearningReport> findAll() {
-	    return LearningListRepository.findAll();
+	    return learningListRepository.findAll();
+	  }
+	  
+	  public void selectById(interger id) {
+		  learningListRepository.findById(id);
 	  }
 	  
 	  public void delete(Integer id){
