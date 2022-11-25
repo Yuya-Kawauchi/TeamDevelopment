@@ -26,21 +26,21 @@
         <tr th:each="report : ${learninglist}" th:object="${LearningReport}" class="record">
           <div class="table-contents">
           <td th:text="*{id}"></td>
-          <td th:text="${#dates.format(Date, 'yyyy/MM/dd')}"></td>
-          <td th:text="${#dates.format(opentime, 'HH:mm')}"></td>
-          <td th:text="${#dates.format(closetime, 'HH:mm')}"></td>
+          <td th:text="${#dates.format(created_at, 'yyyy/MM/dd')}"></td>
+          <td th:text="${#dates.format(start_time, 'HH:mm')}"></td>
+          <td th:text="${#dates.format(end_time, 'HH:mm')}"></td>
           <td th:text="${#dates.format(totaltime, 'HH:mm')}"></td>
           </div>
           <td>
             <form th:action="@{/learningReportEdit}" method="post">
                 <button name="edit">編集</button>
-                <input type="hidden" name="id" th:value="${LearningReport.id}">
+                <input type="hidden" name="rema" th:value="${LearningReport.rema}">
             </form>
         </td>
         <td>
             <form th:action="@{/learningReportList}" method="post">
               <button  name="delete">削除</button>
-                <input type="hidden" name="id" th:value="${LearningReport.id}">
+                <input type="hidden" name="rema" th:value="${LearningReport.rema}">
             </form>
         </td>
         </tr>
