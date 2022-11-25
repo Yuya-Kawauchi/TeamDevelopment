@@ -17,8 +17,8 @@ public class LearningListService {
 	    return learningListRepository.findAll();
 	  }
 	  
-	  public void selectById(interger id) {
-		  learningListRepository.findById(id);
+	  public List<LearningReport> selectById(interger id) {
+		 return learningListRepository.findById(id);
 	  }
 	  
 	  public void delete(Integer id){
