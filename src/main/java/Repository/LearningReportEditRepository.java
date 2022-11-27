@@ -7,7 +7,7 @@ import entity.LearningReport;
 
 @Repository
 public interface LearningReportEditRepository
-    extends JpaRepository <LearningReport, Long> {
+    extends JpaRepository <LearningReport, Integer> {
 }
 
 

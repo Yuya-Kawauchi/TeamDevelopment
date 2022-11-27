@@ -12,13 +12,13 @@ import entity.LearningReport;
 
 @Service
 @Transactional
-public class learningReportEditService {
+public class LearningReportEditService {
 	
 	@Autowired
 	LearningReportEditRepository learningReportEditRepository;
 	
-	public  List<learningReport> selectById(Integer id) {
-		return repository.findById(id);
+	public  List<learningReport> selectById(Integer rema) {
+		return learningReportEditRepository.findById(rema);
 	}
 	
 
@@ -26,13 +26,13 @@ public class learningReportEditService {
 		
 		LearningEditForm form = new LearningEditForm();
 		
-		form.setId(learningReport.getId());
-		form.setUserId(learningReport.getUserId());
-		form.setDate(learningReport.getDate());
-		form.setStartTime(learningReport.getStartTime());
-		form.setEndTime(learningReport.getEndTime());
-		form.setCourseId(learningReport.getCourseId());
-		form.setremark(learningReport.getremark());
+		form.setRema(learningReport.getRema());
+		form.setUser_id(learningReport.getUser_id());
+		form.setCreated_at(learningReport.getCreated_at());
+		form.setStart_time(learningReport.getStart_time());
+		form.setEnd_time(learningReport.getEnd_time());
+		form.setCourse_id(learningReport.getCourse_id());
+		form.setRemark(learningReport.getRemark());
 		
 		learningReportEditRepository.save(form);
 	}

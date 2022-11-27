@@ -1,4 +1,4 @@
-package Controller;
+package com.example.Controller;
 
 import java.util.List;
 
@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import Service.LearningReportEditService;
 import entity.LearningReport;
 
 @Controller
@@ -21,7 +22,7 @@ public class LearningReportEditController {
 	
 	  @GetMapping("/learningReportEdit")
 	  public String  showLearningEdit(Model model ,LearningReport learningReport) {
-	    List<LearningReport> learningreport = learningReportEditService.selectById(id);
+	    List<LearningReport> learningreport = learningReportEditService.selectById(rema);
 	    model.addAttribute(learningReport);
 	    return "learningReportEdit";
 	  }
