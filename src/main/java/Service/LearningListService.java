@@ -17,7 +17,7 @@ public class LearningListService {
 	    return learningListRepository.findAll();
 	  }
 	  
-	  public List<LearningReport> selectById(interger rema) {
+	  public List<LearningReport> selectById(Integer rema) {
 		 return learningListRepository.findById(rema);
 	  }
 	  

@@ -14,7 +14,7 @@ import lombok.Data;
 	@Entity
 	
 	@Data
-	@Table(name = "employee")
+	@Table(name = "report")
 	public class LearningReport{
 	 
 		
@@ -30,11 +30,9 @@ import lombok.Data;
 	 private Date created_at;
 	 
 	 @Column(name = "start_time")
-	 @DateTimeFormat(pattern = "HH/mm")
 	 private String start_time ;
 	 
 	 @Column(name = "end_time")
-	 @DateTimeFormat(pattern = "HH/mm")
 	 private String end_time ;
 	 
 	 @Column(name = "course_id")
