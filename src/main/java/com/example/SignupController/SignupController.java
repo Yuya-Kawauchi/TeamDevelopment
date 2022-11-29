@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.SignupController;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +13,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.example.Service.SignupService;
+import com.example.userRequest.UserRequest;
+
+
+
+
 /**
  * ユーザー情報 Controller
  */
@@ -23,6 +30,9 @@ public class SignupController {
    */
   @Autowired
   private SignupService userService;
+  
+  @Autowired
+  private UserRequest userRequest;
   /**
    * ユーザー情報一覧画面を表示
    * @param model Model
@@ -41,7 +51,7 @@ public class SignupController {
    */
   @GetMapping(value = "/user/add")
   public String displayAdd(Model model) {
-    model.addAttribute("userRequest", new UserRequest());
+    model.addAttribute("userRequest", userRequest);
     return "user/add";
   }
   /**
@@ -62,7 +72,7 @@ public class SignupController {
       return "user/add";
     }
     // ユーザー情報の登録
-    userService.create(userRequest);
+    userService.save(userRequest);
     return "redirect:/user/list";
   }
   /**

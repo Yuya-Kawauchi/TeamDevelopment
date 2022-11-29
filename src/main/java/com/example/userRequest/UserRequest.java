@@ -1,4 +1,4 @@
-package com.example.demo.dto;
+package java.com.example.userRequest;
 import java.io.Serializable;
 
 import javax.validation.constraints.NotEmpty;
