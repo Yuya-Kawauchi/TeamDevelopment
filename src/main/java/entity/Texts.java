@@ -24,3 +24,4 @@ public class Texts {
 	 
 	 @Column(name = "chapters_id")
 	 private String chapters_id;
+}
