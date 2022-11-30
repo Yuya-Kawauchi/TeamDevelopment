@@ -3,6 +3,7 @@ package com.example.demo.controller;
 	import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
@@ -28,7 +29,7 @@ import com.example.demo.service.LeaningNewReportService;
 	    }
 
 	    @GetMapping("/leaningnewreport")
-	    public String getleaningmewreport(@ModelAttribute Model model,LeaningNewReportForm form) {
+	    public String getleaningmewreport(@ModelAttribute  @Validated Model model,LeaningNewReportForm form) {
 	        model.addAttribute("created_at");
 	        model.addAttribute("start_time");
 	        model.addAttribute("end_time");
