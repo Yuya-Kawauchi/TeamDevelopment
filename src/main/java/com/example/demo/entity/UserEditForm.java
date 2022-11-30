@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class UserEditForm {
 	
-	@NotEmpty(message = "id ")
+	@NotEmpty
 	private Integer user_id;
 	
 	@NotEmpty
@@ -16,8 +16,6 @@ public class UserEditForm {
 	@NotEmpty
 	private String password;
 	
-	@NotEmpty(message = "メールアドレスが入力されていません")
+	@NotEmpty
 	private String mail_address;
-	
-}
-
+	}

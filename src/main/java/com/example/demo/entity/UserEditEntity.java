@@ -3,7 +3,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 
 import lombok.Data;
 
@@ -22,7 +21,6 @@ public class UserEditEntity {
 	   * 名前
 	   */
 	  @Column(name = "name")
-	  @Size(max = 100, message = "名前は100桁以内で入力してください")
 	  private String name;
 	  /**
 	   * パスワード
