@@ -5,8 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
 
+import com.example.demo.entitiy.LeaningNewReportForm;
 import com.example.demo.service.LeaningNewReportService;
 
 	/**
@@ -28,21 +28,15 @@ import com.example.demo.service.LeaningNewReportService;
 	    }
 
 	    @GetMapping("/leaningnewreport")
-	    public String getleaningmewreport(@ModelAttribute Model model) {
-	        model.addAttribute("date");
+	    public String getleaningmewreport(@ModelAttribute Model model,LeaningNewReportForm form) {
+	        model.addAttribute("created_at");
 	        model.addAttribute("startTime");
 	        model.addAttribute("endTime");
-	        return "/05";
-	    }
-
-	    @PostMapping("/05")
-	    public String postLogout() {
-	        return "redirect:/05";
-	    }
-
-	    @GetMapping("/05")
-	    public String getUserListCsv(Model model) {
-	        return getleaningnewreport(model);
+	        model.addAttribute("course_id");
+	        model.addAttribute("chapters_id");
+	        model.addAttribute("text_id");
+	        leaningnewReportService.insert(form); 
+	        return "/LeaningNewReport";
 	    }
 	}
 

@@ -3,33 +3,35 @@ package com.example.demo.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.entitiy.LeaningNewReportEntity;
+import com.example.demo.entitiy.LeaningNewReportForm;
+import com.example.demo.repository.LeaningNewReportRepository;
+
 
 	@Service
 	public class LeaningNewReportService{
+		
 	    @Autowired
-	    UserDao dao;
-	     public boolean insert(LeaningNewReport leaningnewreport) {
-	        // insert実行
-	        int rowNumber = dao.insertOne(leaningnewreport);
-	        // 判定用変数
-	        boolean result = false;
+	    LeaningNewReportRepository leaningNewReportRepository ;		
+//		public List<LeaningNewReportEntity> serchAll() {
+//			return leaningNewReportRepository.findAll();
+//		}
+//
+//		public LeaningNewReportEntity findById(Date created_at) {
+//			return leaningNewReportRepository.findById(created_at).get();
+//		}
 
-	        if (rowNumber > 0) {
-	            // insert成功
-	            result = true;
-	        }
-	        return result;
-	    }
+		//学習新規登録
 
-	    //カウント用メソッド.
-	    public int count() {
-	        return dao.count();
-	    }
-
-	    //全件取得用メソッド.
-	    public List<LeaningNewReport> selectMany() {
-	        // 全件取得
-	        return dao.selectMany();
-	    }
+		public void insert(LeaningNewReportForm reportForm) {
+			LeaningNewReportEntity user = new LeaningNewReportEntity();
+			user.setCreated_at(reportForm.getCreated_at());
+			user.setStart_time(reportForm.getStart_time());
+			user.setEnd_time(reportForm.getEnd_time());
+			user.setCourse_id(reportForm.getCourse_id());
+			user.setChapters_id(reportForm.getChapters_id());
+			user.setText_id(reportForm.getText_id());
+			leaningNewReportRepository.save(user);
+		}
 	}
-}
+		

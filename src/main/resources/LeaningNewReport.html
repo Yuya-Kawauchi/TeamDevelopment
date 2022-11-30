@@ -6,27 +6,27 @@
 <script th:src="@{/js/scheduleCreate.js}"></script>
 <title>新規学習報告</title>
 <html lang="en">
-<link rel="stylesheet" href="05.css"></head>
+<link rel="stylesheet" href="LeaningNewReport.css"></head>
 <body>
 <form name="login_form">
 <div class="login_form_top"><h1>新規学習報告</h1></div>
   <form class="login-container">
   <form th:action="@{/schedule/confirm}" th:object="${scheduleSessionForm}"method="post">
-    <span style="border-bottom: solid 1px rgb(95, 95, 95);">日付</span><input type="date" placeholder="日付"input type="text" name="date" th:field="*{scheduleForm.date}">
-    <span style="border-bottom: solid 1px rgb(95, 95, 95);">開始時刻</span><input type="time" placeholder="開始時刻"input type="text" name="startTime" th:field="*{scheduleForm.startTime}">
-    <span style="border-bottom: solid 1px rgb(95, 95, 95);">終了時刻</span><input type="time"  placeholder="終了時刻"input type="text" name="endTime" th:field="*{scheduleForm.endTime}"font color:#fff>
+    <span style="border-bottom: solid 1px rgb(95, 95, 95);">日付</span><input type="date" placeholder="日付"input type="text" name="created_at" th:field="*{scheduleForm.date}">
+    <span style="border-bottom: solid 1px rgb(95, 95, 95);">開始時刻</span><input type="time" placeholder="開始時刻"input type="text" name="start_time" th:field="*{scheduleForm.startTime}">
+    <span style="border-bottom: solid 1px rgb(95, 95, 95);">終了時刻</span><input type="time"  placeholder="終了時刻"input type="text" name="end_time" th:field="*{scheduleForm.endTime}"font color:#fff>
     <span style="border-bottom: solid 1px  rgb(95, 95, 95);">学習内容</span>
 
 
     <div class="cp_ipselect cp_sl03">
 
-      <select name="language">
+      <select name="course_id">
        <option>RTC-32</option>
        </select>
-       <select name="chapters">
+       <select name="chapters_id">
        <option>RTC-32</option>
        </select>
-       <select name="text">
+       <select name="text_id">
        <option>RTC-32</option>
        </select>
        </div>
