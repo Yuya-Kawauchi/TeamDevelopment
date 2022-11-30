@@ -30,13 +30,13 @@ import com.example.demo.service.LeaningNewReportService;
 	    @GetMapping("/leaningnewreport")
 	    public String getleaningmewreport(@ModelAttribute Model model,LeaningNewReportForm form) {
 	        model.addAttribute("created_at");
-	        model.addAttribute("startTime");
-	        model.addAttribute("endTime");
+	        model.addAttribute("start_time");
+	        model.addAttribute("end_time");
 	        model.addAttribute("course_id");
 	        model.addAttribute("chapters_id");
 	        model.addAttribute("text_id");
 	        leaningnewReportService.insert(form); 
 	        return "/LeaningNewReport";
 	    }
+	   
 	}
-

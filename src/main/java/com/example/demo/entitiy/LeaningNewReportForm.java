@@ -25,7 +25,6 @@ import lombok.Data;
 		
 		@NotNull
 		private String text_id;
-	}
-
-
-
+	
+       
+}
