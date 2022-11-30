@@ -18,7 +18,7 @@ public class Chapters {
 	 private String chapters_id;
 
 	 @Column(name = "chapter")
-	 private String chapters;
+	 private String chapter;
 	 
 	 @Column(name = "course_id")
 	 private String course_id;

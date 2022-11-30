@@ -1,6 +1,7 @@
 package Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,13 +18,13 @@ public class LearningListService {
 	    return learningListRepository.findAll();
 	  }
 	  
-	  public List<LearningReport> selectById(Integer rema) {
+	  public Optional<LearningReport> selectById(Integer rema) {
 		 return learningListRepository.findById(rema);
 	  }
 	  
 	  public void delete(Integer rema){
-		 LearningReport learningReport = learningListRepository.findById(rema);
-		 learningListRepository.delete(learningReport);
+//		 Optional<LearningReport> learningReport = learningListRepository.findById(rema);
+		 learningListRepository.deleteById(rema);
 	  }
 	  
 }

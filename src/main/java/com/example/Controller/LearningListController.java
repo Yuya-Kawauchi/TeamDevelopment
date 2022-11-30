@@ -1,4 +1,4 @@
-package Controller;
+package com.example.Controller;
 
 import java.util.List;
 
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import Service.LearningListService;
-import entity.LearningEditForm;
 import entity.LearningReport;
 
 
@@ -24,12 +23,13 @@ public class LearningListController {
 	  public String showLearningList(Model model) {
 	    List<LearningReport> learningreport = learningListService.findAll();
 	    model.addAttribute("learningreport", learningreport);
+	    
 	    return "learningReportList";
 	  }
 	  
 	  @PostMapping(path = "edit", params = "edit")
 	  public String postLearningList(@RequestParam Integer rema, @ModelAttribute LearningReport learningReport) {
-		  LearningEditForm learningEditForm = learningListService.selectById(rema);
+		  learningListService.selectById(rema);
 		  return "learningReportEdit";
 	  }
 	  @PostMapping(path = "learningReportList", params = "delete")
