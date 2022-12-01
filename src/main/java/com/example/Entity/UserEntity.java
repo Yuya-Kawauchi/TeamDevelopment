@@ -20,6 +20,12 @@ public class UserEntity {
 	private Integer name;
 	
 	@Column(name = "name_kana")
-	private Integer name_kana;
-
+	private Integer name_kana; 
+	
+	@Column(name = "mail_address")
+	private Integer mail_address; 
+	
+	@Column(name = "password")
+	private Integer password; 
+	
 }

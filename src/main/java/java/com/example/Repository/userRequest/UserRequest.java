@@ -1,4 +1,4 @@
-package java.com.example.userRequest;
+package java.com.example.Repository.userRequest;
 import java.io.Serializable;
 
 import javax.validation.constraints.NotEmpty;

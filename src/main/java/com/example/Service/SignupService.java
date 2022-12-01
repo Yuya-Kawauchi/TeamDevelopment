@@ -1,10 +1,12 @@
-package com.example.demo.service;
+package com.example.Service.;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.example.Repository.UserRepository;
 /**
  * ユーザー情報 Service
  */
