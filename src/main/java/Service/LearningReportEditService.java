@@ -1,6 +1,6 @@
 package Service;
 
-import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class LearningReportEditService {
 	@Autowired
 	LearningReportEditRepository learningReportEditRepository;
 	
-	public  List<learningReport> selectById(Integer rema) {
+	public  Optional<LearningReport> selectById(Integer rema) {
 		return learningReportEditRepository.findById(rema);
 	}
 	

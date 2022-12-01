@@ -1,7 +1,5 @@
 package com.example.Controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,9 +8,11 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import Service.LearningReportEditService;
 import entity.LearningReport;
+import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional;
 
 @Controller
 public class LearningReportEditController {
@@ -21,8 +21,8 @@ public class LearningReportEditController {
 	private LearningReportEditService learningReportEditService;
 	
 	  @GetMapping("/learningReportEdit")
-	  public String  showLearningEdit(Model model ,LearningReport learningReport) {
-	    List<LearningReport> learningreport = learningReportEditService.selectById(rema);
+	  public String  showLearningEdit(@RequestParam Integer rema, Model model ,LearningReport learningReport) {
+	    Optional<LearningReport> learningreport = learningReportEditService.selectById(rema);
 	    model.addAttribute(learningReport);
 	    return "learningReportEdit";
 	  }
