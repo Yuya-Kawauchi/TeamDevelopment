@@ -23,7 +23,7 @@ import com.example.demo.repository.LeaningNewReportRepository;
 
 		//学習新規登録
 
-		public void insert(LeaningNewReportForm reportForm) {
+		public  void insert(LeaningNewReportForm reportForm) {
 			LeaningNewReportEntity user = new LeaningNewReportEntity();
 			user.setCreated_at(reportForm.getCreated_at());
 			user.setStart_time(reportForm.getStart_time());
@@ -33,5 +33,7 @@ import com.example.demo.repository.LeaningNewReportRepository;
 			user.setText_id(reportForm.getText_id());
 			leaningNewReportRepository.save(user);
 		}
+
+		
 	}
 		
