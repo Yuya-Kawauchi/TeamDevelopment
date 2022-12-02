@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.example.Entity.UserEntity;
 import com.example.Service.SignupService;
 import com.example.userRequest.UserRequest;
-
 
 
 
@@ -40,7 +40,7 @@ public class SignupController {
    */
   @GetMapping(value = "/user/list")
   public String displayList(Model model) {
-    List<User> userlist = userService.searchAll();
+    List<UserEntity> userlist = userService.searchAll();
     model.addAttribute("userlist", userlist);
     return "user/list";
   }
@@ -72,7 +72,7 @@ public class SignupController {
       return "user/add";
     }
     // ユーザー情報の登録
-    userService.save(userRequest);
+    userService.create(userRequest);
     return "redirect:/user/list";
   }
   /**

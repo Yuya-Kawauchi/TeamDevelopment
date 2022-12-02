@@ -14,18 +14,27 @@ public class UserEntity {
 	
 	@Id
 	@Column(name = "user_id")
-	private Integer user_id;
+	private String user_id;
 	
 	@Column(name = "name")
-	private Integer name;
+	private String name;
 	
 	@Column(name = "name_kana")
-	private Integer name_kana; 
+	private String name_kana; 
 	
 	@Column(name = "mail_address")
-	private Integer mail_address; 
+	private String mail_address; 
 	
 	@Column(name = "password")
-	private Integer password; 
+	private String password;
 	
+	public void setName(String user_name) {
+		name=user_name;
+    }
+	public void setAddress(String userMail_address) {
+		mail_address=userMail_address;
+    }
+	public void setpassword(String user_password) {
+		password=user_password;
+    }
 }

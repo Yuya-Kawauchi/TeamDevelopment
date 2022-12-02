@@ -17,5 +17,5 @@ public interface UserRepository extends JpaRepository<UserEntity, Integer> {}
 //画面
 //コントロール
 //サービス
-//レポ時とry
-//えんちぇ
+//リポジトリ
+//エンティティ
