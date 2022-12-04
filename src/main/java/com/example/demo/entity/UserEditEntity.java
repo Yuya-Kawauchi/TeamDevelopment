@@ -8,7 +8,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "user")
+@Table(name = "user_tb")
 public class UserEditEntity {
 	
 	  /**
