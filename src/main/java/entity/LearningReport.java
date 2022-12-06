@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -20,28 +20,30 @@ import lombok.Data;
 	 
 		
 	 @Id
-	 @NotNull
+	 @NotBlank
 	 @Column(name = "rema")
 	 private Integer rema;
 	 
-	 @NotNull
+	 @NotBlank
 	 @Column(name = "user_id")
 	 private Integer user_id;
 
-	 @NotNull
+	 @NotBlank
 	 @Column(name = "created_at")
 	 @DateTimeFormat(pattern = "yyyy-MM-dd")
 	 private Date created_at;
 	 
-	 @NotNull
+	 @NotBlank
+	 @DateTimeFormat(pattern = "hh:mm:ss")
 	 @Column(name = "start_time")
 	 private String start_time ;
 	 
-	 @NotNull
+	 @NotBlank
+	 @DateTimeFormat(pattern = "hh:mm:ss")
 	 @Column(name = "end_time")
 	 private String end_time ;
 	 
-	 @NotNull
+	 @NotBlank
 	 @Column(name = "course_id")
 	 private String course_id;
 	 
