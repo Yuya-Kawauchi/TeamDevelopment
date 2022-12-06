@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import Service.LearningReportEditService;
 import entity.LearningReport;
-import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional;
 
 @Controller
 public class LearningReportEditController {
@@ -21,8 +20,8 @@ public class LearningReportEditController {
 	private LearningReportEditService learningReportEditService;
 	
 	  @GetMapping("/learningReportEdit")
-	  public String  showLearningEdit(@RequestParam Integer rema, Model model ,LearningReport learningReport) {
-	    Optional<LearningReport> learningreport = learningReportEditService.selectById(rema);
+	  public String  showLearningEdit(@RequestParam Integer rema, Model model ,java.util.Optional<LearningReport> learningReport) {
+	learningReport = learningReportEditService.selectById(rema);
 	    model.addAttribute(learningReport);
 	    return "learningReportEdit";
 	  }
