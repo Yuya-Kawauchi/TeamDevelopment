@@ -28,13 +28,4 @@ public class UserEntity {
 	@Column(name = "password")
 	private String password;
 	
-	public void setName(String user_name) {
-		name=user_name;
-    }
-	public void setAddress(String userMail_address) {
-		mail_address=userMail_address;
-    }
-	public void setpassword(String user_password) {
-		password=user_password;
-    }
 }
