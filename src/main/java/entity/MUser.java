@@ -30,14 +30,13 @@ public class MUser {
 	 private String name_kana ;
 	 
 	 @NotBlank
-	 @Email
+	 @Email(message="メールアドレスを入力してください")
 	 @Column(name = "mail_address")
 	 private String mail_address ;
 	 
 	 @NotBlank
-	 @Pattern(regexp = "[a-zA-Z0-9]*")
+	 @Pattern(regexp = "[a-zA-Z0-9]*",message="半角英数字で入力してください")
 	 @Column(name = "password")
 	 private String password;
 	 
 }
-
