@@ -10,6 +10,6 @@ import com.example.demo.entitiy.LeaningNewReportEntity;
 	 * ユーザー情報 Repository
 	 */
 	@Repository
-	public interface LeaningNewReportRepository extends JpaRepository<LeaningNewReportEntity, String> {
+	public interface LeaningNewReportRepository extends JpaRepository<LeaningNewReportEntity, Integer> {
 	}
 

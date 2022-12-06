@@ -1,7 +1,10 @@
 package com.example.demo.entitiy;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
 
@@ -9,22 +12,18 @@ import lombok.Data;
 	public class LeaningNewReportForm {
 		
 		@NotEmpty
-		private Integer created_at;
+		private Integer createdAt;
 		
 		@NotEmpty
-		private String start_time;
+		@DateTimeFormat(pattern = "yyyy-MM-dd")   // 入力時の期待フォーマット
+        @JsonFormat(pattern = "yyyy/MM/dd")   // 出力時の期待フォーマット
+		private String startTime;
 		
 		@NotEmpty
-		private String end_time;
-		
-		@NotNull
-		private String course_id;
-		
-		@NotNull
-		private String chapters_id;
-		
-		@NotNull
-		private String text_id;
-	
-       
+		@DateTimeFormat(pattern = "yyyy-MM-dd")   // 入力時の期待フォーマット
+        @JsonFormat(pattern = "yyyy/MM/dd")   // 出力時の期待フォーマット
+		private String endTime;
+		private String courseId;
+		private String chaptersId;
+		private String textId;
 }
