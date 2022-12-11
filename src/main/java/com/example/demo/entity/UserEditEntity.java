@@ -32,5 +32,4 @@ public class UserEditEntity {
 	   */
 	  @Column(name = "mail_address")
 	  private String mail_address;
-	 
 	}

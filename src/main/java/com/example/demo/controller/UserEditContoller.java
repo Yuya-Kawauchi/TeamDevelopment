@@ -39,7 +39,7 @@ public class UserEditContoller {
     	usereditform.setPassword(user.getPassword());
     	usereditform.setMail_address(user.getMail_address());
         model.addAttribute("userUpdateRequest", usereditform);
-        return "/UserEdit.html";
+        return "/UserEdit";
       }
     
     @RequestMapping(value="/edit/user",method = RequestMethod.POST)
