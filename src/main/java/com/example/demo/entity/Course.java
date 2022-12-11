@@ -1,4 +1,4 @@
-package entity;
+package com.example.demo.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,20 +11,20 @@ import lombok.Data;
 @Entity
 
 @Data
-@Table(name = "chapters")
-public class Chapters {
-
+@Table(name = "course")
+public class Course {
+	
 	 @Id
-	 @NotBlank
-	 @Column(name = "chapters_id")
-	 private String chapters_id;
-
-	 @NotBlank
-	 @Column(name = "chapter")
-	 private String chapter;
-	 
 	 @NotBlank
 	 @Column(name = "course_id")
 	 private String course_id;
+
+	 @NotBlank
+	 @Column(name = "chapters_id")
+	 private String chapters_id;
+	 
+	 @NotBlank
+	 @Column(name = "text_id")
+	 private String text_id ;
 	 
 }

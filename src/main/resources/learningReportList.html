@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+ <head>
+ <meta charset="utf-8">
+ <title>学習報告一覧</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="learningReportList.css">
+ </head>
+<body>
+  <div class="contents">
+      <h1>学習報告一覧</h1>
+    <div class="warapper">
+    <table>
+      <thead>
+        <tr class="item-name">
+          <th>No.</th>
+          <th>日付</th>
+          <th>開始時間</th>
+          <th>終了時間</th>
+          <th>総時間</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody  class="record">
+        <tr th:each="report : ${learninglist}" th:object="${LearningReport}" class="record">
+          <div class="table-contents">
+          <td th:text="*{id}"></td>
+          <td th:text="${#dates.format(created_at, 'yyyy/MM/dd')}"></td>
+          <td th:text="${#dates.format(start_time, 'HH:mm')}"></td>
+          <td th:text="${#dates.format(end_time, 'HH:mm')}"></td>
+          <td th:text="${#dates.format(totaltime, 'HH:mm')}"></td>
+          </div>
+          <td>
+            <form th:action="@{/learningReportEdit}" method="post">
+                <button name="edit">編集</button>
+                <input type="hidden" name="rema" th:value="${LearningReport.rema}">
+            </form>
+        </td>
+        <td>
+            <form th:action="@{/learningReportList}" method="post">
+              <button  name="delete">削除</button>
+                <input type="hidden" name="rema" th:value="${LearningReport.rema}">
+            </form>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

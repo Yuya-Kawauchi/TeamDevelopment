@@ -1,4 +1,4 @@
-package Service;
+package com.example.demo.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import Repository.LearningListRepository;
-import entity.LearningReport;
+import com.example.demo.Repository.LearningListRepository;
+import com.example.demo.entity.LearningReport;
 
 @Service
 public class LearningListService {
