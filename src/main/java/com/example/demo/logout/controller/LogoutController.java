@@ -1,4 +1,4 @@
-package com.logout.controller;
+package com.example.demo.logout.controller;
 
 public class LogoutController {
 

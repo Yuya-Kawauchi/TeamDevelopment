@@ -1,4 +1,4 @@
-package com.login.service;
+package com.example.demo.login.service;
 
 public class LoginService {
 

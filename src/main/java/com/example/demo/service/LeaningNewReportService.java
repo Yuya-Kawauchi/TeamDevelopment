@@ -3,9 +3,10 @@ package com.example.demo.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.Repository.LeaningNewReportRepository;
 import com.example.demo.entitiy.LeaningNewReportEntity;
 import com.example.demo.entitiy.LeaningNewReportForm;
-import com.example.demo.repository.LeaningNewReportRepository;
+
 
 
 	@Service
