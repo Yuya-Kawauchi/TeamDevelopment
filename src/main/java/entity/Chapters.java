@@ -11,7 +11,7 @@ import lombok.Data;
 @Entity
 
 @Data
-@Table(name = "CHAPTERS")
+@Table(name = "chapters")
 public class Chapters {
 
 	 @Id
