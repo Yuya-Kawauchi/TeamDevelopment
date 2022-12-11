@@ -1,10 +1,13 @@
 package com.example.demo.entity;
 
+import java.io.Serializable;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 @Data
 public class UserEditForm {
@@ -25,4 +28,6 @@ public class UserEditForm {
 	@Size(min = 1, max = 50)
 	private String mail_address;
 	
-}
+	@EqualsAndHashCode(callSuper=false)
+	public class UserUpdateRequest extends UserEditForm implements Serializable {
+}}
