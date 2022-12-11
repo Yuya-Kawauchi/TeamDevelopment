@@ -1,6 +1,4 @@
-package com.example.Controller;
-
-import java.util.List;
+package com.example.demo.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,11 +10,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import Service.LearningReportEditService;
-import entity.Chapters;
-import entity.Course;
-import entity.LearningReport;
-import entity.Texts;
+import com.example.demo.Service.LearningReportEditService;
+import com.example.demo.entity.Chapters;
+import com.example.demo.entity.Course;
+import com.example.demo.entity.LearningReport;
+import com.example.demo.entity.Texts;
 
 @Controller
 public class LearningReportEditController {
@@ -29,14 +27,14 @@ public class LearningReportEditController {
 	learningReport = learningReportEditService.selectById(rema);
 	    model.addAttribute(learningReport);
 	    
-	    List<Chapters> chapter = learningReportEditService.findChapter();
-	    model.addAttribute("chapter", chapter);
-	    
-	    List<Course> course = learningReportEditService.findCourse();
-	    model.addAttribute("course", course);
-	    
-	    List<Texts> texts = learningReportEditService.findTexts();
-	    model.addAttribute("texts", texts);
+//	    List<Chapters> chapter = learningReportEditService.findChapter();
+//	    model.addAttribute("chapter", chapter);
+//	    
+//	    List<Course> course = learningReportEditService.findCourse();
+//	    model.addAttribute("course", course);
+//	    
+//	    List<Texts> texts = learningReportEditService.findTexts();
+//	    model.addAttribute("texts", texts);
 	    return "learningReportEdit";
 	  }
 	  
