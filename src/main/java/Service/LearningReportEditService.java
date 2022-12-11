@@ -1,5 +1,6 @@
 package Service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +8,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import Repository.LearningReportEditRepository;
+import entity.Chapters;
+import entity.Course;
 import entity.LearningEditForm;
 import entity.LearningReport;
+import entity.Texts;
 
 @Service
 @Transactional
@@ -17,13 +21,27 @@ public class LearningReportEditService {
 	@Autowired
 	LearningReportEditRepository learningReportEditRepository;
 	
-	public  Optional<LearningReport> selectById(Integer rema) {
+	public Optional<LearningReport> selectById(Integer rema) {
 		return learningReportEditRepository.findById(rema);
 	}
 	
+	public List<Chapters> findChapter(){
+		return learningReportEditRepository.findAll();
+	}
+	public List<Course> findCourse(){
+		return learningReportEditRepository.findAll();
+	}
+	public List<Texts> findTexts(){
+		return learningReportEditRepository.findAll();
+	}
 
+	public void putReport(LearningReport learningReport,Course course,Chapters chapter,Texts texts){
+		learningReport.setCourse_id(course.getCourse_id());
+	}
+	
 	public void update(LearningReport learningReport) {
 		
+	
 		LearningEditForm form = new LearningEditForm();
 		
 		form.setRema(learningReport.getRema());
@@ -33,6 +51,7 @@ public class LearningReportEditService {
 		form.setEnd_time(learningReport.getEnd_time());
 		form.setCourse_id(learningReport.getCourse_id());
 		form.setRemark(learningReport.getRemark());
+		
 		
 		learningReportEditRepository.save(form);
 	}
