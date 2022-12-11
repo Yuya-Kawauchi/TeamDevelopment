@@ -49,8 +49,7 @@ public class LearningReportEditController {
 			learningReportEditService.update(learningReport);
 			return "redirect:/Toppage";
 	  }
-			
-			
+
 	  @PostMapping(path = "/learningReportList", params = "back")
 	  public String back() {
 		  return "redirect:/learningReportList";
