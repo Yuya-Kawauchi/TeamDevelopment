@@ -1,6 +1,4 @@
 
 
 @Repository
-public class ReportRepository {
-
-}
+public interface findByUserId extends JpaRepository<Integer> {}
