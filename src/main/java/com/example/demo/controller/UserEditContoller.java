@@ -43,11 +43,12 @@ public class UserEditContoller {
       }
     
     @RequestMapping(value="/edit/user",method = RequestMethod.POST)
-    public String update(@Validated @ModelAttribute UserEditForm form) {
-		return null;
+    public String update(@Validated @ModelAttribute UserEditForm form , Model model) {
+    	 model.addAttribute("form", form);
+		return "/UserEdit";
 	}
-    
 }
+
 //        model.addAttribute("usereditForm",form);
 //    	  //ユーザー一覧画面にリダイレクト
 //        List<User> userList = usereditservice.selectMany();
