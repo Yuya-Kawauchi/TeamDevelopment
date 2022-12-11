@@ -24,6 +24,7 @@ public class Chapters {
 	 private String chapters;
 	 
 	 @NotBlank
+	 
 	 @Column(name = "course_id")
 	 private String course_id;
 	 
