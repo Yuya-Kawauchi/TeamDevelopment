@@ -1,15 +1,18 @@
-package com.example.userRequest;
+package com.example.demo.dto;
 
 import java.io.Serializable;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+import org.springframework.stereotype.Component;
+
 import lombok.Data;
 /**
  * ユーザー情報 リクエストデータ
  */
 @Data
+@Component
 public class UserRequest implements Serializable {
 	
 	
