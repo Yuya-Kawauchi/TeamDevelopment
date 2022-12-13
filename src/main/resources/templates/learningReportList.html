@@ -24,7 +24,7 @@
       </thead>
       <tbody  class="record">
 
-        <tr th:each="learningreport:${learningreport}" th:object="${learningreport}" class="record">
+        <tr th:each="report:${learningreport}" class="record">
           <td th:text="*{learningreport.rema}"></td>
           <td th:text="${#dates.format(learningreport.created_at, 'yyyy/MM/dd')}"></td>
           <td th:text="${#dates.format(learningreport.start_time, 'HH:mm')}"></td>
@@ -40,7 +40,7 @@
         <td>
             <form th:action="@{/learningReportList}" method="post">
               <button  name="delete">削除</button>
-                <input type="hidden" name="rema" th:value="${LearningReport.rema}">
+                <input type="hidden" name="rema" th:value="${learningReport.rema}">
             </form>
         </td>
         </tr>

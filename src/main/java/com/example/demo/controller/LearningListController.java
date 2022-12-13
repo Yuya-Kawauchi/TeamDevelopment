@@ -33,14 +33,13 @@ public class LearningListController {
 	  @PostMapping(path = "edit", params = "edit")
 	  public String postLearningList(@RequestParam Integer rema, @ModelAttribute LearningReport learningReport) {
 		  learningListService.selectById(rema);
-		  return "learningReportEdit";
+		  return "redirect:/learningReportEdit";
 	  }
+	  
 	  @PostMapping(path = "learningReportList", params = "delete")
 	  public String deleteLearningReport(@RequestParam Integer rema) {
 		  learningListService.delete(rema);
 		  return "redirect:/learningReportList";
 	  }
-	  
-	  
 
 }
