@@ -11,9 +11,12 @@ import lombok.Data;
 @Entity
 
 @Data
-@Table(name = "TEXTS")
-public class Texts {
+
 	
+
+@Table(name = "texts")
+public class Texts {
+
 	 @Id
 	 @NotBlank
 	 @Column(name = "text_id")
@@ -30,4 +33,5 @@ public class Texts {
 	 @NotBlank
 	 @Column(name = "chapters_id")
 	 private String chapters_id;
+
 }

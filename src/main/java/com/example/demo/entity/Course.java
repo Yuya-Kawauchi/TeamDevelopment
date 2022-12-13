@@ -11,7 +11,8 @@ import lombok.Data;
 @Entity
 
 @Data
-@Table(name = "COURSE")
+
+@Table(name = "course")
 public class Course {
 	
 	 @Id
@@ -27,4 +28,5 @@ public class Course {
 	 @Column(name = "text_id")
 	 private String text_id ;
 	 
+
 }

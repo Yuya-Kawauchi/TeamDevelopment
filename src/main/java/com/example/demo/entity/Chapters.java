@@ -11,7 +11,8 @@ import lombok.Data;
 @Entity
 
 @Data
-@Table(name = "CHAPTERS")
+
+@Table(name = "chapters")
 public class Chapters {
 
 	 @Id
@@ -21,10 +22,10 @@ public class Chapters {
 
 	 @NotBlank
 	 @Column(name = "chapter")
-	 private String chapters;
+
+	 private String chapter;
 	 
 	 @NotBlank
-	 
 	 @Column(name = "course_id")
 	 private String course_id;
 	 
