@@ -62,6 +62,7 @@ form input[type = "password"]:focus,form input[type = "mail"]:focus{
     cursor: pointer;
   }
 
+
   form input[type = "change"]:hover {
     background-color: #990b14
   }
@@ -79,6 +80,7 @@ form input[type = "password"]:focus,form input[type = "mail"]:focus{
     text-align: center;
     cursor: pointer;
   }
+
 
   form input[type = "back"]:hover {
     background-color: #990b14
