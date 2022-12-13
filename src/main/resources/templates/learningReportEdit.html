@@ -14,7 +14,7 @@
 	<div class="form">
 	  <form th:action="@{/Toppage}" th:object="${LearningReport}" method="POST">
         <span>日付</span>
-		<input type="date" th:field="*{date}" th:value="*{date}" required pattern="\d{4}-\d{2}-\d{2}"><br>
+		<input type="date" th:field="*{create_at}" th:value="*{create_at}" required pattern="\d{4}-\d{2}-\d{2}"><br>
 		<span>開始時刻</span>
 		<input type="time" th:field="*{opentime}" th:value="*{opentime}"><br>
 		<span>終了時刻</span>

@@ -11,6 +11,7 @@ import lombok.Data;
 @Entity
 
 @Data
+
 @Table(name = "chapters")
 public class Chapters {
 
@@ -21,6 +22,7 @@ public class Chapters {
 
 	 @NotBlank
 	 @Column(name = "chapter")
+
 	 private String chapter;
 	 
 	 @NotBlank

@@ -11,6 +11,7 @@ import lombok.Data;
 @Entity
 
 @Data
+
 @Table(name = "course")
 public class Course {
 	
@@ -27,4 +28,5 @@ public class Course {
 	 @Column(name = "text_id")
 	 private String text_id ;
 	 
+
 }
