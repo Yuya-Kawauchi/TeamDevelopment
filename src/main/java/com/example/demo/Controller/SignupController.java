@@ -1,4 +1,4 @@
-package com.example.demo.Controller;
+package com.example.demo.controller;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.demo.Entity.UserEntity;
-import com.example.demo.Service.SignupService;
 import com.example.demo.dto.UserRequest;
+import com.example.demo.entity.UserEntity;
+import com.example.demo.service.SignupService;
 
 
 /**

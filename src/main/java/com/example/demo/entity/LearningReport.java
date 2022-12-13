@@ -1,4 +1,4 @@
-package com.example.demo.Entity;
+package com.example.demo.entity;
 	import java.util.Date;
 
 import javax.persistence.Column;
