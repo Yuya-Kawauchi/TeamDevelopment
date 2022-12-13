@@ -23,6 +23,7 @@
         </tr>
       </thead>
       <tbody  class="record">
+
         <tr th:each="learningreport:${learningreport}" th:object="${learningreport}" class="record">
           <td th:text="*{learningreport.rema}"></td>
           <td th:text="${#dates.format(learningreport.created_at, 'yyyy/MM/dd')}"></td>
@@ -33,6 +34,7 @@
             <form th:action="@{/learningReportEdit}" method="post">
                 <button name="edit">編集</button>
                 <input type="hidden" name="rema" th:value="${learningreport.rema}">
+
             </form>
         </td>
         <td>
