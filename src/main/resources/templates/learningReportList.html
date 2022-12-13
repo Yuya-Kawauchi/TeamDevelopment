@@ -4,7 +4,7 @@
  <meta charset="utf-8">
  <title>学習報告一覧</title>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="learningReportList.css">
+ <link rel="stylesheet" href="css/learningReportList.css">
  </head>
 <body>
   <div class="contents">
@@ -23,18 +23,18 @@
         </tr>
       </thead>
       <tbody  class="record">
-        <tr th:each="report : ${learninglist}" th:object="${LearningReport}" class="record">
-          <div class="table-contents">
-          <td th:text="*{id}"></td>
-          <td th:text="${#dates.format(created_at, 'yyyy/MM/dd')}"></td>
-          <td th:text="${#dates.format(start_time, 'HH:mm')}"></td>
-          <td th:text="${#dates.format(end_time, 'HH:mm')}"></td>
-          <td th:text="${#dates.format(totaltime, 'HH:mm')}"></td>
-          </div>
+
+        <tr th:each="learningreport:${learningreport}" th:object="${learningreport}" class="record">
+          <td th:text="*{learningreport.rema}"></td>
+          <td th:text="${#dates.format(learningreport.created_at, 'yyyy/MM/dd')}"></td>
+          <td th:text="${#dates.format(learningreport.start_time, 'HH:mm')}"></td>
+          <td th:text="${#dates.format(learningreport.end_time, 'HH:mm')}"></td>
+          <td th:text="${#dates.format(learningreport.totaltime, 'HH:mm')}"></td>
           <td>
             <form th:action="@{/learningReportEdit}" method="post">
                 <button name="edit">編集</button>
-                <input type="hidden" name="rema" th:value="${LearningReport.rema}">
+                <input type="hidden" name="rema" th:value="${learningreport.rema}">
+
             </form>
         </td>
         <td>
