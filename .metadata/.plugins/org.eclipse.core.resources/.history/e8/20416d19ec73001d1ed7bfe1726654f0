@@ -1,0 +1,5 @@
+0000000000000000000000000000000000000000 d0e0d6aaa848834c611de645896146c8fe8c8992 tolbou <ttorubou@gmail.com> 1670167717 +0900	clone: from https://github.com/Yuya-Kawauchi/TeamDevelopment.git
+d0e0d6aaa848834c611de645896146c8fe8c8992 95ca514ad555bab7a4ac19aef93fb53c18a11d24 tolbou <ttorubou@gmail.com> 1670167752 +0900	checkout: moving from main to develop
+95ca514ad555bab7a4ac19aef93fb53c18a11d24 4228949a95121d1258058abc9c1b13ff3e59e1b0 tolbou <ttorubou@gmail.com> 1670167755 +0900	checkout: moving from develop to login
+4228949a95121d1258058abc9c1b13ff3e59e1b0 95ca514ad555bab7a4ac19aef93fb53c18a11d24 tolbou <ttorubou@gmail.com> 1670167762 +0900	checkout: moving from login to develop
+95ca514ad555bab7a4ac19aef93fb53c18a11d24 3d3b638ded04958580c35c91b2c9a59edf419c51 tolbou <ttorubou@gmail.com> 1670168984 +0900	commit: login
