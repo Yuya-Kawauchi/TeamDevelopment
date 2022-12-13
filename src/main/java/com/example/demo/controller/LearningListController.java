@@ -1,4 +1,4 @@
-package com.example.demo.Controller;
+package com.example.demo.controller;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.demo.Entity.LearningReport;
-import com.example.demo.Service.LearningListService;
+import com.example.demo.entity.LearningReport;
+import com.example.demo.service.LearningListService;
 
 
 

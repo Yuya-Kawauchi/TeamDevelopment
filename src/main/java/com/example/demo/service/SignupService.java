@@ -1,4 +1,4 @@
-package com.example.demo.Service;
+package com.example.demo.service;
 import java.util.Date;
 import java.util.List;
 
@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.demo.Entity.UserEntity;
-import com.example.demo.Repository.UserRepository;
 import com.example.demo.dto.UserRequest;
+import com.example.demo.entity.UserEntity;
+import com.example.demo.repository.UserRepository;
 
 
 /**

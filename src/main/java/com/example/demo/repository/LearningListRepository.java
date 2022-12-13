@@ -1,15 +1,12 @@
-package com.example.demo.Repository;
+package com.example.demo.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.Entity.LearningReport;
-
+import com.example.demo.entity.LearningReport;
 
 
 @Repository
-public interface LearningReportEditRepository
+public interface LearningListRepository
     extends JpaRepository <LearningReport, Integer> {
 }
-
-
