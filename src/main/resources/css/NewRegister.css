@@ -48,7 +48,7 @@ form input[type = "password"]:focus,form input[type = "mail"]:focus{
   width: 280px;
   background-color: #f0f8ff;
 }
- form button[type = "change"]{
+  form input[type = "change"]{
     border: 0;
     background: none;
     display: block;
@@ -62,11 +62,12 @@ form input[type = "password"]:focus,form input[type = "mail"]:focus{
     cursor: pointer;
   }
 
-  form button[type = "change"]:hover {
+
+  form input[type = "change"]:hover {
     background-color: #990b14
   }
 
-  form button[type = "back"]{
+  form input[type = "back"]{
     border: 0;
     background: none;
     display: block;
@@ -80,6 +81,9 @@ form input[type = "password"]:focus,form input[type = "mail"]:focus{
     cursor: pointer;
   }
 
-  form button[type = "back"]:hover {
+
+  form input[type = "back"]:hover {
     background-color: #990b14
   }
+
+</div>

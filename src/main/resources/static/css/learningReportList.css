@@ -1,0 +1,55 @@
+body {
+    background-image:url(./images/haikei.png);
+    height:auto;
+    position:relative;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    }
+    .contents{
+        height: 100%;
+        width: 80%;
+        padding: 10px 0;
+        position: relative;
+        top: 5%;
+        background-color: #000;
+        text-align: center;
+        margin: 0 auto;
+    }
+    table{
+        height: 100%;
+        width: 100%;
+
+        position: absolute;
+        top: 100px;
+        background-color: rgb(65, 65, 65);
+        text-align: center;
+    }
+    th{
+        padding: 10px;
+        border-bottom:3px solid #990b14;
+        color: white;
+    }
+    .record tbody{
+        background-color: rgb(167, 167, 167);
+    }
+    .record td{
+        border-bottom: 1px solid #990b14;
+        background-color: rgb(99, 99, 99);
+    }
+    button{
+        background-color: #000;
+        width: 100%;
+        height: 100%;
+        color: rgb(255, 255, 255);
+        padding: auto;
+        border: auto;
+    }
+    button:hover {
+        background-color: #990b14;
+        width: 100%;
+        height: 100%;
+        padding: auto;
+        border:2px solid #990b14;
+        }  
