@@ -6,12 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.demo.Entity.Chapters;
+import com.example.demo.Entity.Course;
+import com.example.demo.Entity.LearningEditForm;
+import com.example.demo.Entity.LearningReport;
+import com.example.demo.Entity.Texts;
 import com.example.demo.Repository.LearningReportEditRepository;
-import com.example.demo.entity.Chapters;
-import com.example.demo.entity.Course;
-import com.example.demo.entity.LearningEditForm;
-import com.example.demo.entity.LearningReport;
-import com.example.demo.entity.Texts;
+
 
 @Service
 @Transactional

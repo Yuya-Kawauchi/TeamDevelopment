@@ -1,4 +1,4 @@
-package com.example.demo.entitiy;
+package com.example.demo.Entity;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;

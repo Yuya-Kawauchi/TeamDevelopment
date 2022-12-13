@@ -6,8 +6,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.Entity.LearningReport;
 import com.example.demo.Repository.LearningListRepository;
-import com.example.demo.entity.LearningReport;
+
 
 @Service
 public class LearningListService {

@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.Entity.Chapters;
+import com.example.demo.Entity.Course;
+import com.example.demo.Entity.LearningReport;
+import com.example.demo.Entity.Texts;
 import com.example.demo.Service.LearningReportEditService;
-import com.example.demo.entity.Chapters;
-import com.example.demo.entity.Course;
-import com.example.demo.entity.LearningReport;
-import com.example.demo.entity.Texts;
+
 
 @Controller
 public class LearningReportEditController {
