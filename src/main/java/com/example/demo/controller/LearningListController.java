@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,9 +31,10 @@ public class LearningListController {
 	    return "learningReportList";
 	  }
 	  
-	  @PostMapping(path = "edit", params = "edit")
-	  public String postLearningList(@RequestParam Integer rema, @ModelAttribute LearningReport learningReport) {
-		  learningListService.selectById(rema);
+	  @PostMapping(path = "learningReportList", params = "edit")
+	  public String postLearningList(@RequestParam Integer rema, @ModelAttribute LearningReport learningreport ,Model model) {
+		 Optional<LearningReport> form = learningListService.selectById(rema);
+		  model.addAttribute("form", form);
 		  return "redirect:/learningReportEdit";
 	  }
 	  

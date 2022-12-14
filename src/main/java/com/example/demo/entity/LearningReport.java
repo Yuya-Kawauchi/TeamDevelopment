@@ -33,12 +33,12 @@ import lombok.Data;
 	 private Date created_at;
 	 
 	 @NotBlank
-	 @DateTimeFormat(pattern = "hh:mm:ss")
+	 @DateTimeFormat(pattern = "HH:mm:ss")
 	 @Column(name = "start_time")
 	 private String start_time ;
 	 
 	 @NotBlank
-	 @DateTimeFormat(pattern = "hh:mm:ss")
+	 @DateTimeFormat(pattern = "HH:mm:ss")
 	 @Column(name = "end_time")
 	 private String end_time ;
 	 

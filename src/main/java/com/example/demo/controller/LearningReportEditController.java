@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,7 +10,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.Chapters;
 import com.example.demo.entity.Course;
@@ -24,9 +25,9 @@ public class LearningReportEditController {
 	private LearningReportEditService learningReportEditService;
 	
 	  @GetMapping("/learningReportEdit")
-	  public String  showLearningEdit(@RequestParam Integer rema, Model model ,java.util.Optional<LearningReport> learningReport) {
-	learningReport = learningReportEditService.selectById(rema);
-	    model.addAttribute(learningReport);
+	  public String  showLearningEdit( Model model ,Optional<LearningReport> form) {
+//	form = learningReportEditService.selectById(rema);
+	    model.addAttribute(form);
 	    
 //	    List<Chapters> chapter = learningReportEditService.findChapter();
 //	    model.addAttribute("chapter", chapter);
@@ -39,7 +40,7 @@ public class LearningReportEditController {
 	    return "learningReportEdit";
 	  }
 	  
-	  @PostMapping("/Toppage")
+	  @PostMapping("/learningReportEdit")
 	  public String postLearningEdit(@ModelAttribute @Validated LearningReport learningReport,Course course,Chapters chapter,Texts texts, BindingResult result,Model model) {
 			
 			if (result.hasErrors()) {
