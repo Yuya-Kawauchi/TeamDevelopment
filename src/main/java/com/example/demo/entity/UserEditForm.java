@@ -10,20 +10,21 @@ import lombok.Data;
 @Data
 public class UserEditForm {
 	
-	@NotEmpty
+	@NotEmpty(message = "IDを入力してください")
+	@Size(max = 20, message = "IDを20文字以内で入力してください")
 	private Integer user_id;
 	
-	@NotEmpty
-	@Size(max = 20, message = "名前は25桁以内で入力してください")
+	@NotEmpty(message = "名前を入力してください")
+	@Size(max = 25, message = "名前は25桁以内で入力してください")
     private String name;
 	
-	@NotEmpty
-	@Size(min = 1, max = 100)
+	@NotEmpty(message = "パスワードを入力してください")
+	@Size(min = 1, max = 100, message= "パスワードを100文字以内で入力してください")
 	private String password;
 	
 	@Email
-	@NotEmpty
-	@Size(min = 1, max = 50)
+	@NotEmpty(message = "メールアドレスを入力してください")
+	@Size(min = 1, max = 50, message = "メールアドレスを50字以内で入力してください")
 	private String mail_address;
 	
 	}

@@ -18,7 +18,7 @@ public class UserEntity {
 	
 	@Column(name = "name")
 	private String name;
-	
+
 	@Column(name = "name_kana")
 	private String name_kana; 
 	

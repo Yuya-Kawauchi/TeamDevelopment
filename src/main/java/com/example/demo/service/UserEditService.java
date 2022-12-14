@@ -24,14 +24,13 @@ public class UserEditService {
 			return userEditRepository.findById(user_id).get();
 		}	
 		//ユーザー更新
-		public void update(UserEditForm editForm) {
-			UserEditEntity user = findById(editForm.getUser_id());
-			user.setUser_id(editForm.getUser_id());
-			user.setName(editForm.getName());
+		public void update(UserEditForm usereditform) {
+			UserEditEntity user = findById(usereditform.getUser_id());
+			user.setUser_id(usereditform.getUser_id());
+			user.setName(usereditform.getName());
 //			user.setName_kana(editForm.getName_kana());
-			user.setPassword(editForm.getPassword());
-			user.setMail_address(editForm.getMail_address());	
+			user.setPassword(usereditform.getPassword());
+			user.setMail_address(usereditform.getMail_address());	
 			userEditRepository.save(user);
 		}
-
 }

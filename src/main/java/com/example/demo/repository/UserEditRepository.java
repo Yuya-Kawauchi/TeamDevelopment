@@ -11,4 +11,3 @@ import com.example.demo.entity.UserEditEntity;
 @Repository
 public interface UserEditRepository extends JpaRepository<UserEditEntity, Integer> {
 }
-
