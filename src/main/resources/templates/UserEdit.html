@@ -7,17 +7,16 @@
 <html lang="en">
 <link rel="stylesheet" href="UserEdit.css"></head>
 <body>
-<form th:action="@{/edit/user}" th:object="${/UserEditForm}" th:method="post">
-<form name="login_form">
+<form th:action="@{/edit/user}" name="login_form" th:object="${UserEditForm}" th:method="post">
+
       <div class="login_form_top">
         <h1>ユーザー編集</h1>
       </div>
-  <form class="login-container">
-    <input type="name" placeholder="名前"name="name" th:field="*{name}">
+    <input type="text" placeholder="名前" name="name" th:field="*{name}">
     <span th:if="${#fields.hasErrors('name')} th:errors="*{name}" color:red ></span>
-    <input type="id" placeholder="ID"name="user_id" th:field="*{.user_id}">
+    <input type="text" placeholder="ID"name="user_id" th:field="*{.user_id}">
     <span th:if="${#fields.hasErrors('user_id')} th:errors="*{user_id}" color:red ></span>
-    <input type="password"  placeholder="Password"name="password" th:field="*{passeord}">
+    <input type="password"  placeholder="Password"name="password" th:field="*{password}">
     <span th:if="${#fields.hasErrors('password')} th:errors="*{password}" color:red ></span>
     <input type="mail"  placeholder="Email"name="mail_address" th:field="*{mail_address}">
     <span th:if="${#fields.hasErrors('mail_address')} th:errors="*{mail_address}" color:red ></span>

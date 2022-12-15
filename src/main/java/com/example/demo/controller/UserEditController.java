@@ -11,6 +11,7 @@ import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -23,7 +24,7 @@ import com.example.demo.service.UserEditService;
 	public class UserEditController {
 
 	    @Autowired
-	    UserEditService usereditservice;
+	    UserEditService userEditService;
 
 	    @GetMapping("/useredit")
 	    public String getHome() {
@@ -31,16 +32,17 @@ import com.example.demo.service.UserEditService;
 	        return "/topPage";
 	    }
 
-	    @GetMapping("/userlist")
-	    public String getUseEdit(UserEditForm form, Model model) {
+	    @GetMapping("/userlist/{user_id}")
+	    public String getUseEdit(@PathVariable Integer user_id, Model model) {
 	        //ユーザー一覧の生成
-	    	UserEditEntity user = usereditservice.findById(form.getUser_id());
-	    	UserEditForm usereditform = new UserEditForm();
-	    	usereditform.setUser_id(user.getUser_id());
-	    	usereditform.setName(user.getName());
-	    	usereditform.setPassword(user.getPassword());
-	    	usereditform.setMail_address(user.getMail_address());
-	        model.addAttribute("UserEditForm", usereditform);
+	    	UserEditEntity user = userEditService.findById(user_id);
+	    	UserEditForm userEditForm = new UserEditForm();
+	    	userEditForm.setUser_id(user.getUser_id());
+	    	userEditForm.setName(user.getName());
+	    	userEditForm.setName_kana(user.getName_kana());
+	    	userEditForm.setPassword(user.getPassword());
+	    	userEditForm.setMail_address(user.getMail_address());
+	        model.addAttribute("UserEditForm", userEditForm);
 	        return "/UserEdit";
 	      }
 	    
@@ -54,7 +56,7 @@ import com.example.demo.service.UserEditService;
 			      model.addAttribute("validationError", errorList);
 			      return "/UserEdit";
 			    }
-	    usereditservice.update(usereditform); 
+	    userEditService.update(usereditform); 
 	    model.addAttribute("UserEditForm", usereditform);
 	    return "/topPage";
 		}

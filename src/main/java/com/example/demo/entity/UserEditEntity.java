@@ -1,6 +1,8 @@
 package com.example.demo.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,12 +18,16 @@ public class UserEditEntity {
 	   */
 	  @Id
 	  @Column(name = "user_id")
-	  private Integer user_id;
+	  @GeneratedValue(strategy = GenerationType.IDENTITY)
+      private Integer user_id;
 	  /**
 	   * 名前
 	   */
 	  @Column(name = "name")
 	  private String name;
+	  
+	  @Column(name = "name_kana")
+	  private String name_kana;
 	  /**
 	   * パスワード
 	   */
