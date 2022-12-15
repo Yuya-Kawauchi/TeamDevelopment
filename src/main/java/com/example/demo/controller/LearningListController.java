@@ -24,10 +24,17 @@ public class LearningListController {
 	private LearningListService learningListService;
 	
 	  @GetMapping("/learningReportList")
-	  public String showLearningList(Model model) {
+	  public String showLearningList(Model model)throws Exception {
 	    List<LearningReport> learningreport = learningListService.findAll();
 	    model.addAttribute("learningreport", learningreport);
+//	    SimpleDateFormat formatter = new SimpleDateFormat ("yyyy/MM/dd HH:mm:ss");
+//	    formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
+//	    Date startDate = formatter.parse(learningreport.getStart_time()); // 開始時刻
+//	    Date endDate = formatter.parse("04/05/11 17:01:30"); // 終了時刻
+//	    long total_time = endDate.getTime() - startDate.getTime();
+//	    String totaltime = formatter.format(new Date(total_time));
 	    
+
 	    return "learningReportList";
 	  }
 	  

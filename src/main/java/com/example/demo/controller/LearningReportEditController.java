@@ -25,9 +25,9 @@ public class LearningReportEditController {
 	private LearningReportEditService learningReportEditService;
 	
 	  @GetMapping("/learningReportEdit")
-	  public String  showLearningEdit( Model model ,Optional<LearningReport> learningreport) {
+	  public String  showLearningEdit( Model model ,Optional<LearningReport> form) {
 //	form = learningReportEditService.selectById(rema);
-	    model.addAttribute("learningreport",learningreport);
+	    model.addAttribute("form",form);
 	    
 //	    List<Chapters> chapter = learningReportEditService.findChapter();
 //	    model.addAttribute("chapter", chapter);

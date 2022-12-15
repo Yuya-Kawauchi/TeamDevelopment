@@ -16,8 +16,11 @@ public class LearningListService {
 	  private LearningListRepository learningListRepository;
 
 	  public List<LearningReport> findAll() {
+		  
 	    return learningListRepository.findAll();
 	  }
+	  
+	  
 	  
 	  public Optional<LearningReport> selectById(Integer rema) {
 		 return learningListRepository.findById(rema);
