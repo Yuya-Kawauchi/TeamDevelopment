@@ -25,9 +25,9 @@
       <tbody  class="record">
         <tr th:each="learningreport:${learningreport}" class="record">
           <td th:text="${learningreport.rema}"></td>
-          <td th:text="${#dates.format(learningreport.created_at, 'yyyy/MM/dd')}"></td>
-          <td th:text="${learningreport.start_time}"></td>
-          <td th:text="${learningreport.end_time}"></td>
+          <td th:text="${#dates.format(learningreport.created_at, 'YYYY/MM/dd')}"></td>
+          <td th:text="${learningreport.start_time,'HH:mm'}"></td>
+          <td th:text="${learningreport.end_time,'HH:mm'}"></td>
           <td ></td>
           <td>
             <form th:action="@{/learningReportList}" method="post">
