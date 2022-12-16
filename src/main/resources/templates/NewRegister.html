@@ -13,10 +13,12 @@
       <div class="newRegister_form_top">
         <h1>ユーザー新規登録</h1>
       </div>
+      
+<form th:action="@{/user/create}" th:object="${userRequest}" th:method="post">
 
   <form class="newRegister-container">
-   <p><input type="name" placeholder="名前"></p>
-   <p><input type="id" placeholder="ID"></p>
+   <p><input type="text" name="name" th:field=”*{name}”placeholder="名前"></p>
+   <p><input type="text"　th:field="*{user}" placeholder="ID"></p>
    <p><input type="password"  placeholder="Password"></p>
    <p><input type="mail"  placeholder="Email"></p>
    <p><button id="register"> 登録</button></p>

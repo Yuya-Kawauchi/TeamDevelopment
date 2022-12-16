@@ -37,8 +37,8 @@ public class SignupService {
     Date now = new Date();
     UserEntity user = new UserEntity();
     user.setName(userRequest.getName());
-    //user.setAddress(userRequest.getMail_address());
-    //user.setpassword(userRequest.getPassword());
+    user.setMail_address(userRequest.getMail_address());
+    user.setPassword(userRequest.getPassword());
     //user.setCreateDate(now);
     //user.setUpdateDate(now);
     userRepository.save(user);
