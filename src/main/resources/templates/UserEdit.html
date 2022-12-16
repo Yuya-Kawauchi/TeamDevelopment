@@ -3,16 +3,14 @@
 <head>
 <meta charset="utf-8">
 <title>ユーザー編集</title>
-
-<link rel="stylesheet" href="UserEdit.css"></head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/UserEdit.css"></head>
 <body>
 <form th:action="@{/edit/user/{user_id}}" name="login_form" th:object="${UserEditForm}" th:method="post">
-
-      <div class="login_form_top">
-        <h1>ユーザー編集</h1>
+<div class="login_form_top">
+      <h1>ユーザー編集</h1>
       </div>
     <input type="text" placeholder="名前" name="name" th:field="*{name}">
-
     <input type="text" placeholder="ID"name="user_id" th:field="*{user_id}">
  <input type="password"  placeholder="Password"name="password" th:field="*{password}">
  <input type="text"  placeholder="Email"name="mail_address" th:field="*{mail_address}">
