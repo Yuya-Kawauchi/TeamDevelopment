@@ -18,11 +18,14 @@
 
   <form class="newRegister-container">
    <p><input type="text" name="name" th:field=”*{name}”placeholder="名前"></p>
-   <p><input type="text"　th:field="*{user}" placeholder="ID"></p>
-   <p><input type="password"  placeholder="Password"></p>
-   <p><input type="mail"  placeholder="Email"></p>
+   <p><input type="text" th:field="*{user_id}"  placeholder="ID"></p>
+   <p><input type="text" th:field="*{password}"  placeholder="Password"></p>
+   <p><input type="text" th:field="*{mail_address}"  placeholder="Email"></p>
    <p><button id="register"> 登録</button></p>
    <p><button id="back"> 戻る</button></p>
   </form>
+</form>  
 </body>
 </html>
+
+<!--  -->

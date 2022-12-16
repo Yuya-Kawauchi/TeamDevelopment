@@ -1,5 +1,4 @@
 package com.example.demo.service;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,8 +33,9 @@ public class SignupService {
    * @param user ユーザー情報
    */
   public void create(UserRequest userRequest) {
-    Date now = new Date();
+//    Date now = new Date();
     UserEntity user = new UserEntity();
+    user.setUser_id(userRequest.getUser_id());
     user.setName(userRequest.getName());
     user.setMail_address(userRequest.getMail_address());
     user.setPassword(userRequest.getPassword());
@@ -43,4 +43,4 @@ public class SignupService {
     //user.setUpdateDate(now);
     userRepository.save(user);
   }
-}
+}//
