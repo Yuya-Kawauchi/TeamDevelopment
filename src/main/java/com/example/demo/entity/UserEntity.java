@@ -14,7 +14,7 @@ public class UserEntity {
 	
 	@Id
 	@Column(name = "user_id")
-	private String user_id;
+	private Integer user_id;
 	
 	@Column(name = "name")
 	private String name;
