@@ -10,8 +10,6 @@ import lombok.Data;
 @Data
 public class UserEditForm {
 	
-	@NotEmpty(message = "IDを入力してください")
-	@Size(max = 20, message = "IDを20文字以内で入力してください")
 	private Integer user_id;
 	
 	@NotEmpty(message = "名前を入力してください")
