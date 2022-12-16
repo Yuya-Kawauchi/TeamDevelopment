@@ -18,6 +18,10 @@ public class UserEditForm {
 	@Size(max = 25, message = "名前は25桁以内で入力してください")
     private String name;
 	
+	@NotEmpty(message = "名前を入力してください")
+	@Size(max = 25, message = "名前は25桁以内で入力してください")
+    private String name_kana;
+	
 	@NotEmpty(message = "パスワードを入力してください")
 	@Size(min = 1, max = 100, message= "パスワードを100文字以内で入力してください")
 	private String password;

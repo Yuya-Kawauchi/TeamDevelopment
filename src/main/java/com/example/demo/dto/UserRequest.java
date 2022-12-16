@@ -25,6 +25,9 @@ public class UserRequest implements Serializable {
   
   @Size(max = 20, message = "名前は20文字以内で入力してください")
   private String name;
+  
+  @Size(max = 20, message = "名前は20文字以内で入力してください")
+  private String name_kana;
 
   @Size(max = 20, message = "パスワードは20文字以内で入力してください")
   private String password;
