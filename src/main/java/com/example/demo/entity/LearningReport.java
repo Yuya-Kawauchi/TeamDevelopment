@@ -1,5 +1,6 @@
 package com.example.demo.entity;
-	import java.util.Date;
+	import java.sql.Time;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,12 +36,12 @@ import lombok.Data;
 	 @NotNull
 	 @DateTimeFormat(pattern = "HH:mm:ss")
 	 @Column(name = "start_time")
-	 private Date start_time ;
+	 private Time start_time ;
 	 
 	 @NotNull
 	 @DateTimeFormat(pattern = "HH:mm:ss")
 	 @Column(name = "end_time")
-	 private Date end_time ;
+	 private Time end_time ;
 	 
 	 @NotNull
 	 @Column(name = "course_id")

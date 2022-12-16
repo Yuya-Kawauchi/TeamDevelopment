@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,10 @@ import com.example.demo.entity.Course;
 import com.example.demo.entity.LearningEditForm;
 import com.example.demo.entity.LearningReport;
 import com.example.demo.entity.Texts;
+import com.example.demo.repository.ChapterRepository;
+import com.example.demo.repository.CourseRepository;
 import com.example.demo.repository.LearningReportEditRepository;
+import com.example.demo.repository.TextRepository;
 
 
 @Service
@@ -21,19 +25,30 @@ public class LearningReportEditService {
 	@Autowired
 	LearningReportEditRepository learningReportEditRepository;
 	
+	@Autowired
+	ChapterRepository chapterrepository;
+	
+	@Autowired
+	CourseRepository courserepository;
+	
+	@Autowired
+	TextRepository textrepository;
+	
+	
+	
 	public Optional<LearningReport> selectById(Integer rema) {
 		return learningReportEditRepository.findById(rema);
 	}
 	
-//	public List<Chapters> findChapter(){
-//		return learningReportEditRepository.findAll();
-//	}
-//	public List<Course> findCourse(){
-//		return learningReportEditRepository.findAll();
-//	}
-//	public List<Texts> findTexts(){
-//		return learningReportEditRepository.findAll();
-//	}
+	public List<Chapters> findChapter(){
+		return chapterrepository.findAll();
+	}
+	public List<Course> findCourse(){
+		return courserepository.findAll();
+	}
+	public List<Texts> findTexts(){
+		return textrepository.findAll();
+	}
 
 	public void putReport(LearningReport learningReport,Course course,Chapters chapter,Texts texts){
 		learningReport.setCourse_id(course.getCourse_id());
