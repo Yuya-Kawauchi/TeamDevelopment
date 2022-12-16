@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"lang="en">
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta charset="UTF-8" />
 <title>ユーザー新規登録</title>
-<html lang="en">
 <link href="/css/NewRegister.css"rel="stylesheet">
 </head>
 <body>
@@ -13,14 +12,23 @@
       <div class="newRegister_form_top">
         <h1>ユーザー新規登録</h1>
       </div>
+</form>
+<div th:if="${validationError}" th:each="error:${validationError}"></div>
+<form th:action="@{/user/create}" th:object="${userRequest}" th:method="post">
 
   <form class="newRegister-container">
-   <p><input type="name" placeholder="名前"></p>
-   <p><input type="id" placeholder="ID"></p>
-   <p><input type="password"  placeholder="Password"></p>
-   <p><input type="mail"  placeholder="Email"></p>
-   <p><button id="register"> 登録</button></p>
-   <p><button id="back"> 戻る</button></p>
+   <input type="text" name="name" th:field="*{name}"placeholder="名前"></input>
+   <input type="text" th:field="*{user_id}"  placeholder="ID"></input>
+   <input type="text" th:field="*{password}"  placeholder="Password"></input>
+   <input type="text" th:field="*{mail_address}"  placeholder="Email"></input>
+   <input type="submit" value="登録" id="register"></input>
+   <input type="button" value="戻る" id="back"></input>
   </form>
+</form>  
+  <!-- <div th:if="${validationError}" th:each="error : ${validationError}">
+   <label class="text-danger" th:text="${error}"></label>
+  </div> -->
 </body>
 </html>
+
+<!--  -->

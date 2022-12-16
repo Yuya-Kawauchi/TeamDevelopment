@@ -1,18 +1,18 @@
-//
+//import org.springframework.http.ResponseEntity;
+//import org.springframework.security.core.annotation.AuthenticationPrincipal;
+//import org.springframework.security.core.userdetails.UserDetails;
+//import org.springframework.stereotype.Controller;
+//import org.springframework.web.bind.annotation.GetMapping;
+
+//import com.example.demo.entity.UserEntity;
+
 //@Controller
-//@RequestMapping("/home")
 //public class ToppageController {
-//	 private final ToppageService service;
-//
-//	    @Autowired
-//	    public ToppageService(AccountService service) {
-//	        this.service = service;
-//	    }
-//    public String home() {
-//        return "home";
-//        /*トリビュート？
-//         * DBにSUM関数で合計を出せるのを使って月学習時間を出せるかも
-//         * 家計簿アプリを参考にできるかも
-//         * 一覧にだすのはタイムリーフとhomeタグで出来る
-//         * */
+	
+//	@GetMapping("/1")
+//    public UserEntity<?> test1(@AuthenticationPrincipal UserDetails user) {
+//        return ResponseEntity.ok().body(new TestRes(user.getUsername()));
+//    }
+
+
 //}
