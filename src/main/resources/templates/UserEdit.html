@@ -12,9 +12,8 @@
       </div>
     <input type="text" placeholder="ID"name="user_id" th:field="*{user_id}">
     <input type="text" placeholder="名前" name="name" th:field="*{name}">
-
- <input type="password"  placeholder="Password"name="password" th:field="*{password}">
- <input type="text"  placeholder="Email"name="mail_address" th:field="*{mail_address}">
+    <input type="text"  placeholder="Password"name="password" th:field="*{password}">
+    <input type="text"  placeholder="Email"name="mail_address" th:field="*{mail_address}">
     <button id="change"type="submit"> 更新</button>
     <button id="back" th:href="@{/top}">戻る</button>
   </form>

@@ -26,7 +26,7 @@ form h1{
     font-weight: 500;
   }
 
-  form input[type = "name"],form input[type = "user_id"] ,form input[type = "password"],form input[type = "mail_address"]{
+  form input[type = "text"],form input[type = "text"] ,form input[type = "text"],form input[type = "text"]{
     border: 0;
     background: none;
     display: block;
