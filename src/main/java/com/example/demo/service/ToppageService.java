@@ -1,12 +1,11 @@
-//
+
 //package com.example.demo.service;
 //import java.util.Calendar;
 //import java.util.List;
-//
+
 //import org.springframework.stereotype.Service;
-//
-//
-//
+
+
 //@Service
 //public class ToppageService {
 //	 public List<Account> findAccountByYearAndMonth(String year, String month) {
@@ -20,11 +19,11 @@
 //	        int result = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
 //	        String endDate = year + "-" + month + "-" + result;
 //	        List<Account> list = dao.findAccountByYearAndMonth(startDate, endDate);
-//	        totalPrice = 0;
+//            totalPrice = 0;
 //	        for (Account account : list) {
 //	            totalPrice += account.getPrice();
 //	        }
 //	        return list;
-//
+
 //	    }
 //}
