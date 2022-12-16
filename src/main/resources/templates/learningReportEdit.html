@@ -4,7 +4,7 @@
  <meta charset="utf-8">
  <title>学習報告編集</title>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link rel="stylesheet" href="learningReportEdit.css">
+ <link rel="stylesheet" href="css/learningReportEdit.css">
  </head>
  <body>
 	<div class="contents">
@@ -12,31 +12,31 @@
 	  <h1>学習報告編集</h1>
     </div>
 	<div class="form">
-	  <form th:action="@{/learningReportEdit}"  method="POST">
+	  <form th:action="@{/learningReportEdit}"  th:object="${form}" method="POST">
         <span>日付</span>
-		<input type="date" th:field="${#dates.format(form.created_at, 'YYYY-MM-DD')}" th:value="${#dates.format(form.created_at, 'YYYY-MM-DD')}"><br>
+		<input type="date" th:field="*{created_at}" th:value="${#dates.format(created_at,'YYYY-MM-DD')}"><br>
 		<span>開始時刻</span>
-		<input type="time" th:field="${form.start_time}" th:value="${form.start_time}"><br>
+		<input type="time" th:field="*{start_time}"><br>
 		<span>終了時刻</span>
-		<input type="time" th:field=${form.end_time} th:value="${form.end_time}"><br>
+		<input type="time" th:field=*{end_time}><br>
         <span>学習内容</span>
 		<div class="manu">
 		   <div>
-		       <select name="language">
+		       <select name="course">
 		          <option>言語</option>
-		          <option th:each="course : ${course}"th:value="${course.courseId}"th:text="*{course.course}"></option>
+		          <option th:each="course : ${course}"th:value="${course.course_id}"th:text="${course.course_id}"></option>
 		       </select>
 	       </div>
 	        <div>
-		        <select name="chapters">
+		        <select name="chapter">
 		    	 <option>チャプター</option>
-			     <option th:each="chapter : ${chapters}"th:value="${chapters.chapterId}"th:text="*{chapters.chapter}"></option>
+			     <option th:each="chapter : ${chapter}"th:value="${chapter.chapters_id}"th:text="${chapter.chapter}"></option>
 		        </select>
 	        </div>
 		    <div>
-		        <select name="text">
+		        <select name="texts">
 			       <option>テキスト</option>
-			       <option th:each="text: ${text}"th:value="${text.textId}"th:text="*{text.textName}"></option>
+			       <option th:each="texts: ${texts}"th:value="${texts.text_id}"th:text="${texts.text_name}"></option>
 		        </select>
          	</div>
 		</div>

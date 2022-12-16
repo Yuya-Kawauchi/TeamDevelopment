@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.demo.entity.LearningReport;
 import com.example.demo.service.LearningListService;
@@ -24,7 +24,7 @@ public class LearningListController {
 	private LearningListService learningListService;
 	
 	  @GetMapping("/learningReportList")
-	  public String showLearningList(Model model)throws Exception {
+	  public String showLearningList(Model model) {
 	    List<LearningReport> learningreport = learningListService.findAll();
 	    model.addAttribute("learningreport", learningreport);
 //	    SimpleDateFormat formatter = new SimpleDateFormat ("yyyy/MM/dd HH:mm:ss");
@@ -39,9 +39,12 @@ public class LearningListController {
 	  }
 	  
 	  @PostMapping(path = "learningReportList", params = "edit")
-	  public String postLearningList(@RequestParam Integer rema, @ModelAttribute LearningReport learningreport ,Model model) {
-		 Optional<LearningReport> form = learningListService.selectById(rema);
-		  model.addAttribute("form", form);
+	  public String postLearningList(RedirectAttributes redirectAttributes,@RequestParam("rema") Integer rema, @ModelAttribute LearningReport learningreport ,Model model) {
+		 
+		  
+		  redirectAttributes.addFlashAttribute("rema", rema);
+//		  Optional<LearningReport> form = learningListService.selectById(rema);
+//		  model.addAttribute("form", form);
 		  return "redirect:/learningReportEdit";
 	  }
 	  
