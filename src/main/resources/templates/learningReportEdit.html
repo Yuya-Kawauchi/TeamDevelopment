@@ -12,7 +12,7 @@
 	  <h1>学習報告編集</h1>
     </div>
 	<div class="form">
-	  <form th:action="@{/learningReportEdit}"  th:object="${form}" method="POST">
+	  <form th:action="@{/learningReportEditUpdate}"  th:object="${form}" method="POST">
         <span>日付</span>
 		<input type="date" th:field="*{created_at}" th:value="${#dates.format(created_at,'YYYY-MM-DD')}"><br>
 		<span>開始時刻</span>
@@ -40,7 +40,7 @@
 		        </select>
          	</div>
 		</div>
-		<button>更新</button> <button formaction="/learningReportList" name="back">戻る</button>
+		<button>更新</button> <button formaction="/learningReportEditUpdate" name="back">戻る</button>
 	  </form>
     </div>
   </div>
