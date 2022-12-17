@@ -28,7 +28,6 @@ public class UserEditService {
 			UserEditEntity user = findById(usereditform.getUser_id());
 			user.setUser_id(usereditform.getUser_id());
 			user.setName(usereditform.getName());
-//			user.setName_kana(editForm.getName_kana());
 			user.setPassword(usereditform.getPassword());
 			user.setMail_address(usereditform.getMail_address());	
 			userEditRepository.save(user);
