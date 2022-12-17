@@ -1,0 +1,64 @@
+.wapper {
+  width: 1000px;
+  text-align: center;
+  margin: 0 auto;
+  background-color: rgb(242, 231, 201);
+
+}
+
+
+header{
+    width: 20px;
+    height: 20px;
+    color: rgb(4, 4, 5);
+    background-color: rgb(255, 187, 0);
+
+}
+
+h1 {
+    
+    height: 50px;
+    color: rgb(4, 4, 5);
+    background-color: rgb(255, 174, 0);
+}
+
+.form-text {
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  
+}
+
+table th{
+    padding : 20px 10px;
+  }
+  
+  table td{
+    padding : 20px 10px;
+  }
+
+
+  table header{
+    width: 20px;
+    height: 20px;
+
+  }
+
+  #table_edit {
+    border-collapse:collapse;
+}
+#table_edit td {
+    border:1px solid rgb(10, 10, 10);
+    background-color: rgb(234, 215, 162);
+
+}
+
+#data {
+    height:8em;
+    width:100%;
+}
+
+li {
+  list-style: none;
+}
+
