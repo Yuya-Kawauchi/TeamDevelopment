@@ -14,15 +14,15 @@
 	<div class="form">
 	  <form th:action="@{/learningReportEditUpdate}"  th:object="${form}" method="POST">
         <span>日付</span>
-		<input type="date" th:field="*{created_at}" th:value="${#dates.format(created_at,'YYYY-MM-DD')}"><br>
+		<input type="date" th:field="*{created_at}" th:text="${#calendars.format(created_at, 'dd/MMM/yyyy HH:mm')}"><br>
 		<span>開始時刻</span>
-		<input type="time" th:field="*{start_time}"><br>
+		<input type="time" th:field="*{start_time}"  th:text="${#calendars.format(start_time, 'HH:mm')}"> <br>
 		<span>終了時刻</span>
-		<input type="time" th:field=*{end_time}><br>
+		<input type="time" th:field="*{end_time}" ><br>
         <span>学習内容</span>
 		<div class="manu">
 		   <div>
-		       <select name="course">
+		       <select name="course_id">
 		          <option>言語</option>
 		          <option th:each="course : ${course}"th:value="${course.course_id}"th:text="${course.course_id}"></option>
 		       </select>
@@ -39,6 +39,9 @@
 			       <option th:each="texts: ${texts}"th:value="${texts.text_id}"th:text="${texts.text_name}"></option>
 		        </select>
          	</div>
+         	 <input type="hidden" name="rema" th:field="*{rema}">
+         	 <input type="hidden" name="user_id" th:field="*{user_id}">
+         	  
 		</div>
 		<button>更新</button> <button formaction="/learningReportEditUpdate" name="back">戻る</button>
 	  </form>

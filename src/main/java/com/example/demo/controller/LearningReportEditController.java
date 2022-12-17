@@ -6,8 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.demo.entity.Chapters;
 import com.example.demo.entity.Course;
 import com.example.demo.entity.LearningReport;
+import com.example.demo.entity.Learningform;
 import com.example.demo.entity.Texts;
 import com.example.demo.service.LearningListService;
 import com.example.demo.service.LearningReportEditService;
@@ -52,16 +51,15 @@ public class LearningReportEditController {
 
 	 
 	  @PostMapping("/learningReportEditUpdate")
-	  public String postLearningEdit(@Validated @ModelAttribute  LearningReport form,Course course,Chapters chapter,Texts texts, BindingResult result,Model model) {
-			
-			if (result.hasErrors()) {
-				
-				return "redirect:/learningReportEdit";
-			}
-			learningReportEditService.putReport(form,course,chapter,texts);
-		    model.addAttribute("chapter", chapter);
-		    model.addAttribute("course", course);
-		    model.addAttribute("texts", texts);
+	  public String postLearningEdit(@ModelAttribute Learningform form,Course course,Chapters chapter,Texts texts, Model model) {
+//			
+//			if (result.hasErrors()) {
+//				
+//				return "redirect:/learningReportEdit";
+//			}
+
+
+		    
 			learningReportEditService.update(form);
 			model.addAttribute("form",form);
 			return "redirect:/Toppage";

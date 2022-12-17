@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -10,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.example.demo.entity.Chapters;
 import com.example.demo.entity.Course;
 import com.example.demo.entity.LearningReport;
+import com.example.demo.entity.Learningform;
 import com.example.demo.entity.Texts;
 import com.example.demo.repository.ChapterRepository;
 import com.example.demo.repository.CourseRepository;
@@ -53,19 +56,23 @@ public class LearningReportEditService {
 		form.setCourse_id(course.getCourse_id());
 	}
 	
-	public void update(LearningReport form) {
-		
+	public void update(Learningform form) {
 	
 		LearningReport learningReport = new LearningReport();
 		
+		SimpleDateFormat sdFormat = new SimpleDateFormat("hh:mm:ss");
+
 		learningReport.setRema(form.getRema());
-		learningReport.setUser_id(form.getUser_id());
+	    learningReport.setUser_id(form.getUser_id());
+//		learningReport.setRema(1);
+//		learningReport.setUser_id(1);
 		learningReport.setCreated_at(form.getCreated_at());
-		learningReport.setStart_time(form.getStart_time());
-		learningReport.setEnd_time(form.getEnd_time());
+		learningReport.setStart_time(LocalTime.parse(form.getStart_time().substring(0,5)+":00"));
+		learningReport.setEnd_time(LocalTime.parse(form.getEnd_time().substring(0,5)+":00"));
 		learningReport.setCourse_id(form.getCourse_id());
 		learningReport.setRemark(form.getRemark());
 		
+
 		
 		learningReportEditRepository.save(learningReport);
 	}
