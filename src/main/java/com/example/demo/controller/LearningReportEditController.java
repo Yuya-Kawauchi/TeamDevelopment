@@ -65,7 +65,7 @@ public class LearningReportEditController {
 			return "redirect:/Toppage";
 	  }
 
-	  @PostMapping(path = "/learningReportList", params = "back")
+	  @PostMapping(path = "/learningReportEditUpdate", params = "back")
 	  public String back() {
 		  return "redirect:/learningReportList";
 	  }
