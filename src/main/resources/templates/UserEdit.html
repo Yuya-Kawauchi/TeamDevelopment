@@ -10,7 +10,7 @@
 <div class="login_form_top">
       <h1>ユーザー編集</h1>
       </div>
-    <input type="text" placeholder="ID"name="user_id" th:field="*{user_id}">
+    <input type disabled ="text" placeholder="ID"name="user_id" th:field="*{user_id}">
     <input type="text" placeholder="名前" name="name" th:field="*{name}">
     <input type="text"  placeholder="Email"name="mail_address" th:field="*{mail_address}">
     <input type="text"  placeholder="Password"name="password" th:field="*{password}">
@@ -18,4 +18,3 @@
     <button id="back" th:href="@{/top}">戻る</button>
   </form>
 </body>
-</html>
