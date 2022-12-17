@@ -52,14 +52,15 @@ public class LearningReportEditController {
 
 	 
 	  @PostMapping("/learningReportEdit")
-	  public String postLearningEdit(@ModelAttribute @Validated LearningReport learningReport,Course course,Chapters chapter,Texts texts, BindingResult result,Model model) {
+	  public String postLearningEdit(@ModelAttribute @Validated LearningReport form,Course course,Chapters chapter,Texts texts, BindingResult result,Model model) {
 			
 			if (result.hasErrors()) {
 				
 				return "redirect:/learningReportEdit";
 			}
-			learningReportEditService.putReport(learningReport,course,chapter,texts);
-			learningReportEditService.update(learningReport);
+			learningReportEditService.putReport(form,course,chapter,texts);
+			learningReportEditService.update(form);
+			model.addAttribute("form",form);
 			return "redirect:/Toppage";
 	  }
 

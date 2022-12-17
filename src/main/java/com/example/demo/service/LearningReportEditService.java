@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.entity.Chapters;
 import com.example.demo.entity.Course;
-import com.example.demo.entity.LearningEditForm;
 import com.example.demo.entity.LearningReport;
 import com.example.demo.entity.Texts;
 import com.example.demo.repository.ChapterRepository;
@@ -50,24 +49,24 @@ public class LearningReportEditService {
 		return textrepository.findAll();
 	}
 
-	public void putReport(LearningReport learningReport,Course course,Chapters chapter,Texts texts){
-		learningReport.setCourse_id(course.getCourse_id());
+	public void putReport(LearningReport form,Course course,Chapters chapter,Texts texts){
+		form.setCourse_id(course.getCourse_id());
 	}
 	
-	public void update(LearningReport learningReport) {
+	public void update(LearningReport form) {
 		
 	
-		LearningEditForm form = new LearningEditForm();
+		LearningReport learningReport = new LearningReport();
 		
-		form.setRema(learningReport.getRema());
-		form.setUser_id(learningReport.getUser_id());
-		form.setCreated_at(learningReport.getCreated_at());
-		form.setStart_time(learningReport.getStart_time());
-		form.setEnd_time(learningReport.getEnd_time());
-		form.setCourse_id(learningReport.getCourse_id());
-		form.setRemark(learningReport.getRemark());
+		learningReport.setRema(form.getRema());
+		learningReport.setUser_id(form.getUser_id());
+		learningReport.setCreated_at(form.getCreated_at());
+		learningReport.setStart_time(form.getStart_time());
+		learningReport.setEnd_time(form.getEnd_time());
+		learningReport.setCourse_id(form.getCourse_id());
+		learningReport.setRemark(form.getRemark());
 		
 		
-		learningReportEditRepository.save(form);
+		learningReportEditRepository.save(learningReport);
 	}
 }
