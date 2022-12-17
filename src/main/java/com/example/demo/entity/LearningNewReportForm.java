@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
-	public class LeaningNewReportForm {
+	public class LearningNewReportForm {
 		
 		@NotEmpty
 		private Integer created_at;
@@ -24,7 +24,5 @@ import lombok.Data;
 		private String chapters_id;
 		
 		@NotNull
-		private String text_id;
-	
-       
+		private String text_id;     
 }
