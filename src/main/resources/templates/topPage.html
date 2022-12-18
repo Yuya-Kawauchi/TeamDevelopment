@@ -37,42 +37,23 @@
 
   
  <table border= "3" >
-   <caption>毎月の学習時間</caption>
+    <caption>毎月の学習時間</caption>
+ <thead>
     <tr bgcolor="#990b14">
       <th>年/月</th>
       <th>名前</th>
       <th>総時間</th>
     </tr>
-    <tr>
-      <td></td>
-     <td th:text="*{name}">--</td>
-      <td>--</td>
-    </tr>
-   <tr>
-      <td>--</td>
-      <td>--</td>
-      <td>--</td>
-    </tr>
-    <tr>
-      <td>--</td>
-      <td>--</td>
-      <td>--</td>
-    </tr>
-    <tr>
-      <td>--</td>
-      <td>--</td>
-      <td>--</td>
-    </tr>
-    <tr>
-      <td>--</td>
-      <td>--</td>
-      <td>--</td>
-    </tr>
-    <tr>
-      <td>--</td>
-      <td>--</td>
-      <td>--</td>
-    </tr>
+         </thead>
+      <tbody  class="record">
+        <tr th:each="userlist:${userlist}" th:object="${userlist}">
+          <td></td>
+          <td th:text="*{name}"></td>
+          <td></td>
+
+        </td>
+        </tr>
+      </tbody>
   </table>
 <ul class="Pagination">
     <li class="Pagination-Item">
