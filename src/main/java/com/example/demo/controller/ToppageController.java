@@ -22,8 +22,14 @@ public class ToppageController {
 		 List<UserEntity> userlist = toppageService.searchAll();
 		 model.addAttribute("userlist", userlist);
 		return "topPage";
+		
+		
 	
 	}
+//	@Autowired
+//	private LearningReport learningReport;
+//	ResultSet date = learningReport.executeQuery("SELECT created_at FROM report_tb;");
+
 //	@GetMapping("/1")
 //    public  UserEntity test1(@AuthenticationPrincipal UserDetails user) {
 //        return ResponseEntity.ok().body(new user.setUser_id(userRequest.getUser_id());
