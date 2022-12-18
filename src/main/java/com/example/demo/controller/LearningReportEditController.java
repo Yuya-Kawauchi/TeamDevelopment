@@ -62,7 +62,7 @@ public class LearningReportEditController {
 		    
 			learningReportEditService.update(form);
 			model.addAttribute("form",form);
-			return "redirect:/Toppage";
+			return "topPage";
 	  }
 
 	  @PostMapping(path = "/learningReportEditUpdate", params = "back")
