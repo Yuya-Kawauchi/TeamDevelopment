@@ -32,7 +32,8 @@ import com.example.demo.repository.TextRepository;
 			
 				LearningNewReportEntity user = new LearningNewReportEntity();
 				user.setRema(LearningNewReportForm.getRema());
-				user.setUser_id(LearningNewReportForm.getUser_id());
+//				user.setUser_id(LearningNewReportForm.getUser_id());
+				user.setUser_id(1);
 			    user.setCreated_at(LearningNewReportForm.getCreated_at());
 			    user.setStart_time(LocalTime.parse(LearningNewReportForm.getStart_time().substring(0,5)+":00"));
 			    user.setEnd_time(LocalTime.parse(LearningNewReportForm.getEnd_time().substring(0,5)+":00"));

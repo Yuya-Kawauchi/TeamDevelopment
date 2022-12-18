@@ -50,7 +50,7 @@ public class LearningNewReportController {
   public String back() {
 	  return "/topPage";
   }			
-	    @GetMapping("/leaningnewreport")
+	    @PostMapping("/leaningnewreport")
 	    public String getleaningmewreport(@ModelAttribute @Validated Model model,BindingResult result,LearningNewReportForm LearningNewReportForm) {
 	    	if (result.hasErrors()) {
 		        // 入力チェックエラーの場合
