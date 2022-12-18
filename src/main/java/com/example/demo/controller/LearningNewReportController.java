@@ -26,15 +26,13 @@ public class LearningNewReportController {
 
 	@Autowired
 	private LearningNewReportService learningNewReportService;
-	
+
 	@Autowired
 	private LearningReportEditService learningReportEditService;
 
-	 @GetMapping("/learningNew")
-		  public String  LearningNewReport(Model model ) {
+	@GetMapping("/learningNew")
+	public String  LearningNewReport(Model model ) {
 		model.addAttribute("LearningNewReportForm",new LearningNewReportForm());
-		//	    LearningReport learningReport = new LearningReport();
-		//	    learningReport.setCreated_at(form,getCreated_at());
 
 		List<Chapters> chapter = learningReportEditService.findChapter();
 		model.addAttribute("chapter", chapter);
@@ -46,35 +44,25 @@ public class LearningNewReportController {
 		model.addAttribute("texts", texts);
 		return "/LeaningNewReport";
 	}
-	 
- 
-	 			
-	    @PostMapping("/leaningnewreport")
-	    public String getleaningmewreport(@ModelAttribute @Validated Model model,BindingResult result,LearningNewReportForm LearningNewReportForm) {
-	    	if (result.hasErrors()) {
-		        // 入力チェックエラーの場合
-		        List<String> errorList = new ArrayList<String>();
-		        for (ObjectError error : result.getAllErrors()) {
-		          errorList.add(error.getDefaultMessage());
-		        }
-		        model.addAttribute("validationError", errorList);
-		        return "/LeaningNewReport";
-		      }    
-// ユーザー情報の登録
-	    	learningNewReportService.insert(LearningNewReportForm);
-	   model.addAttribute("LearningNewReportForm", LearningNewReportForm);
-	      return "/topPage";
-}
-	    @GetMapping("/leaningnewreport/{id}")
-	    public String displayView(@PathVariable Integer id, Model model) {
-	      return "topPage";
-	    }
-}
-	
-	
-	
-	
 
-	
-	
-	
+	@PostMapping("/leaningnewreport")
+	public String getleaningmewreport(@ModelAttribute @Validated LearningNewReportForm LearningNewReportForm,Course course,Chapters chapter,Texts texts, Model model,BindingResult result) {
+		if (result.hasErrors()) {
+			// 入力チェックエラーの場合
+			List<String> errorList = new ArrayList<String>();
+			for (ObjectError error : result.getAllErrors()) {
+				errorList.add(error.getDefaultMessage());
+			}
+			model.addAttribute("validationError", errorList);
+			return "/LeaningNewReport";
+		}    
+		// ユーザー情報の登録
+		learningNewReportService.insert(LearningNewReportForm);
+		model.addAttribute("LearningNewReportForm", LearningNewReportForm);
+		return "/topPage";
+	}
+	@GetMapping("/leaningnewreport/{id}")
+	public String displayView(@PathVariable Integer id, Model model) {
+		return "topPage";
+	}
+}
