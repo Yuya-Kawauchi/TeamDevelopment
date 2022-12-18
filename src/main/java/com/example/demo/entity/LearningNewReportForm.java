@@ -3,6 +3,7 @@ package com.example.demo.entity;
 import java.sql.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Id;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -12,7 +13,7 @@ import lombok.Data;
 public class LearningNewReportForm{
  
 	
-
+@Id
 // @NotNull
  @Column(name = "rema")
  private Integer rema;

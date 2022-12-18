@@ -1,39 +1,55 @@
-<DOCTYPE html>
-<html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="utf-8">
-<script th:src="@{/js/scheduleCreate.js}"></script>
-<title>新規学習報告</title>
-<html lang="en">
-<link rel="stylesheet" href="LeaningNewReport.css"></head>
-<body>
-<form name="login_form">
-<div class="login_form_top"><h1>新規学習報告</h1></div>
-  <form class="login-container">
-  <form th:action="@{/leaningnewreport}" th:object="${LearningNewReportForm}"method="post">
-    <span style="border-bottom: solid 1px rgb(95, 95, 95);">日付</span><input type="date" placeholder="日付"input type="text" name="created_at" th:field="*{scheduleForm.date}">
-    <span style="border-bottom: solid 1px rgb(95, 95, 95);">開始時刻</span><input type="time" placeholder="開始時刻"input type="text" name="start_time" th:field="*{scheduleForm.startTime}">
-    <span style="border-bottom: solid 1px rgb(95, 95, 95);">終了時刻</span><input type="time"  placeholder="終了時刻"input type="text" name="end_time" th:field="*{scheduleForm.endTime}"font color:#fff>
-    <span style="border-bottom: solid 1px  rgb(95, 95, 95);">学習内容</span>
-
-
-    <div class="cp_ipselect cp_sl03">
-
-      <select name="course_id">
-       <option th:each="course : ${course}"th:value="${course.course_id}"th:text="${course.course_id}" ></option>
-       </select>
-       <select name="chapter">
-       <option th:each="chapter : ${chapter}"th:value="${chapter.chapters_id}"th:text="${chapter.chapter}"></option>
-       </select>
-       <select name="texts">
-       <option  th:each="texts: ${texts}"th:value="${texts.text_id}"th:text="${texts.text_name} "></option>
-       </select>
-        <input type="hidden" name="rema" th:field="*{rema}">
-        <input type="hidden" name="user_id" th:field="*{user_id}">
-       </div>
-        <button id="register"> 登録</button>
-        <button id="back" > 戻る</button>
-</form>
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+ <head>
+ <meta charset="utf-8">
+ <title>新規学習報告</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="css/LeaningNewReport.css">
+ </head>
+ <body>
+	<div class="contents">
+	<div class="header">
+	  <h1>新規学習報告</h1>
+    </div>
+	<div class="form">
+	  <form th:action="@{/leaningnewreport}"  th:object="${LearningNewReportForm}" method="POST">
+        <span>日付</span>
+		<input type="date" th:field="*{created_at}" th:text="${#calendars.format(created_at, 'dd/MMM/yyyy HH:mm')}"><br>
+		<span>開始時刻</span>
+		<input type="time" th:field="*{start_time}"  th:text="${#calendars.format(start_time, 'HH:mm')}"> <br>
+		<span>終了時刻</span>
+		<input type="time" th:field="*{end_time}" ><br>
+        <span>学習内容</span>
+		<div class="manu">
+		   <div>
+		   <span>言語：</span>
+		       <select name="course_id">
+		          
+		          <option th:each="course : ${course}"th:value="${course.course_id}"th:text="${course.course_id}"></option>
+		       </select>
+	       </div>
+	        <div>
+	        <span>チャプター：</span>
+		        <select name="chapter">
+		    	 
+			     <option th:each="chapter : ${chapter}"th:value="${chapter.chapters_id}"th:text="${chapter.chapter}"></option>
+		        </select>
+	        </div>
+		    <div>
+		    <span>テキスト：</span>
+		        <select name="texts">
+			       
+			       <option th:each="texts: ${texts}"th:value="${texts.text_id}"th:text="${texts.text_name}"></option>
+		        </select>
+         	</div>
+         	 <input type="hidden" name="rema" th:field="*{rema}">
+         	 <input type="hidden" name="user_id" th:field="*{user_id}">
+         	  
+		</div>
+		<button >登録</button> 
+		<button formaction="/topPage" name="back">戻る</button>
+	  </form>
+    </div>
+  </div>
 </body>
 </html>
