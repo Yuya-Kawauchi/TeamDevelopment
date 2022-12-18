@@ -39,8 +39,6 @@ public class SignupService {
     user.setName(userRequest.getName());
     user.setMail_address(userRequest.getMail_address());
     user.setPassword(userRequest.getPassword());
-    //user.setCreateDate(now);
-    //user.setUpdateDate(now);
     userRepository.save(user);
   }
 }//

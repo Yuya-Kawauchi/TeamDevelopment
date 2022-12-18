@@ -1,14 +1,14 @@
-<!-- HTMLコード -->
 <!DOCTYPE html>
-<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"lang="en">
 <head>
-<meta charset="utf-8">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta charset="UTF-8" />
 <title>トップページ</title>
-<link rel="stylesheet" href="css/topStyle.css">
+<link rel="stylesheet" href="/css/topStyle.css">
 </head>
- 
+   <body>
   <form name="newRegister_form">
-  <body>
+
     <header class="header">
       <!-- ヘッダーロゴ -->
       <div class="logo">トップページ</div>
@@ -44,8 +44,8 @@
       <th>総時間</th>
     </tr>
     <tr>
-      <td>--</td>
-     <td>--</td>
+      <td placeholder="--"></td>
+     <td th:text="*{name}">>--</td>
       <td>--</td>
     </tr>
    <tr>

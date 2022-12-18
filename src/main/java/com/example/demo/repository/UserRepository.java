@@ -11,9 +11,3 @@ import com.example.demo.entity.UserEntity;
  */
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Integer> {}
-
-//画面
-//コントロール
-//サービス
-//リポジトリ
-//エンティティ
