@@ -42,11 +42,8 @@
 			       <option th:each="texts: ${texts}"th:value="${texts.text_id}"th:text="${texts.text_name}"></option>
 		        </select>
          	</div>
-
-         	
-         	  
-		</div>
-		<button >登録</button> 
+         	</div>
+		<button input type="submit">登録</button> 
 		<button formaction="/topPage" name="back">戻る</button>
 	  </form>
     </div>
