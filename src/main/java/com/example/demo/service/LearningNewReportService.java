@@ -1,12 +1,72 @@
 package com.example.demo.service;
 
 
+import java.time.LocalTime;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.example.demo.entity.Chapters;
+import com.example.demo.entity.Course;
+import com.example.demo.entity.LearningNewReportEntity;
+import com.example.demo.entity.LearningNewReportForm;
+import com.example.demo.entity.LearningReport;
+import com.example.demo.entity.Texts;
+import com.example.demo.repository.ChapterRepository;
+import com.example.demo.repository.CourseRepository;
+import com.example.demo.repository.LearningNewReportRepository;
+import com.example.demo.repository.TextRepository;
 
 
 	@Service
 	public class LearningNewReportService{
-		
+			@Autowired
+			LearningNewReportRepository learningNewReportRepository;
+			
+			@Autowired
+			ChapterRepository chapterrepository;
+			
+			@Autowired
+			CourseRepository courserepository;
+			
+			@Autowired
+			TextRepository textrepository;
+			
+			
+			
+			public Optional<LearningNewReportEntity> selectById(Integer rema) {
+				return learningNewReportRepository.findById(rema);
+			}
+			
+			public List<Chapters> findChapter(){
+				return chapterrepository.findAll();
+			}
+			public List<Course> findCourse(){
+				return courserepository.findAll();
+			}
+			public List<Texts> findTexts(){
+				return textrepository.findAll();
+			}
+
+			public void putReport(LearningReport form,Course course,Chapters chapter,Texts texts){
+				form.setCourse_id(course.getCourse_id());
+			}
+			
+			public void insert(LearningNewReportForm form) {
+			
+				LearningNewReportEntity user = new LearningNewReportEntity();
+				user.setRema(form.getRema());
+				user.setUser_id(form.getUser_id());
+			    user.setCreated_at(form.getCreated_at());
+			    user.setStart_time(LocalTime.parse(form.getStart_time().substring(0,5)+":00"));
+			    user.setEnd_time(LocalTime.parse(form.getEnd_time().substring(0,5)+":00"));
+			    user.setCourse_id(form.getCourse_id());
+			    user.setRemark(form.getRemark());				
+				learningNewReportRepository.save(user);
+			}
+		}
 //	    @Autowired 
 //	    LearningNewReportRepository leaningNewReportRepository ;		
 //		public List<LearningNewReportEntity> serchAll() {
@@ -35,4 +95,4 @@ import org.springframework.stereotype.Service;
 //			user.setTextId(reportForm.getText_id());
 //			LearningNewReportRepository.save(user);
 //			}
-	}
+	
