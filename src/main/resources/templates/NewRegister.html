@@ -17,10 +17,10 @@
 <form th:action="@{/user/create}" th:object="${userRequest}" th:method="post">
 
   <form class="newRegister-container">
-   <input type="text" name="name" th:field="*{name}"placeholder="名前"></input>
-   <input type="text" th:field="*{user_id}"  placeholder="ID"></input>
-   <input type="text" th:field="*{password}"  placeholder="Password"></input>
-   <input type="text" th:field="*{mail_address}"  placeholder="Email"></input>
+   <input type="text" name="name" th:field="*{name}"placeholder="名前" required="required"></input>
+   <input type="text" th:field="*{user_id}"  placeholder="ID" required="required"></input>
+   <input type="text" th:field="*{password}"  placeholder="Password" required="required"></input>
+   <input type="email" th:field="*{mail_address}"  placeholder="Email" required="required"></input>
    <input type="submit" value="登録" id="register"></input>
    <input type="button" value="戻る" id="back"></input>
   </form>
