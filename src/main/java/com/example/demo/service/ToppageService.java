@@ -12,9 +12,9 @@ import com.example.demo.repository.UserRepository;
 public class ToppageService {
 	
 	@Autowired
-	  private static UserRepository userRepository;
+	  private  UserRepository userRepository;
 	
-	 public static List<UserEntity> searchAll() {
+	 public List<UserEntity> searchAll() {
 		    return userRepository.findAll();
 		  }
 	 

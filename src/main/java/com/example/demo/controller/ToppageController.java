@@ -19,9 +19,10 @@ public class ToppageController {
 	 
 	@GetMapping("/home")
 	public String getHome(Model model) {
-		 List<UserEntity> userlist = ToppageService.searchAll();
+		 List<UserEntity> userlist = toppageService.searchAll();
 		 model.addAttribute("userlist", userlist);
 		return "topPage";
+	
 	}
 //	@GetMapping("/1")
 //    public  UserEntity test1(@AuthenticationPrincipal UserDetails user) {
