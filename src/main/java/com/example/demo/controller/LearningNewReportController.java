@@ -30,6 +30,8 @@ public class LearningNewReportController {
 	@Autowired
 	private LearningReportEditService learningReportEditService;
 
+
+	
 	@GetMapping("/learningNew")
 	public String  LearningNewReport(Model model ) {
 		model.addAttribute("LearningNewReportForm",new LearningNewReportForm());
@@ -65,4 +67,8 @@ public class LearningNewReportController {
 	public String displayView(@PathVariable Integer id, Model model) {
 		return "topPage";
 	}
+	 @PostMapping(path = "/learningNew", params = "back")
+	  public String modoru() {
+		  return "redirect:/home";
+	  }
 }
