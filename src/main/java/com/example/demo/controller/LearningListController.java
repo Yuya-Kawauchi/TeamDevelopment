@@ -27,16 +27,18 @@ public class LearningListController {
 	  public String showLearningList(Model model) {
 	    List<LearningReport> learningreport = learningListService.findAll();
 	    model.addAttribute("learningreport", learningreport);
-//	    SimpleDateFormat formatter = new SimpleDateFormat ("yyyy/MM/dd HH:mm:ss");
-//	    formatter.setTimeZone(TimeZone.getTimeZone("GMT"));
-//	    Date startDate = formatter.parse(learningreport.getStart_time()); // 開始時刻
-//	    Date endDate = formatter.parse("04/05/11 17:01:30"); // 終了時刻
-//	    long total_time = endDate.getTime() - startDate.getTime();
-//	    String totaltime = formatter.format(new Date(total_time));
-	    
-
 	    return "learningReportList";
 	  }
+	  
+//	  @GetMapping("/learningReportList")
+//	  public String showLearningList(@RequestParam("user_id") Integer user_id,Model model) {
+//	    Optional<LearningReport> learningreport = learningListService.findById(user_id);
+//	    model.addAttribute("learningreport", learningreport);
+//
+//	    return "learningReportList";
+//	  }
+//	  
+	  
 	  
 	  @PostMapping(path = "learningReportList", params = "edit")
 	  public String postLearningList(RedirectAttributes redirectAttributes,@RequestParam("rema") Integer rema, @ModelAttribute LearningReport learningreport ,Model model) {

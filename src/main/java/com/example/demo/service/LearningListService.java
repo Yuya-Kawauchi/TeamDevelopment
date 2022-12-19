@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.LearningReport;
@@ -17,10 +18,13 @@ public class LearningListService {
 
 	  public List<LearningReport> findAll() {
 		  
-	    return learningListRepository.findAll();
+	    return learningListRepository.findAll(Sort.by(Sort.Direction.ASC, "rema"));
 	  }
 	  
-	  
+	  public Optional<LearningReport> findById(Integer user_id) {
+		  
+		    return learningListRepository.findById(user_id);
+		  }
 	  
 	  public Optional<LearningReport> selectById(Integer rema) {
 		 return learningListRepository.findById(rema);
