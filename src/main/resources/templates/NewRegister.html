@@ -7,10 +7,12 @@
 <link href="/css/NewRegister.css"rel="stylesheet">
 </head>
 <body>
-
+ <header class="header">
+      <!-- ヘッダーロゴ -->
+      <div class="logo">ユーザー新規登録</div>
+</header>
 <form name="newRegister_form">
       <div class="newRegister_form_top">
-        <h1>ユーザー新規登録</h1>
       </div>
 </form>
 <div th:if="${validationError}" th:each="error:${validationError}"></div>
@@ -22,13 +24,8 @@
    <input type="text" th:field="*{password}"  placeholder="Password" required="required"></input>
    <input type="email" th:field="*{mail_address}"  placeholder="Email" required="required"></input>
    <input type="submit" value="登録" id="register"></input>
-   <input type="button" value="戻る" id="back"></input>
+   <input type="button" value="戻る" id="back" onclick="history.back()"></input>
   </form>
 </form>  
-  <!-- <div th:if="${validationError}" th:each="error : ${validationError}">
-   <label class="text-danger" th:text="${error}"></label>
-  </div> -->
 </body>
 </html>
-
-<!--  -->
