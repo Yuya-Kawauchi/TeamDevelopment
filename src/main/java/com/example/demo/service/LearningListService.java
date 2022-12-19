@@ -18,7 +18,7 @@ public class LearningListService {
 
 	  public List<LearningReport> findAll() {
 		  
-	    return learningListRepository.findAll(Sort.by(Sort.Direction.ASC, "rema"));
+	    return learningListRepository.findAll(Sort.by(Sort.Direction.DESC, "rema"));
 	  }
 	  
 	  public Optional<LearningReport> findById(Integer user_id) {
@@ -29,6 +29,9 @@ public class LearningListService {
 	  public Optional<LearningReport> selectById(Integer rema) {
 		 return learningListRepository.findById(rema);
 	  }
+	  
+//	  総時間
+	  
 	  
 	  public void delete(Integer rema){
 //		 Optional<LearningReport> learningReport = learningListRepository.findById(rema);

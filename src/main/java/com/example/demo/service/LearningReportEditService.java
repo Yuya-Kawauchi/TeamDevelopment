@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import java.text.SimpleDateFormat;
+//import java.text.SimpleDateFormat;
 import java.time.LocalTime;
 import java.util.List;
 import java.util.Optional;
@@ -60,7 +60,7 @@ public class LearningReportEditService {
 	
 		LearningReport learningReport = new LearningReport();
 		
-		SimpleDateFormat sdFormat = new SimpleDateFormat("hh:mm:ss");
+//		SimpleDateFormat sdFormat = new SimpleDateFormat("hh:mm:ss");
 
 		learningReport.setRema(form.getRema());
 	    learningReport.setUser_id(form.getUser_id());
