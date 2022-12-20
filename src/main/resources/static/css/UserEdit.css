@@ -1,50 +1,65 @@
-@charset "UTF-8";
-
 body {
-background-image:url(./images/haikei.png);
-height: 100vh;
-position: fixed;
-background-size: cover;
-background-position: center;
-background-attachment: fixed;
-color: white;
-}
-
-form {
-    width: 400px;
-    padding:　25px 10px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    background-image:url(./images/haikei.png); 
+    top:  50px;
+    height: auto;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    
+    }
+.contents{
+    width: 50%;
+    height: 100%;
+    padding: 25px 10px;
+    position: relative;
+    top: 5%;
+    margin: 0 auto;
     background-color: #000;
     text-align: center;
-  }
+}
 
 form h1{
     color: white;
     font-weight: 500;
-  }
-
-  form input[type = "text"],form input[type = "text"] ,form input[type = "text"],form input[type = "text"]{
+    }
+    
+form input[type = "text"]{
     border: 0;
     background: none;
     display: block;
     margin: 20px auto;
     border: 2px solid #990b14;
     padding: 15px 10px;
-    width: 200px;
+    width: 250px;
     outline: none;
     border-radius: 24px;
     transition: 0.25s;
     text-align: center;
-    color:#fff;
-  }
+    }
 
-button{
+ .manu{
+        border: 0;
+        background: none;
+        display: block;
+        margin: 20px auto;
+        border: 3px solid #990b14;
+        padding: 20px 10px;
+        width: 250px;
+        outline: none;
+        border-radius: 24px;
+        transition: 0.25s;
+        text-align: center;
+    }
+form input[type = "text"]{
+    width: 280px;
+    color: #fff;
+    }
+form button{
     border: 0;
     background: none;
-    display: block;
+    display: inline;
     margin: 10px auto;
     padding: 10px 10px;
     width: 200px;
@@ -53,8 +68,23 @@ button{
     transition: 0.25s;
     text-align: center;
     cursor: pointer;
-  }
-  
-button:hover {
+    }
+form button:hover {
+    background-color: #990b14
+    }  
+    button{
+    border: 0;
+    background: none;
+     display: block;
+    margin: 10px auto;
+    padding: 10px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    transition: 0.25s;
+    text-align: center;
+    cursor: pointer;
+    }
+    button:hover {
     background-color: #990b14
     }  
