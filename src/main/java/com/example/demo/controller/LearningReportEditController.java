@@ -50,8 +50,7 @@ public class LearningReportEditController {
 	    model.addAttribute("texts", texts);
 	    return "learningReportEdit";
 	  }
-//	  
-	
+ 
 
 	 
 	  @PostMapping("/learningReportEditUpdate")
