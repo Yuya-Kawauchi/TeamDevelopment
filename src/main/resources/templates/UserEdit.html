@@ -15,7 +15,8 @@
     <input type="text"  placeholder="Email"name="mail_address" th:field="*{mail_address}">
     <input type="text"  placeholder="Password"name="password" th:field="*{password}">
     <button id="change"type="submit"> 更新</button>
-    <button type="button" id="back" onclick="history.back(-1);">戻る</button>
+    <a th:href="@{/home}">
+    <input type="button" class="back"  value="戻る" ></input></a>
   </form>
 </body>
 </html>

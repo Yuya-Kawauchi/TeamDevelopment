@@ -29,8 +29,6 @@ public class LearningNewReportController {
 	@Autowired
 	private LearningReportEditService learningReportEditService;
 
-
-	
 	@GetMapping("/learningNew")
 	public String  LearningNewReport(Model model ) {
 		model.addAttribute("LearningNewReportForm",new LearningNewReportForm());
