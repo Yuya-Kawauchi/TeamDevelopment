@@ -1,7 +1,5 @@
 package com.example.demo.controller;
 
-import java.sql.Time;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.demo.entity.LearningListform;
 import com.example.demo.entity.LearningReport;
 import com.example.demo.service.LearningListService;
 
@@ -28,40 +25,40 @@ public class LearningListController {
 	private LearningListService learningListService;
 
 	
-//	  @GetMapping("/learningReportList")
-//	  public String showLearningList(Model model) {
-//	    List<LearningReport> learningreport = learningListService.findAll();
-//	    model.addAttribute("learningreport",learningreport);
-//	    return "learningReportList";
-//	  }
+	  @GetMapping("/learningReportList")
+	  public String showLearningList(Model model) {
+	    List<LearningReport> learningreport = learningListService.findAll();
+	    model.addAttribute("learningreport",learningreport);
+	    return "learningReportList";
+	  }
 
 	
 	
-	  @GetMapping("/learningReportList")
-	  public String showLearningList(RedirectAttributes redirectAttributes,Model model) {
-	    List<LearningReport> learningreport = learningListService.findAll();
-	    model.addAttribute("learningreport",learningreport);
-	    redirectAttributes.addFlashAttribute("learningreport",learningreport);
-	    return "redirect:/learningReportListp";
-	  }
-	  
-	
-	  @GetMapping("/learningReportListp")
-	  public String showLearningListp(@ModelAttribute LearningReport learningreport,Model model) {
-		    Long minutes = ChronoUnit.MINUTES.between(learningreport.getEnd_time(), learningreport.getStart_time());
-		    Time total = new Time(minutes);
-		    LearningListform form = new LearningListform();
-		    form.setTotal_time(total);
-		    form.setRema(learningreport.getRema());
-		    form.setUser_id(learningreport.getUser_id());
-		    form.setCreated_at(learningreport.getCreated_at());
-		    form.setStart_time(learningreport.getStart_time());
-		    form.setEnd_time(learningreport.getEnd_time());
-		    form.setCourse_id(learningreport.getCourse_id());
-		    form.setRemark(learningreport.getRemark());
-		    model.addAttribute("form",form);
-		    return "learningReportList";
-		  }
+//	  @GetMapping("/learningReportList")
+//	  public String showLearningList(RedirectAttributes redirectAttributes,Model model) {
+//	    List<LearningReport> learningreport = learningListService.findAll();
+//	    model.addAttribute("learningreport",learningreport);
+//	    redirectAttributes.addFlashAttribute("learningreport",learningreport);
+//	    return "redirect:/learningReportListp";
+//	  }
+//	  
+//	
+//	  @GetMapping("/learningReportListp")
+//	  public String showLearningListp(@ModelAttribute LearningReport learningreport,Model model) {
+//		    Long minutes = ChronoUnit.MINUTES.between(learningreport.getEnd_time(), learningreport.getStart_time());
+//		    Time total = new Time(minutes);
+//		    LearningListform form = new LearningListform();
+//		    form.setTotal_time(total);
+//		    form.setRema(learningreport.getRema());
+//		    form.setUser_id(learningreport.getUser_id());
+//		    form.setCreated_at(learningreport.getCreated_at());
+//		    form.setStart_time(learningreport.getStart_time());
+//		    form.setEnd_time(learningreport.getEnd_time());
+//		    form.setCourse_id(learningreport.getCourse_id());
+//		    form.setRemark(learningreport.getRemark());
+//		    model.addAttribute("form",form);
+//		    return "learningReportList";
+//		  }
 
 	  
 	  
