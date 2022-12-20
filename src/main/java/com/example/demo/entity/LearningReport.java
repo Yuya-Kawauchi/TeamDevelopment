@@ -9,8 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -24,30 +22,30 @@ import lombok.Data;
 		
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	 @NotNull
+//	 @NotNull
 	 @Column(name = "rema")
 	 private Integer rema;
 	 
-	 @NotNull
+//	 @NotNull
 	 @Column(name = "user_id")
 	 private Integer user_id;
 
-	 @NotBlank (message = "日付を入力してください。")
+//	 @NotBlank (message = "日付を入力してください。")
 	 @Column(name = "created_at")
 //	 @DateTimeFormat(pattern = "YYYY-MM-DD")
 	 private Date created_at;
 	 
-	 @NotBlank (message = "時間を入力してください。")
+//	 @NotBlank (message = "時間を入力してください。")
 	 @DateTimeFormat(pattern = "HH:mm:ss")
 	 @Column(name = "start_time")
 	 private LocalTime start_time ;
 	 
-	 @NotBlank (message = "時間を入力してください。")
+//	 @NotBlank (message = "時間を入力してください。")
 	 @DateTimeFormat(pattern = "HH:mm:ss")
 	 @Column(name = "end_time")
 	 private LocalTime end_time ;
 	 
-	 @NotBlank
+//	 @NotBlank
 	 @Column(name = "course_id")
 	 private String course_id;
 	 

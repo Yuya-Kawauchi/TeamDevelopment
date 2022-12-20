@@ -36,16 +36,16 @@ public class LearningListService {
 		 return learningListRepository.findById(rema);
 	  }
 	  
-////	  総時間
+//	  総時間
 //	  public List<LearningReport> findAllTotal(LearningReport form) {
 //			
-////			SimpleDateFormat sdFormat = new SimpleDateFormat("hh:mm:ss");
+//			SimpleDateFormat sdFormat = new SimpleDateFormat("hh:mm:ss");
 //		  LearningReport learningReport = new LearningReport();
 //		  	
 //			learningReport.setRema(form.getRema());
 //		    learningReport.setUser_id(form.getUser_id());
-////			learningReport.setRema(1);
-////			learningReport.setUser_id(1);
+//			learningReport.setRema(1);
+//			learningReport.setUser_id(1);
 //			learningReport.setCreated_at(form.getCreated_at());
 //			learningReport.setStart_time(form.getStart_time());
 //			learningReport.setEnd_time(form.getEnd_time());
