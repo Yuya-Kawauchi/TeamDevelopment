@@ -54,6 +54,6 @@ import lombok.Data;
 	 @Column(name = "remark")
 	 private String remark;
 	 
-	 
+
 	
 }

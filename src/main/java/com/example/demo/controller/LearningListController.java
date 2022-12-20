@@ -22,13 +22,31 @@ import com.example.demo.service.LearningListService;
 public class LearningListController {
 	@Autowired
 	private LearningListService learningListService;
+
 	
 	  @GetMapping("/learningReportList")
 	  public String showLearningList(Model model) {
 	    List<LearningReport> learningreport = learningListService.findAll();
-	    model.addAttribute("learningreport", learningreport);
+	    model.addAttribute("learningreport",learningreport);
 	    return "learningReportList";
 	  }
+	  
+//	  @GetMapping("/learningReportList")
+//	  public String showLearningList(Model model) {
+//	    List<LearningReport> learningreport = learningListService.findAll();
+//	    model.addAttribute("learningreport",learningreport);
+//	    return "redirect:/learningReportListp";
+//	  }
+//	  
+//	  @GetMapping("/learningReportListp")
+//	  public String showLearningListp(@ModelAttribute LearningReport learningreport,Model model) {
+//		    Long minutes = ChronoUnit.MINUTES.between(learningreport.getEnd_time(), learningreport.getStart_time());
+//		    Date total = new Date(minutes);
+//		    model.addAttribute("total", total);
+//		    model.addAttribute("learningreport",learningreport);
+//		    return "learningReportList";
+//		  }
+//	  
 	  
 //	  @GetMapping("/learningReportList")
 //	  public String showLearningList(@RequestParam("user_id") Integer user_id,Model model) {
