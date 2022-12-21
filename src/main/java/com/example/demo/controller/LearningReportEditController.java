@@ -54,11 +54,11 @@ public class LearningReportEditController {
 	  
 	  
 	  @PostMapping("/learningReportEditUpdate")
-	  public String postLearningEdit(@Validated @ModelAttribute Learningform form,Course course,Chapters chapter,Texts texts,BindingResult result, Model model) throws ParseException {
+	  public String postLearningEdit(@Validated @ModelAttribute Learningform form,Course course,Chapters chapter,Texts texts,BindingResult bindingResult, Model model) throws ParseException {
 			
-			if (result.hasErrors()) {
+			if (bindingResult.hasErrors()) {
 			       List<String> errorList = new ArrayList<String>();
-		            for (ObjectError error : result.getAllErrors()) {
+		            for (ObjectError error : bindingResult.getAllErrors()) {
 		                errorList.add(error.getDefaultMessage());
 			}
 		            
