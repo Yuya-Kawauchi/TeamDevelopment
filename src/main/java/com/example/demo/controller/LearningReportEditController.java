@@ -50,9 +50,9 @@ public class LearningReportEditController {
 	    model.addAttribute("texts", texts);
 	    return "learningReportEdit";
 	  }
- 
-
-	 
+	  
+	  
+	  
 	  @PostMapping("/learningReportEditUpdate")
 	  public String postLearningEdit(@Validated @ModelAttribute Learningform form,Course course,Chapters chapter,Texts texts, Model model,BindingResult result) {
 			

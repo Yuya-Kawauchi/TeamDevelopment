@@ -1,7 +1,11 @@
 package com.example.demo.service;
 
+import java.sql.Time;
+import java.text.SimpleDateFormat;
 //import java.text.SimpleDateFormat;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,18 +64,21 @@ public class LearningReportEditService {
 	
 		LearningReport learningReport = new LearningReport();
 		
-//		SimpleDateFormat sdFormat = new SimpleDateFormat("hh:mm:ss");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm:ss");
 
 		learningReport.setRema(form.getRema());
 	    learningReport.setUser_id(form.getUser_id());
-//		learningReport.setRema(1);
-//		learningReport.setUser_id(1);
 		learningReport.setCreated_at(form.getCreated_at());
 		learningReport.setStart_time(LocalTime.parse(form.getStart_time().substring(0,5)+":00"));
 		learningReport.setEnd_time(LocalTime.parse(form.getEnd_time().substring(0,5)+":00"));
 		learningReport.setCourse_id(form.getCourse_id());
 		learningReport.setRemark(form.getRemark());
-		
+		Long millis = ChronoUnit.MILLIS.between(learningReport.getEnd_time(), learningReport.getStart_time());
+	    Time total = new Time(millis);
+	    
+	    String str = new SimpleDateFormat("HH:mm:ss").format(total);
+	    LocalTime timeT = LocalTime.parse(str, DateTimeFormatter.ofPattern("HH:mm:ss"));
+	    learningReport.setTotal_time(timeT);
 
 		
 		learningReportEditRepository.save(learningReport);

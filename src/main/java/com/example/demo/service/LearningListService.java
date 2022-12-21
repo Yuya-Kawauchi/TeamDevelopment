@@ -15,13 +15,16 @@ import com.example.demo.repository.LearningListRepository;
 public class LearningListService {
 	 @Autowired
 	  private LearningListRepository learningListRepository;
-	
-
-//	  public List<Learningform> findAll() {
-//		  
-//	    return learningFormRepository.findAll(Sort.by(Sort.Direction.DESC, "rema"));
+//	 @Autowired
+//	  private LearningformRepository learningformRepository;
+	 
+	 
+	 
+//	  public List<Learningform> findAll() { 
+//	    return learningformRepository.findAll(Sort.by(Sort.Direction.DESC, "rema"));
 //	  }
 	  
+	 
 	  public List<LearningReport> findAll() {
 		  
 		    return learningListRepository.findAll(Sort.by(Sort.Direction.DESC, "rema"));
@@ -35,6 +38,7 @@ public class LearningListService {
 	  public Optional<LearningReport> selectById(Integer rema) {
 		 return learningListRepository.findById(rema);
 	  }
+	  
 	  
 //	  総時間
 //	  public List<LearningReport> findAllTotal(LearningReport form) {
@@ -59,7 +63,8 @@ public class LearningListService {
 //		    
 //			return learningListRepository.findAll(Sort.by(Sort.Direction.DESC, "rema"));
 //		}
-//	  
+
+	  
 	  public void delete(Integer rema){
 //		 Optional<LearningReport> learningReport = learningListRepository.findById(rema);
 		 learningListRepository.deleteById(rema);

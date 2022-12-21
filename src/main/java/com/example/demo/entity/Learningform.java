@@ -44,6 +44,8 @@ import lombok.Data;
 	 @Column(name = "remark")
 	 private String remark;
 	 
-
+	 @DateTimeFormat(pattern = "HH:mm:ss")
+	 @Column(name = "total_time")
+	 private String total_time;
 	
 }

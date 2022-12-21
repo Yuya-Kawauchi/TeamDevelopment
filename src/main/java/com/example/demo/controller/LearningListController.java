@@ -35,18 +35,55 @@ public class LearningListController {
 	
 	
 //	  @GetMapping("/learningReportList")
+//	  public String showLearningList(Model model) {
+//	    List<LearningReport> learningreport = learningListService.findAll();
+//	    Long millis = ChronoUnit.MILLIS.between(learningreport.getEnd_time(), learningreport.getStart_time());
+//	    Time total = new Time(millis);
+//	    Time.toLocalTime​(total);
+//	    LearningListform form = new LearningListform();
+//	    form.setTotal_time(total);
+//	    form.setRema(learningreport.getRema());
+//	    form.setUser_id(learningreport.getUser_id());
+//	    form.setCreated_at(learningreport.getCreated_at());
+//	    form.setStart_time(learningreport.getStart_time());
+//	    form.setEnd_time(learningreport.getEnd_time());
+//	    form.setCourse_id(learningreport.getCourse_id());
+//	    form.setRemark(learningreport.getRemark());
+//	    model.addAttribute("form",form);
+//	    model.addAttribute("learningreport",learningreport);
+//	    return "redirect:/learningReportListp";
+//	  }
+	
+//	  @GetMapping("/learningReportList")
+//	  public String showLearningList(Model model) {
+//	    List<LearningReport> learningreport = learningListService.findAll();
+//	    
+//	    form.setRema(learningreport.getRema());
+//	    form.setUser_id(learningreport.getUser_id());
+//	    form.setCreated_at(learningreport.getCreated_at());
+//	    form.setStart_time(learningreport.getStart_time());
+//	    form.setEnd_time(learningreport.getEnd_time());
+//	    form.setCourse_id(learningreport.getCourse_id());
+//	    form.setRemark(learningreport.getRemark());
+//	    model.addAttribute("form",form);
+//	    model.addAttribute("learningreport",learningreport);
+//	    return "redirect:/learningReportListp";
+//	  }
+//	  
+	
+//	  @GetMapping("/learningReportList")
 //	  public String showLearningList(RedirectAttributes redirectAttributes,Model model) {
 //	    List<LearningReport> learningreport = learningListService.findAll();
 //	    model.addAttribute("learningreport",learningreport);
 //	    redirectAttributes.addFlashAttribute("learningreport",learningreport);
 //	    return "redirect:/learningReportListp";
 //	  }
-//	  
+//
 //	
 //	  @GetMapping("/learningReportListp")
 //	  public String showLearningListp(@ModelAttribute LearningReport learningreport,Model model) {
-//		    Long minutes = ChronoUnit.MINUTES.between(learningreport.getEnd_time(), learningreport.getStart_time());
-//		    Time total = new Time(minutes);
+//		    Long millis = ChronoUnit.MILLIS.between(learningreport.getEnd_time(), learningreport.getStart_time());
+//		    Time total = new Time(millis);
 //		    LearningListform form = new LearningListform();
 //		    form.setTotal_time(total);
 //		    form.setRema(learningreport.getRema());
@@ -96,8 +133,8 @@ public class LearningListController {
 //		    form.setTotal_time(total);
 //		    form.setRema(learningreport.getRema());
 //		    form.setUser_id(learningreport.getUser_id());
-////			learningReport.setRema(1);
-////			learningReport.setUser_id(1);
+//   		learningReport.setRema(1);
+//	    	learningReport.setUser_id(1);
 //		    form.setCreated_at(learningreport.getCreated_at());
 //		    form.setStart_time(learningreport.getStart_time());
 //		    form.setEnd_time(learningreport.getEnd_time());
@@ -106,7 +143,8 @@ public class LearningListController {
 //		    model.addAttribute("form",form);
 //		    return "learningReportList";
 //		  }
-//	  
+	  
+	  
 	  
 //	  @GetMapping("/learningReportList")
 //	  public String showLearningList(@RequestParam("user_id") Integer user_id,Model model) {

@@ -23,12 +23,12 @@
         </tr>
       </thead>
       <tbody  class="record">
-        <tr th:each="form,s:${form}" class="record">
+        <tr th:each="learningreport,s:${learningreport}" class="record">
           <td th:text="${s.count}"></td>
-          <td th:text="${#dates.format(form.created_at, 'YYYY/MM/dd')}"></td>
-          <td th:text="${form.start_time}"></td>
-          <td th:text="${form.end_time}"></td>
-          <td ></td>
+          <td th:text="${#dates.format(learningreport.created_at, 'YYYY/MM/dd')}"></td>
+          <td th:text="${learningreport.start_time}"></td>
+          <td th:text="${learningreport.end_time}"></td>
+          <td th:text="${learningreport.total_time}"></td>
           <td>
             <form th:action="@{/learningReportList}" method="post">
                 <button name="edit">編集</button>
