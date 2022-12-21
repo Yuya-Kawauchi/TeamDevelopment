@@ -50,4 +50,8 @@ public class LearningNewReportEntity{
  
  @Column(name = "remark")
  private String remark;
+ 
+ @DateTimeFormat(pattern = "HH:mm:ss")
+ @Column(name = "total_time")
+ private LocalTime total_time;
  }
