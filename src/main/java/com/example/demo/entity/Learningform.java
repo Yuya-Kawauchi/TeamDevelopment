@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 import java.io.Serializable;
 import java.sql.Date;
+import java.time.LocalTime;
 
 import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
@@ -24,8 +25,8 @@ import lombok.Data;
 	 private Integer user_id;
 
 	@NotNull (message = "日付を入力してください。")
+//	 @DateTimeFormat(pattern = "yyyy-MM-dd")
 	 @Column(name = "created_at")
-//	 @DateTimeFormat(pattern = "YYYY-MM-DD")
 	 private Date created_at;
 	 
 	@NotNull (message = "時間を入力してください。")
@@ -47,6 +48,6 @@ import lombok.Data;
 	 
 	 @DateTimeFormat(pattern = "HH:mm:ss")
 	 @Column(name = "total_time")
-	 private String total_time;
+	 private LocalTime total_time;
 	
 }

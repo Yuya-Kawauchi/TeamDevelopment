@@ -25,6 +25,7 @@ import com.example.demo.service.LearningReportEditService;
 
 
 @Controller
+@Validated 
 public class LearningReportEditController {
 
 	@Autowired
@@ -54,7 +55,7 @@ public class LearningReportEditController {
 	  
 	  
 	  @PostMapping("/learningReportEditUpdate")
-	  public String postLearningEdit(@Validated @ModelAttribute Learningform form,Course course,Chapters chapter,Texts texts,BindingResult bindingResult, Model model) throws ParseException {
+	  public String postLearningEdit(@ModelAttribute @Validated  Learningform form,Course course,Chapters chapter,Texts texts,BindingResult bindingResult, Model model) throws ParseException {
 			
 			if (bindingResult.hasErrors()) {
 			       List<String> errorList = new ArrayList<String>();
@@ -62,9 +63,8 @@ public class LearningReportEditController {
 		                errorList.add(error.getDefaultMessage());
 			}
 		            
-		            Optional<LearningReport> learningreport = learningListService.selectById(form.getRema());
 		            model.addAttribute("validationError", errorList);
-		            model.addAttribute("learningreport",learningreport);
+		            model.addAttribute("learningreport",form);
 		            return "redirect:/learningReportEdit";
 			}
 		    

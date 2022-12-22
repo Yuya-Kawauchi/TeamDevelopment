@@ -1,10 +1,7 @@
 package com.example.demo.service;
 
-import java.sql.Time;
-import java.text.SimpleDateFormat;
 //import java.text.SimpleDateFormat;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Optional;
@@ -73,12 +70,16 @@ public class LearningReportEditService {
 		learningReport.setEnd_time(LocalTime.parse(form.getEnd_time().substring(0,5)+":00"));
 		learningReport.setCourse_id(form.getCourse_id());
 		learningReport.setRemark(form.getRemark());
-		Long millis = ChronoUnit.MILLIS.between(learningReport.getEnd_time(), learningReport.getStart_time());
-	    Time total = new Time(millis);
-	    
-	    String str = new SimpleDateFormat("HH:mm:ss").format(total);
-	    LocalTime timeT = LocalTime.parse(str, DateTimeFormatter.ofPattern("HH:mm:ss"));
-	    learningReport.setTotal_time(timeT);
+		Long minutes = ChronoUnit.MINUTES.between(learningReport.getStart_time(), learningReport.getEnd_time());
+		Long totalH = minutes/60;
+		int totalHour = Math.toIntExact(totalH);
+		Long totalM = minutes%60;
+		int totalMinites = Math.toIntExact(totalM);
+		LocalTime total =  LocalTime.of(totalHour,totalMinites);
+//	    String str = new SimpleDateFormat("HH:mm:ss").format(total);
+//	    LocalTime timeT = LocalTime.parse(str, DateTimeFormatter.ofPattern("HH:mm:ss"));
+//	    learningReport.setTotal_time(timeT);
+	    learningReport.setTotal_time(total);
 
 		
 		learningReportEditRepository.save(learningReport);
