@@ -64,7 +64,7 @@ public class LearningReportEditService {
 	
 		LearningReport learningReport = new LearningReport();
 		
-		SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm:ss");
+//		SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm:ss");
 
 		learningReport.setRema(form.getRema());
 	    learningReport.setUser_id(form.getUser_id());

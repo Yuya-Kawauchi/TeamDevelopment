@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.expression.ParseException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -33,7 +34,7 @@ public class LearningReportEditController {
 	
 	
 	  @GetMapping("/learningReportEdit")
-	  public String  showLearningEdit( @ModelAttribute("rema") Integer rema ,Model model ) {
+	  public String  showLearningEdit( @ModelAttribute("rema") Integer rema, LearningReport learningreport,Model model ) {
 //	form = learningReportEditService.selectById(rema);
 	    
 	    Optional<LearningReport> form = learningListService.selectById(rema);
@@ -52,17 +53,19 @@ public class LearningReportEditController {
 	  }
 	  
 	  
-	  
 	  @PostMapping("/learningReportEditUpdate")
-	  public String postLearningEdit(@Validated @ModelAttribute Learningform form,Course course,Chapters chapter,Texts texts, Model model,BindingResult result) {
+	  public String postLearningEdit(@Validated @ModelAttribute Learningform form,Course course,Chapters chapter,Texts texts,BindingResult bindingResult, Model model) throws ParseException {
 			
-			if (result.hasErrors()) {
+			if (bindingResult.hasErrors()) {
 			       List<String> errorList = new ArrayList<String>();
-		            for (ObjectError error : result.getAllErrors()) {
+		            for (ObjectError error : bindingResult.getAllErrors()) {
 		                errorList.add(error.getDefaultMessage());
 			}
+		            
+		            Optional<LearningReport> learningreport = learningListService.selectById(form.getRema());
 		            model.addAttribute("validationError", errorList);
-		            return "/learningReportEdit";
+		            model.addAttribute("learningreport",learningreport);
+		            return "redirect:/learningReportEdit";
 			}
 		    
 			learningReportEditService.update(form);
