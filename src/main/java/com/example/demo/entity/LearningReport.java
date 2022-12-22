@@ -23,30 +23,30 @@ import lombok.Data;
 		
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	 @NotNull
+//	 @NotNull
 	 @Column(name = "rema")
 	 private Integer rema;
 	 
-	 @NotNull
+//	 @NotNull
 	 @Column(name = "user_id")
 	 private Integer user_id;
 
 	 @NotNull (message = "日付を入力してください。")
-//	 @DateTimeFormat(pattern = "yyyy-MM-dd")
+	 @DateTimeFormat(pattern = "yyyy-MM-dd")
 	 @Column(name = "created_at")
 	 private Date created_at;
 	 
-	 @NotNull (message = "時間を入力してください。")
+//	 @NotNull (message = "時間を入力してください。")
 	 @DateTimeFormat(pattern = "HH:mm:ss")
 	 @Column(name = "start_time")
 	 private LocalTime start_time ;
 	 
-	 @NotNull (message = "時間を入力してください。")
+//	 @NotNull (message = "時間を入力してください。")
 	 @DateTimeFormat(pattern = "HH:mm:ss")
 	 @Column(name = "end_time")
 	 private LocalTime end_time ;
 	 
-	 @NotNull
+//	 @NotNull
 	 @Column(name = "course_id")
 	 private String course_id;
 	 

@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.expression.ParseException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -55,17 +54,18 @@ public class LearningReportEditController {
 	  
 	  
 	  @PostMapping("/learningReportEditUpdate")
-	  public String postLearningEdit(@ModelAttribute @Validated  Learningform form,Course course,Chapters chapter,Texts texts,BindingResult bindingResult, Model model) throws ParseException {
+	  public String postLearningEdit(@ModelAttribute @Validated  Learningform form,BindingResult bindingResult, Model model,Course course,Chapters chapter,Texts texts) {
 			
 			if (bindingResult.hasErrors()) {
 			       List<String> errorList = new ArrayList<String>();
 		            for (ObjectError error : bindingResult.getAllErrors()) {
 		                errorList.add(error.getDefaultMessage());
 			}
-		            
+
+	
 		            model.addAttribute("validationError", errorList);
-		            model.addAttribute("learningreport",form);
-		            return "redirect:/learningReportEdit";
+	
+		            return "/learningReportEdit";
 			}
 		    
 			learningReportEditService.update(form);
