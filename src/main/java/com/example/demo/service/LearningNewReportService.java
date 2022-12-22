@@ -1,9 +1,6 @@
 package com.example.demo.service;
 
-import java.sql.Time;
-import java.text.SimpleDateFormat;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,14 +38,20 @@ public class LearningNewReportService {
 		user.setEnd_time(LocalTime.parse(LearningNewReportForm.getEnd_time().substring(0, 5) + ":00"));
 		user.setCourse_id(LearningNewReportForm.getCourse_id());
 		user.setRemark(LearningNewReportForm.getRemark());
-		Long millis = ChronoUnit.MILLIS.between(user.getEnd_time(), user.getStart_time());
-		Time total = new Time(millis);
-        String str = new SimpleDateFormat("HH:mm:ss").format(total);
-		LocalTime timeT = LocalTime.parse(str, DateTimeFormatter.ofPattern("HH:mm:ss"));
-		user.setTotal_time(timeT);
-		learningNewReportRepository.save(user);
-	}
-}
+Long minutes = ChronoUnit.MINUTES.between(user.getStart_time(), user.getEnd_time());
+Long totalH = minutes/60;
+int totalHour = Math.toIntExact(totalH);
+Long totalM = minutes%60;
+int totalMinites = Math.toIntExact(totalM);
+LocalTime total =  LocalTime.of(totalHour,totalMinites);
+//String str = new SimpleDateFormat("HH:mm:ss").format(total);
+//LocalTime timeT = LocalTime.parse(str, DateTimeFormatter.ofPattern("HH:mm:ss"));
+//learningReport.setTotal_time(timeT);
+user.setTotal_time(total);
+
+
+learningNewReportRepository.save(user);
+}}
 //	    @Autowired 
 //	    LearningNewReportRepository leaningNewReportRepository ;		
 //		public List<LearningNewReportEntity> serchAll() {
