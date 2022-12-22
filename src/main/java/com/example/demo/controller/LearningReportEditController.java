@@ -63,8 +63,9 @@ public class LearningReportEditController {
 			}
 
 	
+
 		            model.addAttribute("validationError", errorList);
-	
+		            model.addAttribute("form",form);
 		            return "/learningReportEdit";
 			}
 		    
