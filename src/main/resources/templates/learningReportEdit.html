@@ -7,7 +7,12 @@
  <link rel="stylesheet" href="css/learningReportEdit.css">
  </head>
  <body>
-
+ 
+  <table>
+        <tr th:if="${validationError}" th:each="error : ${validationError}">
+            <td style="color: red;" th:text="${error}"></td>
+        </tr>
+    </table>
 	<div class="contents">
 	<div class="header">
 	  <h1>学習報告編集</h1>
@@ -15,8 +20,8 @@
 	<div class="form">
 	  <form th:action="@{/learningReportEditUpdate}"  th:object="${form}" method="POST">
         <span>日付</span> 
-		<input type="date" th:field="*{created_at}">
-		<span th:if="${#fields.hasErrors('created_at')}" th:errors="*{created_at}"></span>
+		<input type="date" th:field="*{created_at}" th:text="${#calendars.format(created_at, 'dd/MMM/yyyy HH:mm')}"><br>
+		<span th:if="${#fields.hasErrors('created_at')}" th:errors="*{created_at}"style="color: red;"></span>
 		<span>開始時刻</span>
 		<input type="time" th:field="*{start_time}"  th:text="${#calendars.format(start_time, 'HH:mm')}"> <br>
 		<span>終了時刻</span>

@@ -4,6 +4,7 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -22,7 +23,7 @@ public class LearningNewReportForm{
  @Column(name = "user_id")
  private Integer user_id;
 
-// @NotNull (message = "日付を入力してください。")
+ @NotNull (message = "日付を入力してください。")
  @Column(name = "created_at")
 // @DateTimeFormat(pattern = "YYYY-MM-DD")
  private Date created_at;

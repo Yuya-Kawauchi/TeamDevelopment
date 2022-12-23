@@ -32,16 +32,16 @@ import lombok.Data;
 	 private Integer user_id;
 
 	 @NotNull (message = "日付を入力してください。")
-	 @DateTimeFormat(pattern = "yyyy-MM-dd")
+//	 @DateTimeFormat(pattern = "yyyy-MM-dd")
 	 @Column(name = "created_at")
 	 private Date created_at;
 	 
-//	 @NotNull (message = "時間を入力してください。")
+	 @NotNull (message = "時間を入力してください。")
 	 @DateTimeFormat(pattern = "HH:mm:ss")
 	 @Column(name = "start_time")
 	 private LocalTime start_time ;
 	 
-//	 @NotNull (message = "時間を入力してください。")
+	 @NotNull (message = "時間を入力してください。")
 	 @DateTimeFormat(pattern = "HH:mm:ss")
 	 @Column(name = "end_time")
 	 private LocalTime end_time ;

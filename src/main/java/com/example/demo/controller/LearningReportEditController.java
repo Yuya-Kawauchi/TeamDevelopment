@@ -61,9 +61,6 @@ public class LearningReportEditController {
 		            for (ObjectError error : bindingResult.getAllErrors()) {
 		                errorList.add(error.getDefaultMessage());
 			}
-
-	
-
 		            model.addAttribute("validationError", errorList);
 		            model.addAttribute("form",form);
 		            return "/learningReportEdit";
