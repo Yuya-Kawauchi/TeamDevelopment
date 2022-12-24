@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -33,15 +34,16 @@ import lombok.Data;
 
 	 @NotNull (message = "日付を入力してください。")
 //	 @DateTimeFormat(pattern = "yyyy-MM-dd")
+	 @DateTimeFormat(pattern="yyyyMMdd")
 	 @Column(name = "created_at")
 	 private Date created_at;
 	 
-	 @NotNull (message = "時間を入力してください。")
+	 @NotEmpty (message = "開始時間を入力してください。")
 	 @DateTimeFormat(pattern = "HH:mm:ss")
 	 @Column(name = "start_time")
 	 private LocalTime start_time ;
 	 
-	 @NotNull (message = "時間を入力してください。")
+	 @NotEmpty (message = "終了時間を入力してください。")
 	 @DateTimeFormat(pattern = "HH:mm:ss")
 	 @Column(name = "end_time")
 	 private LocalTime end_time ;
