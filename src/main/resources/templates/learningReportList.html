@@ -25,7 +25,7 @@
       <tbody  class="record">
         <tr th:each="learningreport,s:${learningreport}" class="record">
           <td th:text="${s.count}"></td>
-          <td th:text="${#dates.format(learningreport.created_at, 'YYYY/MM/dd')}"></td>
+          <td th:text="${learningreport.created_at}"></td>
           <td th:text="${learningreport.start_time}"></td>
           <td th:text="${learningreport.end_time}"></td>
           <td th:text="${learningreport.total_time}"></td>

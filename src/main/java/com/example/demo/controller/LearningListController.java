@@ -26,14 +26,27 @@ public class LearningListController {
 	private LearningListService learningListService;
 
 	
+//	  @GetMapping("/learningReportList")
+//	  public String showLearningList(Model model) {
+//	    List<LearningReport> learningreport = learningListService.findAll();
+//	    model.addAttribute("learningreport",learningreport);
+//	    return "learningReportList";
+//	  }
+
 	  @GetMapping("/learningReportList")
 	  public String showLearningList(Model model) {
-	    List<LearningReport> learningreport = learningListService.findAll();
+		  List<LearningReport> learningreport = learningListService.findByuserid(1);
 	    model.addAttribute("learningreport",learningreport);
 	    return "learningReportList";
 	  }
-
-	
+	  
+//	
+//	  @GetMapping("/learningReportList")
+//	  public String showLearningList(Model model) {
+//	   Optional<LearningReport> learningreport = learningListService.findByUserid(1);
+//	    model.addAttribute("learningreport",learningreport);
+//	    return "learningReportList";
+//	  }
 	
 //	  @GetMapping("/learningReportList")
 //	  public String showLearningList(Model model) {

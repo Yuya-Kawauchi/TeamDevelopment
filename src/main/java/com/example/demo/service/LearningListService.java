@@ -30,10 +30,17 @@ public class LearningListService {
 		    return learningListRepository.findAll(Sort.by(Sort.Direction.DESC, "rema"));
 		  }
 	  
-	  public Optional<LearningReport> findById(Integer user_id) {
+	  
+	  public List<LearningReport> findByuserid(Integer user_id) {
 		  
-		    return learningListRepository.findById(user_id);
+		    return learningListRepository.findByuser_id(user_id);
 		  }
+	  
+	  
+//	  public Optional<LearningReport> findByUserid(Integer user_id) {
+//		  
+//		    return learningListRepository.findById(user_id);
+//		  }
 	  
 	  public Optional<LearningReport> selectById(Integer rema) {
 		 return learningListRepository.findById(rema);
