@@ -32,6 +32,7 @@ import lombok.Data;
 	 private Integer user_id;
 
 	 @NotNull (message = "日付を入力してください。")
+//	 @DateTimeFormat(pattern ="yyyy-MM-dd'T'HH:mm")
 //	 @DateTimeFormat(pattern = "yyyy-MM-dd")
 //	 @DateTimeFormat(pattern="yyyyMMdd")
 	 @Column(name = "created_at")

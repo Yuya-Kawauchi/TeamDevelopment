@@ -61,6 +61,12 @@ public class LearningReportEditController {
 		            for (ObjectError error : bindingResult.getAllErrors()) {
 		                errorList.add(error.getDefaultMessage());
 			}
+//		            SimpleDateFormat simpleDateFormat = new SimpleDateFormat ("dd/MM/yyyy");
+//		            simpleDateFormat.parse(form.getCreated_at());
+		            
+//		            java.util.Date utilDate = form.getCreated_at();
+//		            java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
+//		            form.setCreated_at(sqlDate);
 		            model.addAttribute("validationError", errorList);
 		            model.addAttribute("form",form);
 		            return "/learningReportEdit";
