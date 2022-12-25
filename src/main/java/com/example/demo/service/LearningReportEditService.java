@@ -56,7 +56,7 @@ public class LearningReportEditService {
 	public void putReport(LearningReport form,Course course,Chapters chapter,Texts texts){
 		form.setCourse_id(course.getCourse_id());
 		form.setText_id(course.getText_id());
-		
+		form.setChapters_id(course.getChapters_id());
 	}
 	
 	public void update(Learningform form) {
@@ -68,6 +68,8 @@ public class LearningReportEditService {
 		learningReport.setStart_time(LocalTime.parse(form.getStart_time().substring(0,5)+":00"));
 		learningReport.setEnd_time(LocalTime.parse(form.getEnd_time().substring(0,5)+":00"));
 		learningReport.setCourse_id(form.getCourse_id());
+		learningReport.setText_id(form.getText_id());
+		learningReport.setChapters_id(form.getChapters_id());
 		learningReport.setRemark(form.getRemark());
 		Long minutes = ChronoUnit.MINUTES.between(learningReport.getStart_time(), learningReport.getEnd_time());
 		Long totalH = minutes/60;
