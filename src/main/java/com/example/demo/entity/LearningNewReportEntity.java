@@ -54,4 +54,10 @@ public class LearningNewReportEntity{
  @DateTimeFormat(pattern = "HH:mm:ss")
  @Column(name = "total_time")
  private LocalTime total_time;
+ 
+ @Column(name = "text_id")
+ private String text_id;
+ 
+ @Column(name = "chapters_id")
+ private String chapters_id;
  }

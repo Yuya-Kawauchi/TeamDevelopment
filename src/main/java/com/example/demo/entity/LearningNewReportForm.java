@@ -52,5 +52,11 @@ public class LearningNewReportForm{
 	 @DateTimeFormat(pattern = "HH:mm:ss")
 	  @Column(name = "total_time")
 	  private String total_time;
+	 
+	 @Column(name = "text_id")
+	 private String text_id;
+	 
+	 @Column(name = "chapters_id")
+	 private String chapters_id;
 
 	}
