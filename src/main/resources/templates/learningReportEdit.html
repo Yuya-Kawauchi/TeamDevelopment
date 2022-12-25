@@ -7,17 +7,16 @@
  <link rel="stylesheet" href="css/learningReportEdit.css">
  </head>
  <body>
- 
-  <table>
-        <tr th:if="${validationError}" th:each="error : ${validationError}">
-            <td style="color: red;" th:text="${error}"></td>
-        </tr>
-    </table>
 	<div class="contents">
 	<div class="header">
 	  <h1>学習報告編集</h1>
     </div>
 	<div class="form">
+  <table>
+        <tr th:if="${validationError}" th:each="error : ${validationError}">
+            <td style="color: red;" th:text="${error}"></td>
+        </tr>
+    </table>
 	  <form th:action="@{/learningReportEditUpdate}"  th:object="${form}" method="POST">
         <span>日付</span> 
 		<input type="date" th:field="*{created_at}"required><br>

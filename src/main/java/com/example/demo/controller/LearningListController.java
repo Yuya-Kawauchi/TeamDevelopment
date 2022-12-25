@@ -34,8 +34,8 @@ public class LearningListController {
 //	  }
 
 	  @GetMapping("/learningReportList")
-	  public String showLearningList(Model model) {
-		  List<LearningReport> learningreport = learningListService.findByuserid(1);
+	  public String showLearningList( @ModelAttribute("user_id") Integer user_id,Model model) {
+		  List<LearningReport> learningreport = learningListService.findByuserid(user_id);
 	    model.addAttribute("learningreport",learningreport);
 	    return "learningReportList";
 	  }
