@@ -4,12 +4,17 @@
  <meta charset="utf-8">
  <title>学習報告一覧</title>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+ <link rel="stylesheet" href="css/learningReportList.css">
  </head>
 <body>
-
+  <div  class="l">
+  <form th:action="@{/learningReportList}"  th:object="${learningreport}" method="POST">
+	<button formaction="/learningReportList" name="back">戻る</button>
+	  </form>
+	  </div>
   <div class="contents">
       <h1>学習報告一覧</h1>
+      
     <div class="warapper">
     <table>
       <thead>
@@ -46,13 +51,9 @@
       </tbody>
     </table>
   </div>
-  
+
 </div>
-<div  class="l">
-  <form th:action="@{/learningReportEditUpdate}"  th:object="${learningreport}" method="POST">
-	<button formaction="/learningReportList" name="back">戻る</button>
-	  </form>
-	  </div>
+
 </body>
 
 </html>
