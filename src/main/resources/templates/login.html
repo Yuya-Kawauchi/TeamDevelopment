@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-</head>
+ <meta charset="utf-8">
+ <title>ログイン画面</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="css/login.css">
 <body>
-    <!--/* ログイン失敗/ログアウトはgetパラメータにステータスが渡されているので、Thymeleafではparamから取得 */-->
-    <div th:if="${param.logout}">
+<form th:action="@{/toppage}" method="post" name="login_form">
+<div th:if="${param.logout}">
             ログイン失敗しました。
     </div>
     <div th:if="${param.error}">
             名前またはパスワードが違います。
     </div>
-    
-    <!--/* 「/sign_in」がログイン判定処理を呼び出すViewNameとなっている */-->
-	<form th:action="@{/sign_in}" method="post">
-	    <input type="text" name="username">user_name
-	    <br/>
-	    <input type="password" name="password">password
-	    
-	    <br/>
-	    
-	    <input type="submit" value="Login">
-	</form>
-</body>
+    <div class="login_form_top">
+    <h1>LOGIN</h1>
+    </div>
+    <div class="login_form_btm">
+    <input type="text" name="username"  placeholder="UserID">
+    <input type="password" name="password" placeholder="Password">
+    <button formaction="/userName"> LOGIN</button> 
+    <button id="newaccoun"> 新規アカウント作成</button> 
+      </div>
+      </div>
+    </form>
+    </body>
 </html>

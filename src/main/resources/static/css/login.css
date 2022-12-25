@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body {
-background-image:url(./css/image/haikei.png);
+background-image:url(./images/haikei.png);
 height: 100vh;
 position: fixed;
 background-size: cover;
@@ -21,7 +21,7 @@ form {
     text-align: center;
   }
 
-  form input[type = "id"],form input[type = "password"] {
+  form input[type = "text"],form input[type = "password"] {
     border: 0;
     background: none;
     display: block;
