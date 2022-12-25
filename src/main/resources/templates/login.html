@@ -6,7 +6,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="css/login.css">
 <body>
-<form th:action="@{/toppage}" method="post" name="login_form">
+<form th:action="@{/sign_in}" method="post" name="login_form">
 <div th:if="${param.logout}">
             ログイン失敗しました。
     </div>
@@ -19,7 +19,7 @@
     <div class="login_form_btm">
     <input type="text" name="username"  placeholder="UserID">
     <input type="password" name="password" placeholder="Password">
-    <button formaction="/userName"> LOGIN</button> 
+    <button formaction="/sign_in"> LOGIN</button> 
     <button id="newaccoun"> 新規アカウント作成</button> 
       </div>
       </div>
