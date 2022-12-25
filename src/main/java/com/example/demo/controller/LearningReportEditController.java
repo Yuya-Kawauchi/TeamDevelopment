@@ -74,7 +74,7 @@ public class LearningReportEditController {
 		    
 			learningReportEditService.update(form);
 			model.addAttribute("form",form);
-			return "redirect:/home";
+			return "redirect:/learningReportList";
 	  }
 
 	  @PostMapping(path = "/learningReportEditUpdate", params = "back")
