@@ -55,6 +55,8 @@ public class LearningReportEditService {
 
 	public void putReport(LearningReport form,Course course,Chapters chapter,Texts texts){
 		form.setCourse_id(course.getCourse_id());
+		form.setText_id(course.getText_id());
+		
 	}
 	
 	public void update(Learningform form) {

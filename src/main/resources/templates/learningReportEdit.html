@@ -37,20 +37,17 @@
 	        <div>
 	        <span>チャプター：</span>
 		        <select name="chapter">
-		    	 
 			     <option th:each="chapter : ${chapter}"th:value="${chapter.chapters_id}"th:text="${chapter.chapter}"></option>
 		        </select>
 	        </div>
 		    <div>
 		    <span>テキスト：</span>
 		        <select name="texts">
-			       
 			       <option th:each="texts: ${texts}"th:value="${texts.text_id}"th:text="${texts.text_name}"></option>
 		        </select>
          	</div>
          	 <input type="hidden" name="rema" th:field="*{rema}">
          	 <input type="hidden" name="user_id" th:field="*{user_id}">
-         	  
 		</div>
 		<button>更新</button> 
 		<button formaction="/learningReportEditUpdate" name="back">戻る</button>
