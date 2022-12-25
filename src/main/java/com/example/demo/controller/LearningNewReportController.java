@@ -62,4 +62,8 @@ public class LearningNewReportController {
 		model.addAttribute("LearningNewReportForm", LearningNewReportForm);
 		return "redirect:/home";
 	}
+	  @PostMapping(path = "/leaningnewreport", params = "back")
+	  public String back() {
+		  return "redirect:/home";
+	  }
 }
