@@ -6,45 +6,40 @@
 <title>トップページ</title>
 <link rel="stylesheet" href="/css/topStyle.css">
 </head>
-   <body>
-  <form name="newRegister_form">
-
     <header class="header">
       <!-- ヘッダーロゴ -->
       <div class="logo">トップページ</div>
-      <div class="nav">
-     <form class="topPage-container"> 
-      </div>
+      </header>
       <body>
-    </header>
+     <div class="topPage-container"> 
+
+
  <table border="1">
     <tr>
-      <td><a href='/userlist/1'>ユーザー編集</a></td>
+    <td><form th:action="@{/home}" method="post">
+                <button name="useredit">ユーザー編集</button>
+                <input type="hidden" name="">
+            </form></td>
     </tr>
     <tr>
-      <td><a href="/learningNew">新規学習報告</a></td>
+    <td><form th:action="@{/home}" method="post">
+                <button name="new">新規学習報告</button>
+                <input type="hidden" name="">
+            </form></td>
     </tr>
     <tr>
-      <td><a href="/learningReportList">学習報告一覧</a></td>
+      <td><form th:action="@{/home}" method="post">
+                <button name="list">学習報告一覧</button>
+                
+            </form></td>
     </tr>
     <tr>
-      <td><a href="/login">ログアウト</a></td>
+      <td><form th:action="@{/home}" method="post">
+                <button name="logout">ログアウト</button>
+                <input type="hidden" name="">
+            </form></td>
     </tr>
   </table>
- </form>
+ </div>
  </body>
 </html>
-
-
-<!--form th:action="@{/home}" method="post">
-                <button name="list">学習報告一覧</button>
-                <input type="hidden" name="user_id" th:value="${user_id.user_id}">
-                 <button name="list">学習報告一覧</button>
-                <input type="hidden" name="user_id" th:value="${user_id.user_id}">
-                 <button name="list">学習報告一覧</button>
-                <input type="hidden" name="user_id" th:value="${user_id.user_id}">
-                 <button name="list">学習報告一覧</button>
-                <input type="hidden" name="user_id" th:value="${user_id.user_id}">
-            </form-->
-
-            
