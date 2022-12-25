@@ -24,13 +24,12 @@
             <td style="color: red;" th:text="${error}"></td>
         </tr>
    	 </table>
-   <input type="text" name="name" th:field="*{name}"placeholder="名前"></input>
-   
-   <input type="text" th:field="*{user_id}"  placeholder="ID" ></input>
-   <input type="text" th:field="*{password}"  placeholder="Password" ></input>
-   <input type="email" th:field="*{mail_address}"  placeholder="Email" ></input>
+   <input type="text" name="name" th:field="*{name}"placeholder="名前">
+   <input type="text" th:field="*{user_id}"  placeholder="ID" >
+   <input type="text" th:field="*{password}"  placeholder="Password" >
+   <input type="email" th:field="*{mail_address}"  placeholder="Email" >
    <input type="submit" value="登録" id="register"></input>
-   <input type="button" value="戻る" id="back" onclick="history.back()"></input>
+   <input type="button" value="戻る" id="back"><a href="/login"></a>
   </form>
 </form>  
 </body>
