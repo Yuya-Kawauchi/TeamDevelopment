@@ -53,3 +53,7 @@ body {
         padding: auto;
         border:2px solid #990b14;
         }  
+        
+       .l button{
+       float:left;
+    }

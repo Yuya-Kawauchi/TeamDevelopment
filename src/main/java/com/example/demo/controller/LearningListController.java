@@ -34,13 +34,33 @@ public class LearningListController {
 //	  }
 
 	  @GetMapping("/learningReportList")
-	  public String showLearningList( @ModelAttribute("user_id") Integer user_id,Model model) {
-		  List<LearningReport> learningreport = learningListService.findByuserid(user_id);
+	  public String showLearningList(Model model) {
+		  List<LearningReport> learningreport = learningListService.findByuserid(1);
 	    model.addAttribute("learningreport",learningreport);
 	    return "learningReportList";
 	  }
 	  
-//	
+	  @PostMapping(path = "learningReportList", params = "edit")
+	  public String postLearningList(RedirectAttributes redirectAttributes,@RequestParam("rema") Integer rema, @ModelAttribute LearningReport learningreport ,Model model) {
+		 
+		  
+		  redirectAttributes.addFlashAttribute("rema", rema);
+//		  Optional<LearningReport> form = learningListService.selectById(rema);
+//		  model.addAttribute("form", form);
+		  return "redirect:/learningReportEdit";
+	  }
+	  
+	  @PostMapping(path = "learningReportList", params = "delete")
+	  public String deleteLearningReport(@RequestParam Integer rema) {
+		  learningListService.delete(rema);
+		  return "redirect:/learningReportList";
+	  }
+	  
+	  @PostMapping(path = "/learningReportList", params = "back")
+	  public String backToppage() {
+		  return "redirect:/home";
+	  }
+	//	
 //	  @GetMapping("/learningReportList")
 //	  public String showLearningList(Model model) {
 //	   Optional<LearningReport> learningreport = learningListService.findByUserid(1);
@@ -167,23 +187,6 @@ public class LearningListController {
 //
 //	    return "learningReportList";
 //	  }
-//	  
 	  
 	  
-	  @PostMapping(path = "learningReportList", params = "edit")
-	  public String postLearningList(RedirectAttributes redirectAttributes,@RequestParam("rema") Integer rema, @ModelAttribute LearningReport learningreport ,Model model) {
-		 
-		  
-		  redirectAttributes.addFlashAttribute("rema", rema);
-//		  Optional<LearningReport> form = learningListService.selectById(rema);
-//		  model.addAttribute("form", form);
-		  return "redirect:/learningReportEdit";
-	  }
-	  
-	  @PostMapping(path = "learningReportList", params = "delete")
-	  public String deleteLearningReport(@RequestParam Integer rema) {
-		  learningListService.delete(rema);
-		  return "redirect:/learningReportList";
-	  }
-
 }
