@@ -8,7 +8,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.entity.UserEditEntity;
 import com.example.demo.entity.UserEditForm;
@@ -20,12 +20,6 @@ public class UserEditController {
 
 	@Autowired
 	UserEditService userEditService;
-
-	@GetMapping("/top")
-	public String getHome() {
-		//トップページにいくよ
-		return "topPage";
-	}
 
 	@GetMapping("/userlist/{user_id}")
 	public String getUseEdit(@PathVariable Integer user_id, Model model) {
@@ -41,18 +35,19 @@ public class UserEditController {
 		return "/UserEdit";
 	}
 
-	@RequestMapping("/userEdit/complete")
-	public String update(@Validated @ModelAttribute UserEditForm userEditform , BindingResult result, Model model ) {
-//		if (result.hasErrors()) {
+	@PostMapping("/userEdit/complete")
+	public String update(@Validated @ModelAttribute UserEditForm userEditform , BindingResult bindingResult, Model model) {
+//		if (bindingResult.hasErrors()) {
 //			List<String> errorList = new ArrayList<String>();
-//			for (ObjectError error : result.getAllErrors()) {
+//			for (ObjectError error : bindingResult.getAllErrors()) {
 //				errorList.add(error.getDefaultMessage());
 //			}
 //			model.addAttribute("validationError", errorList);
+//			model.addAttribute("userEditform",userEditform);
 //			return "/UserEdit";
 //		}
 		userEditService.update(userEditform); 
 		model.addAttribute("UserEditForm", userEditform);
-		return "/topPage";
+		return "redirect:/home";
 	}
 }
