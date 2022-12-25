@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="utf-8">
-<title>ユーザー編集</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/css/UserEdit.css"></head>
-<body>
+	<meta charset="utf-8">
+	<title>ユーザー編集</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/UserEdit.css">
+</head>
 
-<div class="contents">
-<div class="header">
-      <h1>ユーザー編集</h1>
-         </div>
-   <div class="form">  
-    <form th:action="@{/userEdit/complete}"name="login_form" th:object="${UserEditForm}" method="POST">
+<body>>
 
-	<input type="text" placeholder="ID"name="user_id" th:field="*{user_id}">
-    <input type="text" placeholder="名前" name="name" th:field="*{name}">
-    <input type="text"  placeholder="Email"name="mail_address" th:field="*{mail_address}">
-    <input type="text"  placeholder="Password"name="password" th:field="*{password}">
-    <button id="change"type="submit"> 更新</button>
-    </form>
-    <a th:href="@{/home}">
-	<button type="submit">戻る</button> </a>
-	  </div>
-	   </div>
+	<div class="contents">
+		<div class="header">
+			<h1>ユーザー編集</h1>
+		</div>
+		<div class="form">
+			<div th:if="${validationError}" th:each="error:${validationError}"></div>
+			<form th:action="@{/userEdit/complete}" th:object="${userEditform}" th:method="post">
+				<table>
+					<tr th:if="${validationError}" th:each="error : ${validationError}">
+						<td style="color: red;" th:text="${error}"></td>
+					</tr>
+				</table>
+				<input type="text" placeholder="ID" name="user_id" th:field="*{user_id}">
+				<input type="text" placeholder="名前" name="name" th:field="*{name}">
+				<input type="text" placeholder="Email" name="mail_address" th:field="*{mail_address}">
+				<input type="text" placeholder="Password" name="password" th:field="*{password}">
+				<button id="change" type="submit"> 更新</button>
+			</form>
+			<a th:href="@{/home}">
+				<button type="submit">戻る</button> </a>
+		</div>
+	</div>
 </body>
+
 </html>

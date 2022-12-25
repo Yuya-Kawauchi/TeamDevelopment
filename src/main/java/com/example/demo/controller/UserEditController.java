@@ -1,14 +1,19 @@
 package com.example.demo.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.example.demo.entity.UserEditEntity;
 import com.example.demo.entity.UserEditForm;
@@ -21,6 +26,12 @@ public class UserEditController {
 	@Autowired
 	UserEditService userEditService;
 
+	@GetMapping("/top")
+	public String getHome() {
+		//トップページにいくよ
+		return "topPage";
+	}
+
 	@GetMapping("/userlist/{user_id}")
 	public String getUseEdit(@PathVariable Integer user_id, Model model) {
 		//ユーザー一覧の生成
@@ -31,23 +42,23 @@ public class UserEditController {
 		userEditForm.setName_kana(user.getName_kana());
 		userEditForm.setPassword(user.getPassword());
 		userEditForm.setMail_address(user.getMail_address());
-		model.addAttribute("UserEditForm", userEditForm);
+		model.addAttribute("userEditform", userEditForm);
 		return "/UserEdit";
 	}
 
-	@PostMapping("/userEdit/complete")
-	public String update(@Validated @ModelAttribute UserEditForm userEditform , BindingResult bindingResult, Model model) {
-//		if (bindingResult.hasErrors()) {
-//			List<String> errorList = new ArrayList<String>();
-//			for (ObjectError error : bindingResult.getAllErrors()) {
-//				errorList.add(error.getDefaultMessage());
-//			}
-//			model.addAttribute("validationError", errorList);
-//			model.addAttribute("userEditform",userEditform);
-//			return "/UserEdit";
-//		}
+	@RequestMapping(value = "/userEdit/complete", method = RequestMethod.POST)
+	public String update(@Validated @ModelAttribute UserEditForm userEditform , BindingResult bindingResult, Model model ) {
+		if (bindingResult.hasErrors()) {
+			List<String> errorList = new ArrayList<String>();
+			for (ObjectError error : bindingResult.getAllErrors()) {
+				errorList.add(error.getDefaultMessage());
+			}
+			model.addAttribute("userEditform",userEditform);
+			model.addAttribute("validationError", errorList);
+			return "UserEdit";
+		}
 		userEditService.update(userEditform); 
-		model.addAttribute("UserEditForm", userEditform);
+		model.addAttribute("userEditform", userEditform);
 		return "redirect:/home";
 	}
 }
