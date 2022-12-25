@@ -21,10 +21,10 @@
 	  <form th:action="@{/learningReportEditUpdate}"  th:object="${form}" method="POST">
         <span>日付</span> 
 		<input type="date" th:field="*{created_at}"required><br>
-		<span th:if="${#fields.hasErrors('created_at')}" th:errors="*{created_at}"style="color: red;"></span>
+		<span th:if="${#fields.hasErrors('created_at')}" th:errors="*{created_at}"></span>
 		<span>開始時刻</span>
 		<input type="time" th:field="*{start_time}"  th:text="${#calendars.format(start_time, 'HH:mm')}"> <br>
-		<span>終了時刻</span>
+		<span>終了時刻</span><span th:if="${#fields.hasErrors('start_time')}" th:errors="*{start_time}"></span>
 		<input type="time" th:field="*{end_time}" ><br>
         <span>学習内容</span>
 		<div class="manu">

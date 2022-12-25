@@ -17,7 +17,7 @@ public interface LearningListRepository
 //	List<LearningReport> findByUser_id(Integer user_id);
 //	List<LearningReport> findByOrderByRemaAsc();
 	
-    @Query(value = "SELECT rema,user_id,created_at,start_time,end_time,course_id,remark,total_time FROM report WHERE report.user_id = user_id ",nativeQuery = true)
+    @Query(value = "SELECT rema,user_id,created_at,start_time,end_time,course_id,remark,total_time FROM report WHERE report.user_id = user_id order by created_at desc",nativeQuery = true)
     List<LearningReport> findByuser_id(Integer user_id);
 	
 	
