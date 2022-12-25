@@ -6,31 +6,32 @@
 <title>ユーザー新規登録</title>
 <link href="/css/NewRegister.css"rel="stylesheet">
 </head>
-<body>
- <header class="header">
-      <!-- ヘッダーロゴ -->
-      <div class="logo">ユーザー新規登録</div>
-</header>
-<form name="newRegister_form">
-      <div class="newRegister_form_top">
-      </div>
-</form>
-<div th:if="${validationError}" th:each="error:${validationError}"></div>
-<form th:action="@{/user/create}" th:object="${userRequest}" th:method="post">
 
-  <form class="newRegister-container">
-    	<table>
-        <tr th:if="${validationError}" th:each="error : ${validationError}">
-            <td style="color: red;" th:text="${error}"></td>
-        </tr>
-   	 </table>
-   <input type="text" name="name" th:field="*{name}"placeholder="名前">
-   <input type="text" th:field="*{user_id}"  placeholder="ID" >
-   <input type="text" th:field="*{password}"  placeholder="Password" >
-   <input type="email" th:field="*{mail_address}"  placeholder="Email" >
-   <input type="submit" value="登録" id="register"></input>
-   <input type="button" value="戻る" id="back"><a href="/login"></a>
-  </form>
-</form>  
+<body>
+
+<div class="contents">
+<div class="header">
+      <h1>ユーザー新規登録</h1>
+         </div>
+   <div class="form">
+   <div th:if="${validationError}" th:each="error:${validationError}"></div>
+			<form th:action="@{/user/create}" th:object="${userRequest}" th:method="post">
+				<table>
+					<tr th:if="${validationError}" th:each="error : ${validationError}">
+						<td style="color: red;" th:text="${error}"></td>
+					</tr>
+				</table>  
+
+	<input type="text" placeholder="ID"name="user_id" th:field="*{user_id}">
+    <input type="text" placeholder="名前" name="name" th:field="*{name}">
+    <input type="text"  placeholder="Email"name="mail_address" th:field="*{mail_address}">
+    <input type="text"  placeholder="Password"name="password" th:field="*{password}">
+    <button id="register"type="submit">登録</button>
+    </form>
+    <a th:href="@{/login}">
+	<button type="submit">戻る</button> </a>
+	  </div>
+	   </div>
 </body>
+
 </html>
