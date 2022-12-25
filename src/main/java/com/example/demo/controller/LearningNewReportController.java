@@ -45,7 +45,7 @@ public class LearningNewReportController {
 	}
 
 	@PostMapping("/leaningnewreport")
-	public String getleaningmewreport(@ModelAttribute @Validated LearningNewReportForm LearningNewReportForm,Course course,Chapters chapter,Texts texts, Model model,BindingResult result) {
+	public String getleaningmewreport(@ModelAttribute @Validated LearningNewReportForm LearningNewReportForm,BindingResult result, Model model,Course course,Chapters chapter,Texts texts) {
 		if (result.hasErrors()) {
 			// 入力チェックエラーの場合
 			List<String> errorList = new ArrayList<String>();
@@ -53,11 +53,12 @@ public class LearningNewReportController {
 				errorList.add(error.getDefaultMessage());
 			}
 			model.addAttribute("validationError", errorList);
-			return "/LeaningNewReport";
+			model.addAttribute("form",LearningNewReportForm);
+			return "LeaningNewReport";
 		}    
 		// ユーザー情報の登録
 		learningNewReportService.insert(LearningNewReportForm);
 		model.addAttribute("LearningNewReportForm", LearningNewReportForm);
-		return "/topPage";
+		return "redirect:/topPage";
 	}
 }

@@ -7,14 +7,19 @@
  <link rel="stylesheet" href="css/LeaningNewReport.css">
  </head>
  <body>
+  <tr th:if="${validationError}" th:each="error : ${validationError}">
+            <td style="color: red;" th:text="${error}"></td>
+        </tr>
 	<div class="contents">
 	<div class="header">
 	  <h1>新規学習報告</h1>
     </div>
 	<div class="form">
 	  <form th:action="@{/leaningnewreport}"  th:object="${LearningNewReportForm}" method="POST">
-        <span>日付</span>
-		<input type="date" th:field="*{created_at}" th:text="${#calendars.format(created_at, 'dd/MMM/yyyy HH:mm')}"><br>
+
+        <span>日付</span> 
+		<input type="date" th:field="*{created_at}"><br>
+		<span th:if="${#fields.hasErrors('created_at')}" th:errors="*{created_at}"style="color: red;"></span>
 		<span>開始時刻</span>
 		<input type="time" th:field="*{start_time}"  th:text="${#calendars.format(start_time, 'HH:mm')}"> <br>
 		<span>終了時刻</span>
@@ -42,7 +47,10 @@
 			       <option th:each="texts: ${texts}"th:value="${texts.text_id}"th:text="${texts.text_name}"></option>
 		        </select>
          	</div>
+         	 <input type="hidden" name="rema" th:field="*{rema}">
+         	 <input type="hidden" name="user_id" th:field="*{user_id}">
          	</div>
+ 
 		<button type="submit">登録</button> 
 	  </form>
 	  <a th:href="@{/home}">
