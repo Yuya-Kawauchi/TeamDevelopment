@@ -54,6 +54,16 @@ public class LearningNewReportController {
 			}
 			model.addAttribute("LearningNewReportForm",LearningNewReportForm);
 			model.addAttribute("validationError", errorList);
+			model.addAttribute("LearningNewReportForm",new LearningNewReportForm());
+
+			List<Chapters> chapter1 = learningReportEditService.findChapter();
+			model.addAttribute("chapter", chapter1);
+
+			List<Course> course1 = learningReportEditService.findCourse();
+			model.addAttribute("course", course1);
+
+			List<Texts> texts1 = learningReportEditService.findTexts();
+			model.addAttribute("texts", texts1);
 			return "/LeaningNewReport";
 		}
 		// ユーザー情報の登録
