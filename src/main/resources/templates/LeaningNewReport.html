@@ -13,7 +13,6 @@
     </div>
 	<div class="form">
 	  <form th:action="@{/leaningnewreport}"  th:object="${LearningNewReportForm}" method="POST">
-	<div class="form">
   	<table>
         <tr th:if="${validationError}" th:each="error : ${validationError}">
             <td style="color: red;" th:text="${error}"></td>
@@ -23,38 +22,37 @@
 		<input type="date" th:field="*{created_at}"><br>
 		<span th:if="${#fields.hasErrors('created_at')}" th:errors="*{created_at}"></span>
 		<span>開始時刻</span>
-		<input type="time" th:field="*{start_time}"  th:text="${#calendars.format(start_time, 'HH:mm')}"> <br>
-		<span>終了時刻</span><span th:if="${#fields.hasErrors('start_time')}" th:errors="*{start_time}"></span>
+		<input type="time" th:field="*{start_time}"> <br>
+		<span>終了時刻</span>
 		<input type="time" th:field="*{end_time}" ><br>
         <span>学習内容</span>
 		<div class="manu">
 		   <div>
 		   <span>言語：</span>
 		       <select name="course_id">
-		          
 		          <option th:each="course : ${course}"th:value="${course.course_id}"th:text="${course.course_id}"></option>
 		       </select>
 	       </div>
-	        <div>
-	        <span>チャプター：</span>
-		        <select name="chapter">
-		    	 
-			     <option th:each="chapter : ${chapter}"th:value="${chapter.chapters_id}"th:text="${chapter.chapter}"></option>
-		        </select>
-	        </div>
+
 		    <div>
 		    <span>テキスト：</span>
-		        <select name="texts">
+		        <select name="text_id">
 			       
 			       <option th:each="texts: ${texts}"th:value="${texts.text_id}"th:text="${texts.text_name}"></option>
 		        </select>
          	</div>
+         		        <div>
+	        <span>チャプター：</span>
+		        <select name="chapters_id">
+			     <option th:each="chapter : ${chapter}"th:value="${chapter.chapters_id}"th:text="${chapter.chapter}"></option>
+		        </select>
+	        </div>
          	</div>
- 
 		<button type="submit">登録</button> 
 		<button formaction="/leaningnewreport" name="back">戻る</button>
 	  </form>
-    </div>
+	 
+     </div>
   </div>
 </body>
 </html>

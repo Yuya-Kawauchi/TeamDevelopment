@@ -36,14 +36,14 @@
 	       </div>
 	        <div>
 	        <span>チャプター：</span>
-		        <select name="chapter">
-			     <option th:each="chapter : ${chapter}"th:value="${chapter.chapters_id}"th:text="${chapter.chapter}"></option>
+		        <select name="chapters_id">
+			     <option th:each="chapter : ${chapter}"th:value="${chapter.chapters_id}"th:text="${chapter.chapters_id}"></option>
 		        </select>
 	        </div>
 		    <div>
 		    <span>テキスト：</span>
-		        <select name="texts">
-			       <option th:each="texts: ${texts}"th:value="${texts.text_id}"th:text="${texts.text_name}"></option>
+		        <select name="text_id">
+			       <option th:each="texts: ${texts}"th:value="${texts.text_id}"th:text="${texts.text_id}"></option>
 		        </select>
          	</div>
          	 <input type="hidden" name="rema" th:field="*{rema}">

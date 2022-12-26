@@ -56,7 +56,6 @@ public class LearningNewReportController {
 			model.addAttribute("validationError", errorList);
 			return "/LeaningNewReport";
 		}
-
 		// ユーザー情報の登録
 		learningNewReportService.insert(LearningNewReportForm);
 		model.addAttribute("LearningNewReportForm", LearningNewReportForm);

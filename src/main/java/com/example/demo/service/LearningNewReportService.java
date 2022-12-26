@@ -30,30 +30,32 @@ public class LearningNewReportService {
 	public void insert(LearningNewReportForm LearningNewReportForm) {
 
 		LearningNewReportEntity user = new LearningNewReportEntity();
-		  user.setRema(LearningNewReportForm.getRema());
-		  //    user.setUser_id(LearningNewReportForm.getUser_id());
-		  user.setUser_id(1);
-		  user.setCreated_at(LearningNewReportForm.getCreated_at());
-		  user.setStart_time(LocalTime.parse(LearningNewReportForm.getStart_time().substring(0,5)+":00"));
-		  user.setEnd_time(LocalTime.parse(LearningNewReportForm.getEnd_time().substring(0, 5) + ":00"));
-		  user.setCourse_id(LearningNewReportForm.getCourse_id());
-		  user.setText_id(LearningNewReportForm.getText_id());
-		  user.setChapters_id(LearningNewReportForm.getChapters_id());
-		  user.setRemark(LearningNewReportForm.getRemark());
-		  Long minutes = ChronoUnit.MINUTES.between(user.getStart_time(), user.getEnd_time());
-		  Long totalH = minutes/60;
-		  int totalHour = Math.toIntExact(totalH);
-		  Long totalM = minutes%60;
-		  int totalMinites = Math.toIntExact(totalM);
-		  LocalTime total =  LocalTime.of(totalHour,totalMinites);
-		  //String str = new SimpleDateFormat("HH:mm:ss").format(total);
-		  //LocalTime timeT = LocalTime.parse(str, DateTimeFormatter.ofPattern("HH:mm:ss"));
-		  //learningReport.setTotal_time(timeT);
-		  user.setTotal_time(total);
+		user.setRema(LearningNewReportForm.getRema());
+		//				user.setUser_id(LearningNewReportForm.getUser_id());
+		user.setUser_id(1);
+		user.setCreated_at(LearningNewReportForm.getCreated_at());
+		user.setStart_time(LocalTime.parse(LearningNewReportForm.getStart_time().substring(0,5)+":00"));
+		user.setEnd_time(LocalTime.parse(LearningNewReportForm.getEnd_time().substring(0, 5) + ":00"));
+		user.setCourse_id(LearningNewReportForm.getCourse_id());
+		user.setText_id(LearningNewReportForm.getText_id());
+		user.setChapters_id(LearningNewReportForm.getChapters_id());
+		user.setRemark(LearningNewReportForm.getRemark());
+		Long minutes = ChronoUnit.MINUTES.between(user.getStart_time(), user.getEnd_time());
+		Long totalH = minutes/60;
+		int totalHour = Math.toIntExact(totalH);
+		Long totalM = minutes%60;
+		int totalMinites = Math.toIntExact(totalM);
+		LocalTime total =  LocalTime.of(totalHour,totalMinites);
+		//String str = new SimpleDateFormat("HH:mm:ss").format(total);
+		//LocalTime timeT = LocalTime.parse(str, DateTimeFormatter.ofPattern("HH:mm:ss"));
+		//learningReport.setTotal_time(timeT);
+		user.setTotal_time(total);
 
 
-		  learningNewReportRepository.save(user);
-		 }}
+		learningNewReportRepository.save(user);
+	}
+	
+}
 //	    @Autowired 
 //	    LearningNewReportRepository leaningNewReportRepository ;		
 //		public List<LearningNewReportEntity> serchAll() {
