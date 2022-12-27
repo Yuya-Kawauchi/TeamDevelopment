@@ -69,6 +69,16 @@ public class LearningReportEditController {
 //		            form.setCreated_at(sqlDate);
 		            model.addAttribute("validationError", errorList);
 		            model.addAttribute("form",form);
+		            model.addAttribute("form",new Learningform());
+
+					List<Chapters> chapter1 = learningReportEditService.findChapter();
+					model.addAttribute("chapter", chapter1);
+
+					List<Course> course1 = learningReportEditService.findCourse();
+					model.addAttribute("course", course1);
+
+					List<Texts> texts1 = learningReportEditService.findTexts();
+					model.addAttribute("texts", texts1);
 		            return "/learningReportEdit";
 			}
 		    

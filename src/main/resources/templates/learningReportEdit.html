@@ -34,18 +34,19 @@
 		          <option th:each="course : ${course}"th:value="${course.course_id}"th:text="${course.course_id}"></option>
 		       </select>
 	       </div>
-	        <div>
-	        <span>チャプター：</span>
-		        <select name="chapters_id">
-			     <option th:each="chapter : ${chapter}"th:value="${chapter.chapters_id}"th:text="${chapter.chapters_id}"></option>
-		        </select>
-	        </div>
 		    <div>
 		    <span>テキスト：</span>
 		        <select name="text_id">
-			       <option th:each="texts: ${texts}"th:value="${texts.text_id}"th:text="${texts.text_id}"></option>
+			       
+			       <option th:each="texts: ${texts}"th:value="${texts.text_id}"th:text="${texts.text_name}"></option>
 		        </select>
          	</div>
+         		        <div>
+	        <span>チャプター：</span>
+		        <select name="chapters_id">
+			     <option th:each="chapter : ${chapter}"th:value="${chapter.chapters_id}"th:text="${chapter.chapter}"></option>
+		        </select>
+	        </div>
          	 <input type="hidden" name="rema" th:field="*{rema}">
          	 <input type="hidden" name="user_id" th:field="*{user_id}">
 		</div>
